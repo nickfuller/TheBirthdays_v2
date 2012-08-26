@@ -37,7 +37,7 @@ TheBirthdaysV2::Application.routes.draw do
   get "albums/new" => "Albums#new", :as => "new_album"
   post "albums" => "Albums#create", :as => "create_album"
   
-  get "albums/:id" => "Albums#show", :as => "album,"
+  get "albums/:id" => "Albums#show", :as => "album"
   
   get "albums/:id/edit" => "Albums#edit", :as => "edit_album"
   put "albums/:id" => "Albums#update", :as => "update_album"

@@ -1,0 +1,35 @@
+<h1>Songs to Stream Free</h1>
+
+<%= flash[:song_destroyed] %>
+
+<table>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Audio</th>
+      <th scope="col">Lyric</th>
+      <th scope="col">Chart</th>
+      <th scope="col">Tablature</th>
+    </tr>
+    <% @songs.each do |song| %>
+    <tr>
+      <td><%= link_to song.title, song_url(song.id) %></td> 
+      <td><%= song.audio %></td>
+      <td><%= song.lyric %></td>
+      <td><%= song.chart %></td>
+      <td><%= song.tablature %></td>
+      <td><%= link_to "Edit", edit_song_url(song.id) %> </td>
+      <td><%= link_to "Delete", destroy_song_url(song.id), :method => :delete %></td>
+      </td>
+    </tr>
+    <% end %>
+</table>
+
+
+<p><%= link_to "Upload a New Song", new_song_url %></p>
+
+<p><%= link_to "Albums", albums_url %></p>
+
+<p><%= link_to "Fans", fans_url %></p>
+
+<p><%= link_to "Gigs", gigs_url %></p>
+

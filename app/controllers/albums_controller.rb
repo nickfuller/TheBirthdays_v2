@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
 
   def index
-    @albums = Album.order("date asc")
+    @albums = Album.order("date desc")
     respond_to do |format|
       format.html
       format.json { render :json => @albums }

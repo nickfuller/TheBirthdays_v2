@@ -1,0 +1,28 @@
+<h1><%= @song.title %> details</h1>
+
+<%= flash[:song_created] %>
+<%= flash[:song_updated] %>
+
+<table>
+  <thead>
+    <td>Title</td>
+    <td>Audio</td>
+    <td>Lyric</td>
+    <td>Chart</td>
+    <td>Tablature</td>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @song.title %></td>
+      <td><%= @song.audio %></td>
+      <td><%= @song.lyric %></td>
+      <td><%= @song.chart %></td>
+      <td><%= @song.tablature %></td>      
+      <td><%= link_to "Edit", edit_song_url(@song.id) %></td>
+      <td><%= link_to "Delete", destroy_song_url(@song.id), :method => :delete %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to "All Songs", songs_url %></p>
+<p><%= link_to "Upload a New Song", new_song_url %></p>
