@@ -1,0 +1,22 @@
+<h1>Edit <%= @fan.name %>'s Profile</h1>
+
+<%= flash[:fan_not_updated] %>
+
+<table>
+  <tbody>
+    <%= form_tag(fan_url(@fan.id), :method => :put) do %>
+    <tr>
+      <td><%= label_tag :name %></td>
+      <td><%= text_field_tag :name, @fan.name %></td>
+      <td><%= label_tag :email %></td> 
+      <td><%= text_field_tag :email, @fan.email %></td>
+      <td><%= label_tag :password %></td> 
+      <td><%= text_field_tag :password, @fan.password %></td>
+      <td><%= submit_tag "Submit" %></td>
+      <td><%= link_to "Delete", destroy_fan_url(@fan.id), :method => :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "All Fans", fans_url %></p>

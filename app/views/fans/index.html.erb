@@ -1,0 +1,24 @@
+<h1>All Fans</h1>
+
+<%= flash[:fan_destroyed] %>
+
+<p><%= link_to "Create Fan Profile", new_fan_url %></p>
+
+<table>
+  <thead>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Password</td>
+  </thead>
+  <tbody>
+    <% @fans.each do |fan| %>
+    <tr>
+      <td><%= link_to "#{fan.name}", fan_url(fan.id) %></td>
+      <td><%= fan.email %></td>
+      <td><%= fan.password %></td>
+      <td><%= link_to "Edit", edit_fan_url(fan.id) %></td>
+      <td><%= link_to "Delete", destroy_fan_url(fan.id), :method => :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

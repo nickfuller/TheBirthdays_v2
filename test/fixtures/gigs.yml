@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2012-08-26 02:36:29
+  venue: MyString
+  street: MyString
+  city: MyString
+  zipcode: MyString
+  cover: false
+  ticket_price: MyString
+  poster: MyString
+
+two:
+  date: 2012-08-26 02:36:29
+  venue: MyString
+  street: MyString
+  city: MyString
+  zipcode: MyString
+  cover: false
+  ticket_price: MyString
+  poster: MyString
