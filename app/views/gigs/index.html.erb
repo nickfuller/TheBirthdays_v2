@@ -8,12 +8,13 @@
       <th scope="col">Venue</th>
       <th scope="col">Street</th>
       <th scope="col">City</th>
-      <th scope="col">Zipcode</th>
+      <th scope="col">ZIP</th>
       <th scope="col">Cover</th>
     </tr>
     <% @upcoming_gigs.each do |gig| %>
     <tr>
-      <td><%= link_to gig.date.strftime("%A, %B %e, %Y at %l:%M%P"), gig_url(gig.id) %></td> 
+      <td><%= link_to gig.date.strftime("%B %e, %Y (%A, %l:%M%P)"), gig_url(gig.id) %></td> 
+      <!-- January 21, 2012 (Monday) -->
       <td><%= gig.venue %></td>
       <td><%= gig.street %></td>
       <td><%= gig.city %></td>
@@ -34,7 +35,7 @@
       <th scope="col">Venue</th>
       <th scope="col">Street</th>
       <th scope="col">City</th>
-      <th scope="col">Zipcode</th>
+      <th scope="col">ZIP</th>
       <th scope="col">Cover</th>
     </tr>
     <% @past_gigs.each do |gig| %>
