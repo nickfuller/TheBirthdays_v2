@@ -1,0 +1,32 @@
+<h1>All BLogs</h1>
+
+<%= flash[:blog_destroyed] %>
+
+<table>
+  <thead>
+    <td>Title</td>
+    <td>Body</td>
+    <td>Series</td>
+  </thead>
+  <tbody>
+    <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= link_to blog.title, blog_url(blog.id) %></td>
+      <td><%= blog.body %></td>
+      <td><%= blog.series %></td>
+      <td><%= link_to "Edit", edit_blog_url(blog.id) %></td>
+      <td><%= link_to "Delete", destroy_blog_url(blog.id), :method => :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "Post new Blog Entry", new_blog_url %></p>
+
+<p><%= link_to "Albums", albums_url %></p>
+
+<p><%= link_to "Songs", songs_url %></p>
+
+<p><%= link_to "Fans", fans_url %></p>
+
+<p><%= link_to "Gigs", gigs_url %></p>

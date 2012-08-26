@@ -1,0 +1,22 @@
+<h1>Edit the blog, <%= @blog.title %></h1>
+
+<%= flash[:blog_not_updated] %>
+
+<table>
+  <tbody>
+    <%= form_tag(blog_url(@blog.id), :method => :put) do %>
+    <tr>
+      <td><%= label_tag :title %></td>
+      <td><%= text_field_tag :title, @blog.title %></td>
+      <td><%= label_tag :body %></td> 
+      <td><%= text_field_tag :body, @blog.body %></td>
+      <td><%= label_tag :series %></td> 
+      <td><%= text_field_tag :series, @blog.series %></td>
+      <td><%= submit_tag "Submit" %></td>
+      <td><%= link_to "Delete", destroy_blog_url(@blog.id), :method => :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "All Blogs", blogs_url %></p>

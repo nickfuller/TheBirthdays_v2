@@ -1,6 +1,6 @@
 TheBirthdaysV2::Application.routes.draw do
 
-  # root :to => 'welcome#index'
+  root :to => 'Home#index', :as => "home"
 
 # FAN ROUTES
   

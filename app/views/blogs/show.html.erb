@@ -1,0 +1,23 @@
+<h1><%= @blog.title %> </h1>
+
+<%= flash[:blog_created] %>
+<%= flash[:blog_updated] %>
+
+<table>
+  <thead>
+    <td>Title</td>
+    <td>Body</td>
+    <td>Series</td>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @blog.title %></td>
+      <td><%= @blog.body %></td>
+      <td><%= @blog.series %></td>
+      <td><%= link_to "Edit", edit_blog_url(@blog.id) %></td>
+      <td><%= link_to "Delete", destroy_blog_url(@blog.id), :method => :delete %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to "All Blog Posts", blogs_url %></p>
