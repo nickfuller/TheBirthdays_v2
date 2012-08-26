@@ -1,0 +1,17 @@
+<h1>Post a Gig</h1>
+
+<%= flash[:gig_not_created] %>
+
+<p>Please fill in the following fields, and then submit:</p>
+
+<%= form_tag(gigs_url) do %>
+<ul>
+  <li><%= label_tag :date, "Date: [YEAR-MO-DY-HR:MN]" %><%= text_field_tag :date %></li>
+  <li><%= label_tag :venue %><%= text_field_tag :venue %></li>
+  <li><%= label_tag :street %><%= text_field_tag :street %></li>
+  <li><%= label_tag :city %><%= text_field_tag :city %></li>
+  <li><%= label_tag :zipcode %><%= text_field_tag :zipcode %></li>
+  <li><%= label_tag :ticket_price, "Cover Charge: $" %><%= text_field_tag :ticket_price %></li>
+  <li><%= submit_tag "Submit" %></li>
+</ul>
+<% end %>

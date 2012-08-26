@@ -1,0 +1,22 @@
+<h1>Edit <%= @album.title %> Detail</h1>
+
+<%= flash[:album_not_updated] %>
+
+<table>
+  <tbody>
+    <%= form_tag(album_url(@album.id), :method => :put) do %>
+    <tr>
+      <td><%= label_tag :title %></td>
+      <td><%= text_field_tag :title, @album.title %></td>
+      <td><%= label_tag :date %></td> 
+      <td><%= text_field_tag :date, @album.date %></td>
+      <td><%= label_tag :cover_art %></td> 
+      <td><%= text_field_tag :cover_art, @album.cover_art %></td>
+      <td><%= submit_tag "Submit" %></td>
+      <td><%= link_to "Delete", destroy_album_url(@album.id), :method => :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "All Albums", albums_url %></p>

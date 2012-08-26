@@ -21,7 +21,7 @@ class FansController < ApplicationController
       redirect_to fan_url(@fan.id)
     else
       flash[:fan_not_created] = "Please fill in all fields before submitting."
-      render 'new'
+      render 'new'  # Q: Could I say render new_fan_url instead?
     end
   end
 
@@ -42,12 +42,12 @@ class FansController < ApplicationController
     @fan.name = params[:name]
     @fan.email = params[:email]
     @fan.password = params[:password]
-    if @fan.update_attributes(params[:fans])
+    if @fan.update_attributes(params[:fans])  # Q: Why is "fans" plural in this line?
       flash[:fan_updated] = "#{params[:name]}'s profile has been updated!"
       redirect_to fan_url(@fan.id)
     else
       flash[:fan_not_updated] = "Please fill in all fields before submitting."
-      render 'edit'
+      render 'edit' # Q: Could I say render edit_fan_url(@fan.id) instead?
     end
   end
 

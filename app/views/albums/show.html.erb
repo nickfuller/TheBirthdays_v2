@@ -1,0 +1,23 @@
+<h1><%= @album.title %> Details</h1>
+
+<%= flash[:album_created] %>
+<%= flash[:album_updated] %>
+
+<table>
+  <thead>
+    <td>Title</td>
+    <td>Date</td>
+    <td>Cover Art</td>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @album.title %></td>
+      <td><%= @album.date %></td>
+      <td><%= @album.cover_art %></td>
+      <td><%= link_to "Edit", edit_album_url(@album.id) %></td>
+      <td><%= link_to "Delete", destroy_album_url(@album.id), :method => :delete %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to "All Albums", albums_url %></p>

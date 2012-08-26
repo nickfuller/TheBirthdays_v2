@@ -1,0 +1,35 @@
+<h1>Edit <%= @gig.venue %> gig on <%= @gig.date %></h1>
+
+<%= flash[:gig_not_updated] %>
+
+<table>
+  <tbody>
+    <%= form_tag(gig_url(@gig.id), :method => :put) do %>
+    <tr>
+      <td><%= label_tag :date %></td>
+      <td><%= text_field_tag :date, @gig.date %></td>
+      
+      <td><%= label_tag :venue %></td> 
+      <td><%= text_field_tag :venue, @gig.venue %></td>
+      
+      <td><%= label_tag :street %></td> 
+      <td><%= text_field_tag :street, @gig.street %></td>
+      
+      <td><%= label_tag :city %></td> 
+      <td><%= text_field_tag :city, @gig.city %></td>
+      
+      <td><%= label_tag :zipcode %></td> 
+      <td><%= text_field_tag :zipcode, @gig.zipcode %></td>
+      
+      <td><%= label_tag :ticket_price, "Cover" %></td> 
+      <td><%= text_field_tag :ticket_price, @gig.ticket_price %></td>
+      
+      <td><%= submit_tag "Submit" %></td>
+      
+      <td><%= link_to "Delete", destroy_gig_url(@gig.id), :method => :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "All Gigs", gigs_url %></p>
