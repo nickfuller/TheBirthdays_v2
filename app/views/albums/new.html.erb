@@ -12,12 +12,7 @@
   </thead>
   <tbody>
     <tr>
-    <%= form_for @album do |x| %>
-      <td><%= x.text_field_tag :title %></td>
-      <td><%= x.text_field_tag :date, "YEAR-MO-DY-HR:MN" %></td>
-      <td><%= x.text_field_tag :cover_art %></td>
-      <td><%= x.submit_tag "Submit" %></td>
-    <% end %>
+    <%= render "form" %>
     </tr>
   </tbody>
 </table>

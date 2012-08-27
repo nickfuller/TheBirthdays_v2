@@ -1,0 +1,15 @@
+<%= form_for @album do |f| %>
+<tr>
+  <td><%= f.text_field :title, @album.title %></td>
+  <td><%= f.text_field :date, @album.date %></td>
+  <td><%= f.text_field :cover_art, @album.cover_art %></td>
+  <td><%= f.submit "Submit" %></td>
+</tr>
+<% end %>
+
+<%= form_for @album do |f| %>
+  <td><%= f.text_field :title %></td>
+  <td><%= f.text_field :date %></td>
+  <td><%= f.text_field :cover_art %></td>
+  <td><%= f.submit "Submit" %></td>
+<% end %>

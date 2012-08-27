@@ -14,9 +14,10 @@ class AlbumsController < ApplicationController
 
   def create
     @album = Album.new
-    @album.title = params[:title]
-    @album.date = params[:date]
-    @album.cover_art = params[:cover_art]
+    @album.title = params[:album][:title]
+    @album.date = params[:album][:date]
+    @album.cover_art = params[:album][:cover_art]
+			# Q: When accessing model classes in a params (as we have to do re: params) do [:modelname]
     if @album.save
       flash[:album_created] = "Just posted #{params[:title]}."
       redirect_to album_url(@album.id)
@@ -40,9 +41,9 @@ class AlbumsController < ApplicationController
 
   def update
     @album = Album.find_by_id(params[:id])
-    @album.title = params[:title]
-    @album.date = params[:date]
-    @album.cover_art = params[:cover_art]
+    @album.title = params[:album][:title]
+    @album.date = params[:album][:date]
+    @album.cover_art = params[:album][:cover_art]
     if @album.update_attributes(params[:albums])  # Q: Why is "albums" plural in this line?
       flash[:album_updated] = "#{params[:title]} is now in the database."
       redirect_to album_url(@album.id)
