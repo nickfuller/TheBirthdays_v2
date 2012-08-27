@@ -20,10 +20,12 @@
       <td><%= @gig.city %></td>
       <td><%= @gig.zipcode %></td>
       <td><%= @gig.ticket_price %></td>
+      <td><%= link_to "Edit", edit_gig_url(@gig.id) %></td>
+      <td><%= link_to "Delete", destroy_blog_url(@gig.id), :method => :delete %></td>
     </tr>
   </tbody>
 </table>
 
-<p><%= link_to "Edit", edit_gig_url(@gig.id) %></p>
-<p><%= link_to "Delete", destroy_gig_url(@gig.id), :method => :delete %></p>
+<p><%= link_to "New Gig", new_gig_url %></p>
 <p><%= link_to "All Gigs", gigs_url %></p>
+<p><%= link_to "Home", home_url %></p>

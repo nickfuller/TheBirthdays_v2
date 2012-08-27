@@ -6,7 +6,7 @@
 
 <%= form_tag(gigs_url) do %>
 <ul>
-  <li><%= label_tag :date, "Date: [YEAR-MO-DY-HR:MN]" %><%= text_field_tag :date %></li>
+  <li><%= label_tag :date, "Date [YEAR-MO-DY-HR:MN]:" %><%= text_field_tag :date %></li>
   <li><%= label_tag :venue %><%= text_field_tag :venue %></li>
   <li><%= label_tag :street %><%= text_field_tag :street %></li>
   <li><%= label_tag :city %><%= text_field_tag :city %></li>
@@ -15,3 +15,6 @@
   <li><%= submit_tag "Submit" %></li>
 </ul>
 <% end %>
+
+<p><%= link_to "All Gigs", gigs_url %></p>
+<p><%= link_to "Home", home_url %></p>
