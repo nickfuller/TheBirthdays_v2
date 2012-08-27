@@ -1,4 +1,4 @@
-<h1><%= @gig.date %>, <%= @gig.venue %></h1>
+<h1><%= @gig.venue %> | <%= @gig.date.strftime("%B %e, %Y") %></h1>
 
 <%= flash[:gig_created] %>
 <%= flash[:gig_updated] %>
@@ -14,12 +14,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= @gig.date %></td>
+      <td><%= @gig.date.strftime("%B %e, %Y (%A, %l:%M%P)") %></td>
       <td><%= @gig.venue %></td>
       <td><%= @gig.street %></td>
       <td><%= @gig.city %></td>
       <td><%= @gig.zipcode %></td>
-      <td><%= @gig.ticket_price %></td>
+      <td>$<%= @gig.ticket_price %></td>
       <td><%= link_to "Edit", edit_gig_url(@gig.id) %></td>
       <td><%= link_to "Delete", destroy_blog_url(@gig.id), :method => :delete %></td>
     </tr>

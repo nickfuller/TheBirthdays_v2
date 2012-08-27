@@ -3,31 +3,30 @@
 <%= flash[:song_not_updated] %>
 
 <table>
+  <thead>
+    <td>Title</td>
+    <td>Audio</td>
+    <td>Lyric</td>
+    <td>Chart</td>
+    <td>Tablature</td>
+  </thead>
   <tbody>
     <%= form_tag(song_url(@song.id), :method => :put) do %>
     <tr>
-      <td><%= label_tag :title %></td>
       <td><%= text_field_tag :title, @song.title %></td>
-      
-      <td><%= label_tag :audio %></td> 
       <td><%= text_field_tag :audio, @song.audio %></td>
-      
-      <td><%= label_tag :lyric %></td> 
       <td><%= text_field_tag :lyric, @song.lyric %></td>
-      
-      <td><%= label_tag :chart %></td> 
       <td><%= text_field_tag :chart, @song.chart %></td>
-      
-      <td><%= label_tag :tablature %></td> 
       <td><%= text_field_tag :tablature, @song.tablature %></td>
-      
       <td><%= submit_tag "Submit" %></td>
-      
-      <td><%= link_to "Delete", destroy_song_url(@song.id), :method => :delete %></td>
     </tr>
     <% end %>
+    <tr>
+      <td><%= link_to "Delete", destroy_song_url(@song.id), :method => :delete %></td>
+    </tr>
   </tbody>
 </table>
 
+<p><%= link_to "New Song", new_song_url %></p>
 <p><%= link_to "All Songs", songs_url %></p>
 <p><%= link_to "Home", home_url %></p>

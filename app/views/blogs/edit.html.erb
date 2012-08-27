@@ -3,6 +3,11 @@
 <%= flash[:blog_not_updated] %>
 
 <table>
+  <thead>
+    <td>Title</td>
+    <td>Body</td>
+    <td>Series</td>
+  </thead>
   <tbody>
     <%= form_tag(blog_url(@blog.id), :method => :put) do %>
     <tr>
@@ -13,11 +18,14 @@
       <td><%= label_tag :series %></td> 
       <td><%= text_field_tag :series, @blog.series %></td>
       <td><%= submit_tag "Submit" %></td>
-      <td><%= link_to "Delete", destroy_blog_url(@blog.id), :method => :delete %></td>
     </tr>
     <% end %>
+    <tr>
+      <td><%= link_to "Delete", destroy_blog_url(@blog.id), :method => :delete %></td>
+    </tr>
   </tbody>
 </table>
 
+<p><%= link_to "New Blog Post", new_blog_url %></p>
 <p><%= link_to "Blog", blogs_url %></p>
 <p><%= link_to "Home", home_url %></p>

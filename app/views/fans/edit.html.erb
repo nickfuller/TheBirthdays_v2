@@ -3,6 +3,11 @@
 <%= flash[:fan_not_updated] %>
 
 <table>
+  <thead>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Password</td>
+  </thead>
   <tbody>
     <%= form_tag(fan_url(@fan.id), :method => :put) do %>
     <tr>
@@ -13,11 +18,14 @@
       <td><%= label_tag :password %></td> 
       <td><%= text_field_tag :password, @fan.password %></td>
       <td><%= submit_tag "Submit" %></td>
-      <td><%= link_to "Delete", destroy_fan_url(@fan.id), :method => :delete %></td>
     </tr>
     <% end %>
+    <tr>
+      <td><%= link_to "Delete", destroy_fan_url(@fan.id), :method => :delete %></td>
+    </tr>
   </tbody>
 </table>
 
+<p><%= link_to "Create Profile", new_fan_url %></p>
 <p><%= link_to "All Fans", fans_url %></p>
 <p><%= link_to "Home", home_url %></p>

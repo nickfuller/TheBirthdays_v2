@@ -5,14 +5,16 @@
 <p>Please fill in the following fields, and then submit:</p>
 
 <table>
+  <thead>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Password</td>
+  </thead>
   <tbody>
     <%= form_tag(fans_url) do %>
     <tr>
-      <td><%= label_tag :name %></td>
       <td><%= text_field_tag :name %></td>
-      <td><%= label_tag :email %><td> 
       <td><%= text_field_tag :email %></td>
-      <td><%= label_tag :password %></td>
       <td><%= text_field_tag :password %></td>
       <td><%= submit_tag "Submit" %></td>
     </tr>

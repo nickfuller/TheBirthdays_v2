@@ -9,6 +9,7 @@ class SongsController < ApplicationController
   end
 
   def new
+		@song = Song.new
   end
 
   def create
@@ -20,7 +21,7 @@ class SongsController < ApplicationController
     @song.tablature = params[:tablature]
     if @song.save
       flash[:song_created] = "Song, #{params[:title]}, just uploaded!"
-      redirect_to song_url(@song.id)
+      redirect_to songs_url
     else
       flash[:song_not_created] = "Please fill in all fields before submitting."
       render 'new'  # Q: Could I say render new_song_url instead?
