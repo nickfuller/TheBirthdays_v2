@@ -1,0 +1,10 @@
+<%= form_for @song do |f| %>
+  <tr>
+    <td><%= f.text_field :title %></td>
+    <td><%= f.text_field :audio %></td>
+    <td><%= f.text_field :lyric %></td>
+    <td><%= f.text_field :chart %></td>
+    <td><%= f.text_field :tablature %></td>
+    <td><%= f.submit "Submit" %></td>
+  </tr>
+<% end %>

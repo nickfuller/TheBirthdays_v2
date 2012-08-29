@@ -1,0 +1,22 @@
+<h1>Edit <%= @act.name %></h1>
+
+<%= flash[:act_not_updated] %>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render "form" %>
+    <tr>
+      <td><%= link_to "Delete", destroy_act_url(@act.id), :method => :delete %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to "New Act", new_act_url %></p>
+<p><%= link_to "All Acts", acts_url %></p>
+<p><%= link_to "Home", home_url %></p>

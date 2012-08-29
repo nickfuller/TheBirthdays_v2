@@ -4,16 +4,21 @@
 
 <p>Please fill in the following fields, and then submit:</p>
 
-<%= form_tag(songs_url) do %>
-<ul>
-  <li><%= label_tag :title %><%= text_field_tag :title %></li>
-  <li><%= label_tag :audio %><%= text_field_tag :audio %></li>
-  <li><%= label_tag :lyric %><%= text_field_tag :lyric %></li>
-  <li><%= label_tag :chart %><%= text_field_tag :chart %></li>
-  <li><%= label_tag :tablature %><%= text_field_tag :tablature %></li>
-  <li><%= submit_tag "Submit" %></li>
-</ul>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Audio</th>
+      <th scope="col">Lyric</th>
+      <th scope="col">Chart</th>
+      <th scope="col">Tablature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render "form" %>
+  </tbody>
+</table>
+
 
 <p><%= link_to "All Songs", songs_url %></p>
 <p><%= link_to "Home", home_url %></p>

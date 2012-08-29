@@ -4,23 +4,16 @@
 
 <table>
   <thead>
-    <td>Title</td>
-    <td>Audio</td>
-    <td>Lyric</td>
-    <td>Chart</td>
-    <td>Tablature</td>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Audio</th>
+      <th scope="col">Lyric</th>
+      <th scope="col">Chart</th>
+      <th scope="col">Tablature</th>
+    </tr>
   </thead>
   <tbody>
-    <%= form_tag(song_url(@song.id), :method => :put) do %>
-    <tr>
-      <td><%= text_field_tag :title, @song.title %></td>
-      <td><%= text_field_tag :audio, @song.audio %></td>
-      <td><%= text_field_tag :lyric, @song.lyric %></td>
-      <td><%= text_field_tag :chart, @song.chart %></td>
-      <td><%= text_field_tag :tablature, @song.tablature %></td>
-      <td><%= submit_tag "Submit" %></td>
-    </tr>
-    <% end %>
+    <%= render "form" %>
     <tr>
       <td><%= link_to "Delete", destroy_song_url(@song.id), :method => :delete %></td>
     </tr>

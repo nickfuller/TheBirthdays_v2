@@ -5,21 +5,17 @@
 
 <table>
   <thead>
-    <td>Date</td>
-    <td>Venue</td>
-    <td>Street</td>
-    <td>City</td>
-    <td>Zipcode</td>
-    <td>Cover</td>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Venue</th>
+      <th scope="col">Cover</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
       <td><%= @gig.date.strftime("%B %e, %Y (%A, %l:%M%P)") %></td>
       <td><%= @gig.venue %></td>
-      <td><%= @gig.street %></td>
-      <td><%= @gig.city %></td>
-      <td><%= @gig.zipcode %></td>
-      <td>$<%= @gig.ticket_price %></td>
+      <td>$<%= @gig.cover %></td>
       <td><%= link_to "Edit", edit_gig_url(@gig.id) %></td>
       <td><%= link_to "Delete", destroy_blog_url(@gig.id), :method => :delete %></td>
     </tr>

@@ -5,25 +5,14 @@
 <p>Please fill in the following fields, and then submit:</p>
 <table>
   <thead>
-    <td>Date</td>
-    <td>Venue</td>
-    <td>Street</td>
-    <td>City</td>
-    <td>ZIP</td>
-    <td>Cover</td>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Venue</th>
+      <th scope="col">Cover</th>
+    </tr>
   </thead>
   <tbody>
-    <tr>
-    <%= form_tag(gigs_url) do %>
-      <td><%= text_field_tag :date, "YEAR-MO-DY-HR:MN"%></li>
-      <td><%= text_field_tag :venue %></li>
-      <td><%= text_field_tag :street %></li>
-      <td><%= text_field_tag :city %></li>
-      <td><%= text_field_tag :zipcode %></li>
-      <td><%= text_field_tag :ticket_price, "$" %></li>
-      <td><%= submit_tag "Submit" %></li>
-    <% end %>
-    </tr>
+    <%= render "form" %>
   </tbody>
 </table>
 

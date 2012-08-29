@@ -1,0 +1,8 @@
+<%= form_for @gig do |f| %>
+  <tr>
+    <td><%= f.text_field :date %></td>
+    <td><%= f.text_field :venue %></td>
+    <td><%= f.text_field :cover %></td>
+    <td><%= f.submit "Submit" %></td>
+  </tr>
+<% end %>

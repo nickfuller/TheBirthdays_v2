@@ -13,12 +13,9 @@ class FansController < ApplicationController
   end
 
   def create
-    @fan = Fan.new
-    @fan.name = params[:name]
-    @fan.email = params[:email]
-    @fan.password = params[:password]
+    @fan = Fan.new(params[:fan])
     if @fan.save
-      flash[:fan_created] = "#{params[:name]} is now a registered fan!"
+      flash[:fan_created] = "#{@fan.name} is now a registered fan!"
       redirect_to fan_url(@fan.id)
     else
       flash[:fan_not_created] = "Please fill in all fields before submitting."
@@ -40,11 +37,8 @@ class FansController < ApplicationController
 
   def update
     @fan = Fan.find_by_id(params[:id])
-    @fan.name = params[:name]
-    @fan.email = params[:email]
-    @fan.password = params[:password]
-    if @fan.update_attributes(params[:fans])  # Q: Why is "fans" plural in this line?
-      flash[:fan_updated] = "#{params[:name]}'s profile has been updated!"
+    if @fan.update_attributes(params[:fan])  # Q: Why is "fans" plural in this line?
+      flash[:fan_updated] = "#{@fan.name}'s profile has been updated!"
       redirect_to fan_url(@fan.id)
     else
       flash[:fan_not_updated] = "Please fill in all fields before submitting."

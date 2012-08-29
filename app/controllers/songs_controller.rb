@@ -13,14 +13,9 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new
-    @song.title = params[:title]
-    @song.audio = params[:audio]
-    @song.lyric = params[:lyric]
-    @song.chart = params[:chart]
-    @song.tablature = params[:tablature]
+    @song = Song.new(params[:song])
     if @song.save
-      flash[:song_created] = "Song, #{params[:title]}, just uploaded!"
+      flash[:song_created] = "Song, #{@song.title}, just uploaded!"
       redirect_to songs_url
     else
       flash[:song_not_created] = "Please fill in all fields before submitting."
@@ -42,13 +37,8 @@ class SongsController < ApplicationController
 
   def update
     @song = Song.find_by_id(params[:id])
-    @song.title = params[:title]
-    @song.audio = params[:audio]
-    @song.lyric = params[:lyric]
-    @song.chart = params[:chart]
-    @song.tablature = params[:tablature]    
     if @song.update_attributes(params[:songs])  # Q: Why is "songs" plural in this line?
-      flash[:song_updated] = "Song, #{params[:title]}, just updated."
+      flash[:song_updated] = "Song, #{@song.title}, just updated."
       redirect_to song_url(@song.id)
     else
       flash[:song_not_updated] = "Please fill in all fields before submitting."

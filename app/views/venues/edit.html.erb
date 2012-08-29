@@ -1,0 +1,26 @@
+<h1>Edit <%= @venue.name %></h1>
+
+<%= flash[:venue_not_updated] %>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Street</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">ZIP</th>
+      <th scope="col">Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render "form" %>
+    <tr>
+      <td><%= link_to "Delete", destroy_venue_url(@act.id), :method => :delete %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to "New Venue", new_venue_url %></p>
+<p><%= link_to "All Venues", venues_url %></p>
+<p><%= link_to "Home", home_url %></p>

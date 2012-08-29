@@ -1,15 +1,14 @@
-<h1>New Blog Post</h1>
+<h1>New Act</h1>
 
-<%= flash[:blog_not_created] %>
+<%= flash[:act_not_created] %>
 
 <p>Please fill in the following fields, and then submit:</p>
 
 <table>
   <thead>
     <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Body</th>
-      <th scope="col">Series</th>
+      <th scope="col">Name</th>
+      <th scope="col">Website</th>
     </tr>
   </thead>
   <tbody>
@@ -17,5 +16,5 @@
   </tbody>
 </table>
 
-<p><%= link_to "Blog", blogs_url %></p>
+<p><%= link_to "Acts", acts_url %></p>
 <p><%= link_to "Home", home_url %></p>

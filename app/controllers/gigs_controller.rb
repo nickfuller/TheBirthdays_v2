@@ -15,15 +15,9 @@ class GigsController < ApplicationController
   end
 
   def create
-    @gig = Gig.new
-    @gig.date = params[:date]
-    @gig.venue = params[:venue]
-    @gig.street = params[:street]
-    @gig.city = params[:city]
-    @gig.zipcode = params[:zipcode]
-    @gig.ticket_price = params[:ticket_price]
+    @gig = Gig.new(params[:gig])
     if @gig.save
-      flash[:gig_created] = "A gig on #{params[:date]} at #{params[:venue]} has been added to the site!"
+      flash[:gig_created] = "A gig on #{@gig.date} at #{@gig.venue} has been added to the site!"
       redirect_to gig_url(@gig.id)
     else
       flash[:gig_not_created] = "Please fill in all required fields before submitting."
@@ -45,14 +39,8 @@ class GigsController < ApplicationController
 
   def update
     @gig = Gig.find_by_id(params[:id])
-    @gig.date = params[:date]
-    @gig.venue = params[:venue]
-    @gig.street = params[:street]
-    @gig.city = params[:city]
-    @gig.zipcode = params[:zipcode]
-    @gig.ticket_price = params[:ticket_price]
     if @gig.update_attributes(params[:gigs])
-      flash[:gig_updated] = "The gig on #{params[:date]} at #{params[:venue]} has been updated."
+      flash[:gig_updated] = "The gig on #{@gig.date} at #{@gig.venue} has been updated."
       redirect_to gig_url(@gig.id)
     else
       flash[:gig_not_updated] = "Please fill in all required fields before submitting."

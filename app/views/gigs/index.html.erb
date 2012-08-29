@@ -3,54 +3,50 @@
 <%= flash[:gig_destroyed] %>
 
 <table>
+  <thead>
     <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Venue</th>
-      <th scope="col">Street</th>
-      <th scope="col">City</th>
-      <th scope="col">ZIP</th>
-      <th scope="col">Cover</th>
+     <th scope="col">Date</th>
+     <th scope="col">Venue</th>
+     <th scope="col">Cover</th>
     </tr>
+  </thead>
+  <tbody>
     <% @upcoming_gigs.each do |gig| %>
     <tr>
       <td><%= link_to gig.date.strftime("%B %e, %Y (%A, %l:%M%P)"), gig_url(gig.id) %></td> 
       <!-- January 21, 2012 (Monday) -->
       <td><%= gig.venue %></td>
-      <td><%= gig.street %></td>
-      <td><%= gig.city %></td>
-      <td><%= gig.zipcode %></td>
-      <td>$<%= gig.ticket_price %></td> 
+      <td>$<%= gig.cover %></td> 
       <td><%= link_to "Edit", edit_gig_url(gig.id) %> </td>
       <td><%= link_to "Delete", destroy_gig_url(gig.id), :method => :delete %></td>
       </td>
     </tr>
     <% end %>
+  </tbody>
 </table>
 
 <h1>Past Gigs</h1>
 
 <table>
+  <thead>
     <tr>
       <th scope="col">Date</th>
       <th scope="col">Venue</th>
-      <th scope="col">Street</th>
-      <th scope="col">City</th>
-      <th scope="col">ZIP</th>
       <th scope="col">Cover</th>
     </tr>
+  </thead>
+  <body>
     <% @past_gigs.each do |gig| %>
     <tr>
       <td><%= link_to gig.date.strftime("%B %e, %Y"), gig_url(gig.id) %></td> 
       <td><%= gig.venue %></td>
-      <td><%= gig.street %></td>
-      <td><%= gig.city %></td>
-      <td><%= gig.zipcode %></td>
-      <td>$<%= gig.ticket_price %></td> 
+      <td>$<%= gig.cover %></td> 
       <td><%= link_to "Edit", edit_gig_url(gig.id) %> </td>
       <td><%= link_to "Delete", destroy_gig_url(gig.id), :method => :delete %></td>
       </td>
     </tr>
     <% end %>
+  </body>
 </table>
 
 <p><font color=red, size=4px>BUTTON: DELETE ALL GIGS</font></p> <!-- this shows in green? -->

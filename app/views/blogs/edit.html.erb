@@ -4,22 +4,14 @@
 
 <table>
   <thead>
-    <td>Title</td>
-    <td>Body</td>
-    <td>Series</td>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+      <th scope="col">Series</th>
+    </tr>
   </thead>
   <tbody>
-    <%= form_tag(blog_url(@blog.id), :method => :put) do %>
-    <tr>
-      <td><%= label_tag :title %></td>
-      <td><%= text_field_tag :title, @blog.title %></td>
-      <td><%= label_tag :body %></td> 
-      <td><%= text_field_tag :body, @blog.body %></td>
-      <td><%= label_tag :series %></td> 
-      <td><%= text_field_tag :series, @blog.series %></td>
-      <td><%= submit_tag "Submit" %></td>
-    </tr>
-    <% end %>
+    <%= render "form" %>
     <tr>
       <td><%= link_to "Delete", destroy_blog_url(@blog.id), :method => :delete %></td>
     </tr>

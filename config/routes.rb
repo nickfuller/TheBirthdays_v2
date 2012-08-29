@@ -29,6 +29,35 @@ TheBirthdaysV2::Application.routes.draw do
   put "gigs/:id" => "Gigs#update", :as => "update_gig"
 
   delete "gigs/:id" => "Gigs#destroy", :as => "destroy_gig" 
+
+# VENUE ROUTES
+
+  get "venues" => "venues#index", :as => "venues"
+
+  get "venues/new" => "venues#new", :as => "new_venue"
+  post "venues" => "venues#create", :as => "create_venue"
+
+  get "venues/:id" => "venues#show", :as => "venue"
+
+  get "venues/:id/edit" => "venues#edit", :as => "edit_venue"
+  put "venues/:id" => "venues#update", :as => "update_venue"
+
+  delete "venues/:id" => "venues#destroy", :as => "destroy_venue"
+
+# ACT ROUTES
+
+  get "acts" => "acts#index", :as => "acts"
+
+  get "acts/new" => "acts#new", :as => "new_act"
+  post "acts" => "acts#create", :as => "create_act"
+
+  get "acts/:id" => "acts#show", :as => "act"
+
+  get "acts/:id/edit" => "acts#edit", :as => "edit_act"
+  put "acts/:id" => "acts#update", :as => "update_act"
+
+  delete "acts/:id" => "acts#destroy", :as => "destroy_act" 
+
   
 # ALBUM ROUTES
   
