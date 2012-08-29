@@ -22,6 +22,8 @@
   </tbody>
 </table>
 
+<%= render "songs/songs_list", :songs => @album.songs %>
+
 <p><%= link_to "New Album", new_album_url %></p>
 <p><%= link_to "All Albums", albums_url %></p>
 <p><%= link_to "Home", home_url %></p>

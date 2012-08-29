@@ -37,12 +37,12 @@ class FansController < ApplicationController
 
   def update
     @fan = Fan.find_by_id(params[:id])
-    if @fan.update_attributes(params[:fan])  # Q: Why is "fans" plural in this line?
+    if @fan.update_attributes(params[:fan])
       flash[:fan_updated] = "#{@fan.name}'s profile has been updated!"
       redirect_to fan_url(@fan.id)
     else
       flash[:fan_not_updated] = "Please fill in all fields before submitting."
-      render 'edit' # Q: Could I say render edit_fan_url(@fan.id) instead?
+      render 'edit' 
     end
   end
 

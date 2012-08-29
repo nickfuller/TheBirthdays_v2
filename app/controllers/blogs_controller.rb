@@ -42,7 +42,7 @@ class BlogsController < ApplicationController
       redirect_to blog_url(@blog.id)
     else
       flash[:blog_not_updated] = "Please fill in all fields before submitting."
-      render 'edit' # Q: Could I say render edit_blog_url(@blog.id) instead?
+      render 'edit'
     end
   end
 

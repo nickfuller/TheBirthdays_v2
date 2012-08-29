@@ -39,7 +39,7 @@ class GigsController < ApplicationController
 
   def update
     @gig = Gig.find_by_id(params[:id])
-    if @gig.update_attributes(params[:gigs])
+    if @gig.update_attributes(params[:gig])
       flash[:gig_updated] = "The gig on #{@gig.date} at #{@gig.venue} has been updated."
       redirect_to gig_url(@gig.id)
     else

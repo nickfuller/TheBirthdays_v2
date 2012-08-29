@@ -37,7 +37,7 @@ class ActsController < ApplicationController
 
   def update
     @act = Act.find_by_id(params[:id])
-    if @act.update_attributes(params[:acts])  # Q: Why is "acts" plural in this line?
+    if @act.update_attributes(params[:act])  # Q: Should "act" be plural, "acts"?
       flash[:act_updated] = "Act, #{@act.name}, just updated."
       redirect_to act_url(@act.id)
     else

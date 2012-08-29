@@ -1,3 +1,3 @@
 class Blog < ActiveRecord::Base
-  attr_accessible :body, :series, :title
+  attr_accessible :body, :author, :title
 end

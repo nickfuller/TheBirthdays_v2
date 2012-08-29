@@ -19,7 +19,7 @@ class VenuesController < ApplicationController
       redirect_to venues_url
     else
       flash[:venue_not_created] = "Please fill in all fields before submitting."
-      render 'new'  # Q: Could I say render new_venue_url instead?
+      render 'new'  
     end
   end
 
@@ -37,12 +37,12 @@ class VenuesController < ApplicationController
 
   def update
     @venue = Venue.find_by_id(params[:id])
-    if @venue.update_attributes(params[:venues])  # Q: Why is "venues" plural in this line?
+    if @venue.update_attributes(params[:venue]) 
       flash[:venue_updated] = "Venue, #{@venue.name}, just updated."
       redirect_to venue_url(@venue.id)
     else
       flash[:venue_not_updated] = "Please fill in all fields before submitting."
-      render 'edit' # Q: Could I say render edit_venue_url(@venue.id) instead?
+      render 'edit' 
     end
   end
 
