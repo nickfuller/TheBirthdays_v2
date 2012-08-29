@@ -10,4 +10,5 @@ class RemoveVenueStreetCityZipcodeCoverFromGig < ActiveRecord::Migration
   end
 end
 
-# Did this all do what I wanted it to do? Should leave Gig with 3 strings: date, cover, poster.
+# Q: Did this all do what I wanted it to do? Should leave Gig with 3 strings: date, cover, poster.
+# A: Yes, this all worked.

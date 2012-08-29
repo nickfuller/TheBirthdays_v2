@@ -1,6 +1,6 @@
 class Song < ActiveRecord::Base
   
-	attr_accessible :audio, :chart, :lyric, :tablature, :title, :album_id
+	attr_accessible :title, :audio, :lyric, :chart, :tablature, :album_id
 	
 	belongs_to :album
 	

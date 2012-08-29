@@ -1,3 +1,5 @@
 class Fan < ActiveRecord::Base
-  attr_accessible :email, :name, :password
+
+  attr_accessible :name, :email, :password
+
 end
