@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120826075250) do
+ActiveRecord::Schema.define(:version => 20120828224911) do
+
+  create_table "acts", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "albums", :force => true do |t|
     t.string   "title"
@@ -39,15 +46,10 @@ ActiveRecord::Schema.define(:version => 20120826075250) do
 
   create_table "gigs", :force => true do |t|
     t.datetime "date"
-    t.string   "venue"
-    t.string   "street"
-    t.string   "city"
-    t.string   "zipcode"
-    t.boolean  "cover"
-    t.string   "ticket_price"
     t.string   "poster"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "cover"
   end
 
   create_table "songs", :force => true do |t|
@@ -56,6 +58,17 @@ ActiveRecord::Schema.define(:version => 20120826075250) do
     t.text     "lyric"
     t.string   "chart"
     t.string   "tablature"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "venues", :force => true do |t|
+    t.string   "name"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

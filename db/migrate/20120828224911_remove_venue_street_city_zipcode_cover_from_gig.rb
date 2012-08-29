@@ -1,12 +1,12 @@
 class RemoveVenueStreetCityZipcodeCoverFromGig < ActiveRecord::Migration
   def change
-    remove_column :gig, :venue 
-    remove_column :gig, :street
-    remove_column :gig, :city
-    remove_column :gig, :zipcode
-    remove_column :gig, :cover
-    remove_column :gig, :ticket_price
-    add_column :gig, :cover, :float
+    remove_column :gigs, :venue 
+    remove_column :gigs, :street
+    remove_column :gigs, :city
+    remove_column :gigs, :zipcode
+    remove_column :gigs, :cover
+    remove_column :gigs, :ticket_price
+    add_column :gigs, :cover, :integer
   end
 end
 
