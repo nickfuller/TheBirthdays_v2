@@ -29,7 +29,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.find_by_id(params[:id])
+    @album = Album.find(params[:id]) # Q: any reason to use .find_by_id instead of just .find?
     respond_to do |format|
       format.html
       format.json { render :json => @album }
