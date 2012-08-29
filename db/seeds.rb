@@ -9,10 +9,10 @@
 
 
 # GIG CLASS SEED GENERATE
-Gig.create(date: "2012-12-01 19:00", venue: "The Empty Bottle", street: "Western Ave", city: "Chicago, IL", zipcode: "60657", ticket_price: "10")
-Gig.create(date: "2012-11-11 17:30", venue: "The Crocodile", street: "2200 2nd Avenue", city: "Seattle, WA", zipcode: "98121", ticket_price: "12")
-Gig.create(date: "2007-10-25 22:00", venue: "The Comet", street: "922 E Pike Street", city: "Seattle, WA", zipcode: "98107", ticket_price: "6")
-Gig.create(date: "2007-10-09 19:00", venue: "High Dive", street: "513 N 36th St", city: "Seattle, WA", zipcode: "98103", ticket_price: "5")
+Gig.create(date: "2012-12-01 19:00", cover: "10")
+Gig.create(date: "2012-11-11 17:30", cover: "12")
+Gig.create(date: "2007-10-25 22:00", cover: "6")
+Gig.create(date: "2007-10-09 19:00", cover: "5")
 
 
 # ALBUM CLASS SEED GENERATE

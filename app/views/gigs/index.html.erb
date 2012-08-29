@@ -15,7 +15,7 @@
     <tr>
       <td><%= link_to gig.date.strftime("%B %e, %Y (%A, %l:%M%P)"), gig_url(gig.id) %></td> 
       <!-- January 21, 2012 (Monday) -->
-      <td><%= gig.venue %></td>
+      <td>VENUE PLACEHOLDER</td>
       <td>$<%= gig.cover %></td> 
       <td><%= link_to "Edit", edit_gig_url(gig.id) %> </td>
       <td><%= link_to "Delete", destroy_gig_url(gig.id), :method => :delete %></td>
@@ -39,7 +39,7 @@
     <% @past_gigs.each do |gig| %>
     <tr>
       <td><%= link_to gig.date.strftime("%B %e, %Y"), gig_url(gig.id) %></td> 
-      <td><%= gig.venue %></td>
+      <td>VENUE PLACEHOLDER</td>
       <td>$<%= gig.cover %></td> 
       <td><%= link_to "Edit", edit_gig_url(gig.id) %> </td>
       <td><%= link_to "Delete", destroy_gig_url(gig.id), :method => :delete %></td>
@@ -53,6 +53,9 @@
 
 <p><%= link_to "Post New Gig", new_gig_url %></p>
 <p><%= link_to "Home", home_url %></p>
+<p><%= link_to "Gigs", gigs_url %></p>
+<p><%= link_to "Supporting Acts", acts_url %></p>
+<p><%= link_to "Albums", albums_url %></p>
 <p><%= link_to "Albums", albums_url %></p>
 <p><%= link_to "Songs", songs_url %></p>
 <p><%= link_to "Blog", blogs_url %></p>
