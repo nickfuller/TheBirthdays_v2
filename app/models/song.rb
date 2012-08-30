@@ -4,6 +4,8 @@ class Song < ActiveRecord::Base
 	
 	belongs_to :album
 	
+	has_many :tags, :as => :tagable
+	
 	mount_uploader :audio, AudioUploader
 
 end

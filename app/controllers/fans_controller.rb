@@ -13,10 +13,10 @@ class FansController < ApplicationController
   end
 
   def create
-    @fan = Fan.new(params[:fan])
-    if @fan.save
-      flash[:fan_created] = "#{@fan.name} is now a registered fan!"
-      redirect_to fan_url(@fan.id)
+    fan = Fan.new(params[:fan])
+    if fan.save
+      flash[:fan_created] = "#{fan.name} is now a registered fan!"
+      redirect_to fan_url(fan.id)
     else
       flash[:fan_not_created] = "Please fill in all fields before submitting."
       render 'new'  # Q: Could I say render new_fan_url instead?

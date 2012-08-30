@@ -13,9 +13,9 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(params[:tag])
-    if @tag.save
-      flash[:tag_created] = "Tag, #{@tag.name}, just uploaded!"
+    tag = Tag.new(params[:tag])
+    if tag.save
+      flash[:tag_created] = "Tag, #{tag.name}, just uploaded!"
       redirect_to tags_url
     else
       flash[:tag_not_created] = "Please fill in all fields before submitting."

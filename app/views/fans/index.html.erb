@@ -25,13 +25,5 @@
 
 <p><font color=red, size=4px>BUTTON: DELETE ALL FANS</font></p> <!-- this shows in green? -->
 
-<p><%= link_to "Add a Fan", new_fan_url %></p>
-<p><%= link_to "Home", home_url %></p>
-<p><%= link_to "Gigs", gigs_url %></p>
-<p><%= link_to "Venues", venues_url %></p>
-<p><%= link_to "Supporting Acts", acts_url %></p>
-<p><%= link_to "Albums", albums_url %></p>
-<p><%= link_to "Songs", songs_url %></p>
-<p><%= link_to "Fans", fans_url %></p>
-<p><%= link_to "Blog", blogs_url %></p>
-
+<p><%= link_to "Create a Fan Profile", new_fan_url %></p>
+<%= render "/home/resource_form" %>

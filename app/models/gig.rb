@@ -6,5 +6,6 @@ class Gig < ActiveRecord::Base
 	
 	has_many :sets
 	has_many :acts, :through => :sets
+	has_many :tags, :as => :tagable
 
 end

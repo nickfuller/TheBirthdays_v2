@@ -13,9 +13,9 @@ class ActsController < ApplicationController
   end
 
   def create
-    @act = Act.new(params[:act])
-    if @act.save
-      flash[:act_created] = "Act, #{@act.name}, just uploaded!"
+    act = Act.new(params[:act])
+    if act.save
+      flash[:act_created] = "Act, #{act.name}, just uploaded!"
       redirect_to acts_url
     else
       flash[:act_not_created] = "Please fill in all fields before submitting."

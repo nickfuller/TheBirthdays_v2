@@ -1,0 +1,27 @@
+<!-- NOTE: Using this in Albums#show and Songs#index -->
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Audio</th>
+      <th scope="col">Lyric</th>
+      <th scope="col">Chart</th>
+      <th scope="col">Tablature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% songs.each do |song| %>
+    <tr>
+      <td><%= link_to song.title, song_url(song.id) %></td> 
+      <td><%= song.audio.to_s %></td>
+      <td><%= song.lyric %></td>
+      <td><%= song.chart %></td>
+      <td><%= song.tablature %></td>
+      <td><%= link_to "Edit", edit_song_url(song.id) %> </td>
+      <td><%= link_to "Delete", destroy_song_url(song.id), :method => :delete %></td>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

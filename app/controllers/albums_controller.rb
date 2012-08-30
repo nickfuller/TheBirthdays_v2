@@ -13,15 +13,15 @@ class AlbumsController < ApplicationController
   end
 
   def create
-    @album = Album.new(params[:album]) # Q: Is form_for the reason we can call on params[:album]?
+    album = Album.new(params[:album]) # Q: Is form_for the reason we can call on params[:album]?
     # NOTE: Because of form_for "magic", the below fields need not be specified as with form_tag.
       # @album.title = params[:album][:title]
       # @album.date = params[:album][:date]
       # @album.cover_art = params[:album][:cover_art]
 		# NOTE: When accessing model classes in a params (as we have to do re: params) do [:modelname]
-    if @album.save
-      flash[:album_created] = "Just posted #{@album.title}."
-      redirect_to album_url(@album.id)
+    if album.save
+      flash[:album_created] = "Just posted #{album.title}."
+      redirect_to album_url(album.id)
     else
       flash[:album_not_created] = "Please fill in all fields before submitting."
       render 'new'  # Q: Could I say render new_album_url instead?

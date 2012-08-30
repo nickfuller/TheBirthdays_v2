@@ -15,10 +15,10 @@ class GigsController < ApplicationController
   end
 
   def create
-    @gig = Gig.new(params[:gig])
-    if @gig.save
-      flash[:gig_created] = "A gig on #{@gig.date} at #{@gig.venue} has been added to the site!"
-      redirect_to gig_url(@gig.id)
+    gig = Gig.new(params[:gig])
+    if gig.save
+      flash[:gig_created] = "A gig on #{gig.date} at #{gig.venue} has been added to the site!"
+      redirect_to gig_url(gig.id)
     else
       flash[:gig_not_created] = "Please fill in all required fields before submitting."
       render 'new'

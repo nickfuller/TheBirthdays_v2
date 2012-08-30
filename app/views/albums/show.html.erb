@@ -3,26 +3,9 @@
 <%= flash[:album_created] %>
 <%= flash[:album_updated] %>
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Release Date</th>
-      <th scope="col">Cover Art</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @album.title %></td>
-      <td><%= @album.date.strftime("%Y (%B %e)")  %></td>
-      <td><%= @album.cover_art %></td>
-      <td><%= link_to "Edit", edit_album_url(@album.id) %></td>
-      <td><%= link_to "Delete", destroy_album_url(@album.id), :method => :delete %></td>
-    </tr>
-  </tbody>
-</table>
+<%= render "album_form", :albums => [@album] %>
 
-<%= render "songs/songs_list", :songs => @album.songs %>
+<%= render "songs/song_form", :songs => @album.songs %>
 
 <p><%= link_to "New Album", new_album_url %></p>
 <p><%= link_to "All Albums", albums_url %></p>

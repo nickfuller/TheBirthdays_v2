@@ -13,9 +13,9 @@ class VenuesController < ApplicationController
   end
 
   def create
-    @venue = Venue.new(params[:venue])
-    if @venue.save
-      flash[:venue_created] = "Venue, #{@venue.name}, just uploaded!"
+    venue = Venue.new(params[:venue])
+    if venue.save
+      flash[:venue_created] = "Venue, #{venue.name}, just uploaded!"
       redirect_to venues_url
     else
       flash[:venue_not_created] = "Please fill in all fields before submitting."

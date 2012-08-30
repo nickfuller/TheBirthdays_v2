@@ -13,10 +13,10 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[:contact])
-    if @contact.save
-      flash[:contact_created] = "#{@contact.name} is now a registered contact!"
-      redirect_to contact_url(@contact.id)
+    contact = Contact.new(params[:contact])
+    if contact.save
+      flash[:contact_created] = "#{contact.name} is now a registered contact!"
+      redirect_to contact_url(contact.id)
     else
       flash[:contact_not_created] = "Please fill in all fields before submitting."
       render 'new' 

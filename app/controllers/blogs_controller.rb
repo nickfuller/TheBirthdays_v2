@@ -13,10 +13,10 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.new(params[:blog])
-    if @blog.save
-      flash[:blog_created] = "Just posted #{@blog.title}."
-      redirect_to blog_url(@blog.id)
+    blog = Blog.new(params[:blog])
+    if blog.save
+      flash[:blog_created] = "Just posted #{blog.title}."
+      redirect_to blog_url(blog.id)
     else
       flash[:blog_not_created] = "Please fill in all fields before submitting."
       render 'new'
