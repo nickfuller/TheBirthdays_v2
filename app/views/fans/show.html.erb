@@ -3,24 +3,7 @@
 <%= flash[:fan_created] %>
 <%= flash[:fan_updated] %>
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Password</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @fan.name %></td>
-      <td><%= @fan.email %></td>
-      <td><%= @fan.password %></td>
-      <td><%= link_to "Edit", edit_fan_url(@fan.id) %></td>
-      <td><%= link_to "Delete", destroy_fan_url(@fan.id), :method => :delete %></td>
-    </tr>
-  </tbody>
-</table>
+<%= render "fan_form", :fans => [@fan] %>
 
 <p><%= link_to "New Fan", new_fan_url %></p>
 <p><%= link_to "Fans", fans_url %></p>

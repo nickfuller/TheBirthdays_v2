@@ -1,0 +1,25 @@
+<h1>Edit <%= @contact.name %>'s Profile</h1>
+
+<%= flash[:contact_not_updated] %>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <%= render "form" %>
+    
+    <tr>
+      <td><%= link_to "Delete", destroy_contact_url(@contact.id), :method => :delete %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to "Create Profile", new_contact_url %></p>
+<p><%= link_to "All Contacts", contacts_url %></p>
+<p><%= link_to "Home", home_url %></p>

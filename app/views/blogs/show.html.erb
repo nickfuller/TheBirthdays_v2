@@ -3,24 +3,7 @@
 <%= flash[:blog_created] %>
 <%= flash[:blog_updated] %>
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Body</th>
-      <th scope="col">Author</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @blog.title %></td>
-      <td><%= @blog.body %></td>
-      <td><%= @blog.author %></td>
-      <td><%= link_to "Edit", edit_blog_url(@blog.id) %></td>
-      <td><%= link_to "Delete", destroy_blog_url(@blog.id), :method => :delete %></td>
-    </tr>
-  </tbody>
-</table>
+<%= render "blog_form", :blogs => [@blog] %>
 
 <p><%= link_to "New Blog Post", new_blog_url %></p>
 <p><%= link_to "Blog", blogs_url %></p>

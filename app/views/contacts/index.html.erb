@@ -1,0 +1,10 @@
+<h1>All Contacts</h1>
+
+<%= flash[:contact_destroyed] %>
+
+<%= render "contact_form", :contacts => @contacts %>
+
+<p><font color=red, size=4px>BUTTON: DELETE ALL FANS</font></p> <!-- this shows in green? -->
+
+<p><%= link_to "Create a Contact Profile", new_contact_url %></p>
+<%= render "/home/resource_form" %>

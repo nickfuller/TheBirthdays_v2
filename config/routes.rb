@@ -101,4 +101,33 @@ TheBirthdaysV2::Application.routes.draw do
   
   delete "blogs/:id" => "Blogs#destroy", :as => "destroy_blog"
 
+# CONTACT ROUTES
+
+  get "contacts" => "Contacts#index", :as => "contacts"
+
+  get "contacts/new" => "Contacts#new", :as => "new_contact"
+  post "contacts" => "Contacts#create", :as => "create_contact"
+
+  get "contacts/:id" => "Contacts#show", :as => "contact"
+
+  get "contacts/:id/edit" => "Contacts#edit", :as => "edit_contact"
+  put "contacts/:id" => "Contacts#update", :as => "update_contact"
+
+  delete "contacts/:id" => "Contacts#destroy", :as => "destroy_contact"
+
+# TAG ROUTES
+
+  get "tags" => "Tags#index", :as => "tags"
+
+  get "tags/new" => "Tags#new", :as => "new_tag"
+  post "tags" => "Tags#create", :as => "create_tag"
+
+  get "tags/:id" => "Tags#show", :as => "tag"
+
+  get "tags/:id/edit" => "Tags#edit", :as => "edit_tag"
+  put "tags/:id" => "Tags#update", :as => "update_tag"
+
+  delete "tags/:id" => "Tags#destroy", :as => "destroy_tag"
+
+
 end

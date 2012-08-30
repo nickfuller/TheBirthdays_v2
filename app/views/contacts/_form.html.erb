@@ -1,0 +1,9 @@
+<%= form_for @contact do |f| %>
+  <tr>
+    <td><%= f.text_field :name %></td>
+    <td><%= f.text_field :email %></td>
+    <td><%= f.text_field :phone %></td>
+    <td><%= f.text_field :role %></td>
+    <td><%= f.submit "Submit" %></td>
+  </tr>
+<% end %>

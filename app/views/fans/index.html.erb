@@ -2,26 +2,7 @@
 
 <%= flash[:fan_destroyed] %>
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Password</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @fans.each do |fan| %>
-    <tr>
-      <td><%= link_to "#{fan.name}", fan_url(fan.id) %></td>
-      <td><%= fan.email %></td>
-      <td><%= fan.password %></td>
-      <td><%= link_to "Edit", edit_fan_url(fan.id) %></td>
-      <td><%= link_to "Delete", destroy_fan_url(fan.id), :method => :delete %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render "fan_form", :fans => @fans %>
 
 <p><font color=red, size=4px>BUTTON: DELETE ALL FANS</font></p> <!-- this shows in green? -->
 

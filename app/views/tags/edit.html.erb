@@ -1,6 +1,6 @@
-<h1>Edit <%= @act.name %></h1>
+<h1>Edit <%= @tag.name %></h1>
 
-<%= flash[:act_not_updated] %>
+<%= flash[:tag_not_updated] %>
 
 <table>
   <thead>
@@ -14,11 +14,11 @@
     <%= render "form" %>
     
     <tr>
-      <td><%= link_to "Delete", destroy_act_url(@act.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_tag_url(@tag.id), :method => :delete %></td>
     </tr>
   </tbody>
 </table>
 
-<p><%= link_to "New Act", new_act_url %></p>
-<p><%= link_to "All Acts", acts_url %></p>
+<p><%= link_to "New Tag", new_tag_url %></p>
+<p><%= link_to "All Tags", tags_url %></p>
 <p><%= link_to "Home", home_url %></p>

@@ -1,0 +1,10 @@
+<h1><%= @contact.name %>'s Profile</h1>
+
+<%= flash[:contact_created] %>
+<%= flash[:contact_updated] %>
+
+<%= render "contact_form", :contacts => [@contact] %>
+
+<p><%= link_to "New Contact", new_contact_url %></p>
+<p><%= link_to "Contacts", contacts_url %></p>
+<p><%= link_to "Home", home_url %></p>

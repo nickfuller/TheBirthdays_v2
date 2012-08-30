@@ -1,6 +1,6 @@
-<h1>New Fan</h1>
+<h1>New Contact</h1>
 
-<%= flash[:fan_not_created] %>
+<%= flash[:contact_not_created] %>
 
 <p>Please fill in the following fields, and then submit:</p>
 
@@ -9,7 +9,8 @@
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Password</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Role</th>
     </tr>
   </thead>
   <tbody>
@@ -19,5 +20,5 @@
   </tbody>
 </table>
 
-<p><%= link_to "Fans", fans_url %></p>
+<p><%= link_to "Contacts", contacts_url %></p>
 <p><%= link_to "Home", home_url %></p>
