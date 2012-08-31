@@ -29,11 +29,28 @@ Blog.create(title: "Site in a Conception Stage", body: "We are super excited to 
 Blog.create(title: "Seed Files", body: "This text is being generated from the band to the world, because of a little thing in Rails called the seeds file in the db directory. Free tips from your favorite band!", author: "Nick")
 Blog.create(title: "Derp Sperk", body: "I erb a terp of sperk curled derp sperk. Urt gurts lurk therz. And urt sounds lurk therz.", author: "Nolan")
 
-users = ["Nick Fuller", "Nolan Ericson", "Michael Nunan", "Aaron Wahlborg", "Celine Ui", "Lindsay Wahlborg", "Amanda Chase", "Kevin McCabe", "Courtland Premo", "Sean Cameron"]
-users.each do |user|
-	User.create(name: user, 
-		email: user.first.downcase+"_"+user.split(" ").last.downcase+"@gmail.com",
-		password: user.split(" ").last.upcase+user.split(" ").first.downcase)
+fans = ["Celine Ui", "Lindsay Wahlborg", "Amanda Chase", "Kevin McCabe", "Courtland Premo", "Sean Cameron", "Sean Kelly", "David Rogge", "Deanna Fuller", "Greg Fuller", "Ada Mark"]
+fans.each do |fan|
+	User.create(name: fan, 
+		email: fan.first.downcase + "_" + fan.split(" ").last.downcase + "@gmail.com",
+		password: fan.split(" ").last.upcase + fan.split(" ").first.downcase,
+		category: "Fan")
+end
+
+bandmembers = ["Nick Fuller", "Nolan Ericson", "Michael Nunan", "Aaron Wahlborg"]
+bandmembers.each do |bandmember|
+	User.create(name: bandmember, 
+		email: bandmember.first.downcase + "_" + bandmember.split(" ").last.downcase+"@gmail.com",
+		password: bandmember.split(" ").last.upcase + bandmember.split(" ").first.downcase,
+		category: "Bandmember")
+end
+
+partners = ["David Geffen", "Ridley Scott", "Steven Spielberg", "Kara Diaguardi"]
+partners.each do |partner|
+	User.create(name: partner, 
+		email: partner.first.downcase + "_" + partner.split(" ").last.downcase+"@gmail.com",
+		password: partner.split(" ").last.upcase + partner.split(" ").first.downcase,
+		category: "Partner")
 end
 
 Gig.create(date: "2012-12-01 19:00", cover: "10")
