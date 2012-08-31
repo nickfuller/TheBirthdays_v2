@@ -9,7 +9,7 @@
 Act.destroy_all
 Album.destroy_all
 Blog.destroy_all
-Fan.destroy_all
+User.destroy_all
 Gig.destroy_all
 Song.destroy_all
 Venue.destroy_all
@@ -29,11 +29,11 @@ Blog.create(title: "Site in a Conception Stage", body: "We are super excited to 
 Blog.create(title: "Seed Files", body: "This text is being generated from the band to the world, because of a little thing in Rails called the seeds file in the db directory. Free tips from your favorite band!", author: "Nick")
 Blog.create(title: "Derp Sperk", body: "I erb a terp of sperk curled derp sperk. Urt gurts lurk therz. And urt sounds lurk therz.", author: "Nolan")
 
-fans = ["Nick Fuller", "Nolan Ericson", "Michael Nunan", "Aaron Wahlborg", "Celine Ui", "Lindsay Wahlborg", "Amanda Chase", "Kevin McCabe", "Courtland Premo", "Sean Cameron"]
-fans.each do |fan|
-	Fan.create(name: fan, 
-		email: fan.first.downcase+"_"+fan.split(" ").last.downcase+"@gmail.com",
-		password: fan.split(" ").last.upcase+fan.split(" ").first.downcase)
+users = ["Nick Fuller", "Nolan Ericson", "Michael Nunan", "Aaron Wahlborg", "Celine Ui", "Lindsay Wahlborg", "Amanda Chase", "Kevin McCabe", "Courtland Premo", "Sean Cameron"]
+users.each do |user|
+	User.create(name: user, 
+		email: user.first.downcase+"_"+user.split(" ").last.downcase+"@gmail.com",
+		password: user.split(" ").last.upcase+user.split(" ").first.downcase)
 end
 
 Gig.create(date: "2012-12-01 19:00", cover: "10")

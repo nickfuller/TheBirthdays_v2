@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20120830203935) do
     t.integer  "venue_id"
   end
 
-  create_table "fans", :force => true do |t|
+  create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password"

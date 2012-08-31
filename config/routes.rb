@@ -2,19 +2,19 @@ TheBirthdaysV2::Application.routes.draw do
 
   root :to => 'Home#index', :as => "home"
 
-# FAN ROUTES
+# USERS ROUTES
   
-  get "fans" => "Fans#index", :as => "fans"
+  get "users" => "Users#index", :as => "users"
   
-  get "fans/new" => "Fans#new", :as => "new_fan"
-  post "fans" => "Fans#create", :as => "create_fan"
+  get "users/new" => "Users#new", :as => "new_user"
+  post "users" => "Users#create", :as => "create_user"
   
-  get "fans/:id" => "Fans#show", :as => "fan"
+  get "users/:id" => "Users#show", :as => "user"
   
-  get "fans/:id/edit" => "Fans#edit", :as => "edit_fan"
-  put "fans/:id" => "Fans#update", :as => "update_fan"
+  get "users/:id/edit" => "Users#edit", :as => "edit_user"
+  put "users/:id" => "Users#update", :as => "update_user"
   
-  delete "fans/:id" => "Fans#destroy", :as => "destroy_fan"
+  delete "users/:id" => "Users#destroy", :as => "destroy_user"
   
 # GIG ROUTES
 
