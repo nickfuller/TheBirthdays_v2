@@ -1,7 +1,8 @@
 class SongsController < ApplicationController
 
   def index
-    @songs = Song.all
+		# @songable = find_songable
+		@songs = Song.all
     respond_to do |format|
       format.html
       format.json { render :json => @songs }
@@ -52,8 +53,6 @@ class SongsController < ApplicationController
 		redirect_to :back # <= This ":back" means "the last url you were on"
 		# 
 	end
-	
-	
 		#     if song_url
 		# 	redirect_to songs_url
 		# else redirect_to :back
@@ -63,4 +62,14 @@ class SongsController < ApplicationController
 		# else 
 		# 	redirect to :back  
 		#   end
+
+	# def find_songable
+	# 	params.each do |name, value|
+	# 		if name =~ /(.+)_id$/
+	# 			return $1.classify.constatize.find(value)
+	# 		end
+	# 	end
+	# 	nil
+	# end
+
 end

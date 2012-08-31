@@ -14,7 +14,14 @@
     <% songs.each do |song| %>
     <tr>
       <td><%= link_to song.title, song_url(song.id) %></td> 
-      <td><%= song.recording.to_s %></td>
+      <td>
+        <audio controls preload="none">
+          <source src="<%= song.recording.to_s %>" type="audio/mpeg">
+          <object type="application/x-shockwave-flash" data="player.swf?audio=<%= song.recording.to_s %>">
+          <p>This browser does not support the song format. Please <a href="<%= song.recording.to_s %>" title="<%= song.title %>">download</a>it.</p>
+          </object>
+        </audio>
+      </td>
       <td><%= song.lyric %></td>
       <td><%= song.chart %></td>
       <td><%= song.tablature %></td>

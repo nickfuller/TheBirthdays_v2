@@ -12,7 +12,6 @@ Blog.destroy_all
 Comment.destroy_all
 Contact.destroy_all
 Gig.destroy_all
-Set.destroy_all
 Song.destroy_all
 Tag.destroy_all
 User.destroy_all

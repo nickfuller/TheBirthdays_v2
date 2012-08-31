@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
 	has_many :comments , :as => :commentable
 	has_many :films , :as => :filmable
 	has_many :pictures , :as => :pictureable
-	has_many :songs , :as => :songable
+	has_many :songs
 
 end

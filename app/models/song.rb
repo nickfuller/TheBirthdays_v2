@@ -1,6 +1,6 @@
 class Song < ActiveRecord::Base
   
-	attr_accessible :title, :lyric, :chart, :tablature, :recording, :category, :songable_id, :songable_type
+	attr_accessible :title, :lyric, :chart, :tablature, :recording, :category, :album_id, :user_id
 	
 	belongs_to :songable, :polymorphic => true
 	
@@ -8,6 +8,6 @@ class Song < ActiveRecord::Base
 	has_many :films, :as => :filmable
 	has_many :pictures, :as => :pictureable
 	
-	mount_uploader :audio, AudioUploader
+	mount_uploader :recording, AudioUploader
 
 end
