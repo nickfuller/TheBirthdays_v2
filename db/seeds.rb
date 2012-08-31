@@ -56,7 +56,7 @@ Gig.create(date: "2007-10-09 19:00", cover: "5")
 songs = ["Bliss in a Basket", "Don't Hate Me", "Nix Nix", "Here I Go Again", "Real Bungee", "The Sayso", "Far Behind"]
 songs.each do |song| 
 	Song.create(title: song, 
-		audio: "#{song.split(" ").join("_")}.mp3", 
+		recording: "#{song.split(" ").join("_")}.mp3", 
 		lyric: "#{song.split(" ").join("_")}.lyric", 
 		chart: "#{song.split(" ").join("_")}.chart", 
 		tablature: "#{song.split(" ").join("_")}.tablature", 

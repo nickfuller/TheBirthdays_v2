@@ -6,5 +6,6 @@ class Venue < ActiveRecord::Base
 	has_many :sets, :through => :gigs
 	# can I say $ has_many :acts, :through => :sets $ ?
 	has_many :contacts, :as => :contactable
+	has_many :tags, :as => :tagable
 
 end

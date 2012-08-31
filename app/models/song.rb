@@ -5,7 +5,8 @@ class Song < ActiveRecord::Base
 	belongs_to :songable, :polymorphic => true
 	
 	has_many :tags, :as => :tagable
-	
+	has_many :films, :as => :filmable
+	has_many :pictures, :as => :pictureable
 	
 	mount_uploader :audio, AudioUploader
 

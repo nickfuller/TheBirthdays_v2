@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th scope="col">Title</th>
-      <th scope="col">Audio</th>
+      <th scope="col">Recording</th>
       <th scope="col">Lyric</th>
       <th scope="col">Chart</th>
       <th scope="col">Tablature</th>
@@ -14,7 +14,7 @@
     <% songs.each do |song| %>
     <tr>
       <td><%= link_to song.title, song_url(song.id) %></td> 
-      <td><%= song.audio.to_s %></td>
+      <td><%= song.recording.to_s %></td>
       <td><%= song.lyric %></td>
       <td><%= song.chart %></td>
       <td><%= song.tablature %></td>

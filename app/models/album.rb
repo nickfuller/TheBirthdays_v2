@@ -4,5 +4,8 @@ class Album < ActiveRecord::Base
 
 	has_many :songs
 	has_many :tags, :as => :tagable
+	has_many :films, :as => :filmable
+	has_many :pictures, :as => :pictureable
+	has_many :songs, :as => :songable
 	
 end
