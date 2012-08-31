@@ -14,9 +14,9 @@
   <% end %>
 
   <% if params[:blog].present? %>
-    <td><%= f.text_field :author, params[:blog][:author] %></td>
+    <td><%= f.text_field :category, params[:blog][:category] %></td>
   <% else %>
-    <td><%= f.text_field :author %></td>
+    <td><%= f.text_field :category %></td>
   <% end %>
   
     <td><%= f.submit "Submit" %></td>

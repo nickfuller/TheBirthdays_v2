@@ -1,6 +1,6 @@
 class Blog < ActiveRecord::Base
 
-  attr_accessible :author, :title, :body  
+  attr_accessible :title, :body, :category  
 
 	has_many :tags, :as => :tagable
 

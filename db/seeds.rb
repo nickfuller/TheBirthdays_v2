@@ -25,9 +25,9 @@ Album.create(title: "Ooey", date: "2003-04-22", cover_art: "Ooey.cover_art")
 Album.create(title: "Embeum", date: "2002-07-12", cover_art: "Embeum.cover_art")
 Album.create(title: "In Need of Drums", date: "2001-11-16", cover_art: "In_Need_of_Drums.cover_art")
 
-Blog.create(title: "Site in a Conception Stage", body: "We are super excited to be launching our website 15 years late in 10 years. Please be patient as we work through our issues!", author: "Nick")
-Blog.create(title: "Seed Files", body: "This text is being generated from the band to the world, because of a little thing in Rails called the seeds file in the db directory. Free tips from your favorite band!", author: "Nick")
-Blog.create(title: "Derp Sperk", body: "I erb a terp of sperk curled derp sperk. Urt gurts lurk therz. And urt sounds lurk therz.", author: "Nolan")
+Blog.create(title: "Site in a Conception Stage", body: "We are super excited to be launching our website 15 years late in 10 years. Please be patient as we work through our issues!", category: "by Nick")
+Blog.create(title: "Seed Files", body: "This text is being generated from the band to the world, because of a little thing in Rails called the seeds file in the db directory. Free tips from your favorite band!", category: "by Nick")
+Blog.create(title: "Derp Sperk", body: "I erb a terp of sperk curled derp sperk. Urt gurts lurk therz. And urt sounds lurk therz.", category: "by Nolan")
 
 fans = ["Celine Ui", "Lindsay Wahlborg", "Amanda Chase", "Kevin McCabe", "Courtland Premo", "Sean Cameron", "Sean Kelly", "David Rogge", "Deanna Fuller", "Greg Fuller", "Ada Mark"]
 fans.each do |fan|
