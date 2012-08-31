@@ -1,0 +1,10 @@
+<h1>All Users</h1>
+
+<%= flash[:user_destroyed] %>
+
+<%= render "user_form", :users => @users %>
+
+<p><font color=red, size=4px>BUTTON: DELETE ALL FANS</font></p> <!-- this shows in green? -->
+
+<p><%= link_to "Create a User Profile", new_user_url %></p>
+<%= render "/home/resource_form" %>

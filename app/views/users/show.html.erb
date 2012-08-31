@@ -1,0 +1,10 @@
+<h1><%= @user.name %>'s Profile</h1>
+
+<%= flash[:user_created] %>
+<%= flash[:user_updated] %>
+
+<%= render "user_form", :users => [@user] %>
+
+<p><%= link_to "New User", new_user_url %></p>
+<p><%= link_to "Users", users_url %></p>
+<p><%= link_to "Home", home_url %></p>

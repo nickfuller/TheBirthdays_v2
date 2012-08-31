@@ -1,0 +1,23 @@
+<h1>New User</h1>
+
+<%= flash[:user_not_created] %>
+
+<p>Please fill in the following fields, and then submit:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <%= render "form" %>
+  
+  </tbody>
+</table>
+
+<p><%= link_to "Users", users_url %></p>
+<p><%= link_to "Home", home_url %></p>
