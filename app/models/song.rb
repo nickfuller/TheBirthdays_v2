@@ -1,10 +1,11 @@
 class Song < ActiveRecord::Base
   
-	attr_accessible :title, :audio, :lyric, :chart, :tablature, :album_id
+	attr_accessible :title, :lyric, :chart, :tablature, :recording, :category, :songable_id, :songable_type
 	
-	belongs_to :album
+	belongs_to :songable, :polymorphic => true
 	
 	has_many :tags, :as => :tagable
+	
 	
 	mount_uploader :audio, AudioUploader
 
