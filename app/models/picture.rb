@@ -1,6 +1,6 @@
 class Picture < ActiveRecord::Base
 
-  attr_accessible :category, :description, :image, :pictureable_id, :pictureable_type, :title
+  attr_accessible :category, :description, :image, :title
 
 	has_and_belongs_to_many :tags
 	

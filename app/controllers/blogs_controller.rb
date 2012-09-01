@@ -25,6 +25,7 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find_by_id(params[:id])
+		comments = @blog.comment.all
     respond_to do |format|
       format.html
       format.json { render :json => @blog }
