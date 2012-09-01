@@ -4,8 +4,10 @@ class Gig < ActiveRecord::Base
 
 	belongs_to :venue
 	
+	#has_and_belongs_to_many :tags
 	has_many :sets
 	has_many :acts, :through => :sets
-	has_many :tags, :as => :tagable
+	has_many :films
+	has_many :pictures
 
 end

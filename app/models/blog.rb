@@ -2,11 +2,10 @@ class Blog < ActiveRecord::Base
 
   attr_accessible :title, :body, :category, :user_id  
 
-	has_many :tags, :as => :tagable
-	has_many :comments, :as => :commentable
-	has_many :films, :as => :filmable
-	has_many :pictures, :as => :pictureable
+	#has_and_belongs_to_many :tags
+	has_many :comments
+	has_many :users, :through => :comments # commenting fans
 	
-	belongs_to :user
+	belongs_to :user # posting bandmember
 
 end

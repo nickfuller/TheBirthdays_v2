@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120831220548) do
+ActiveRecord::Schema.define(:version => 20120901000247) do
 
   create_table "acts", :force => true do |t|
     t.string   "name"
@@ -39,30 +39,24 @@ ActiveRecord::Schema.define(:version => 20120831220548) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "contacts", :force => true do |t|
     t.string   "name"
     t.string   "phone"
     t.string   "email"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.integer  "contactable_id"
-    t.string   "contactable_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "films", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.string   "footage"
-    t.integer  "filmable_id"
-    t.string   "filmable_type"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "gigs", :force => true do |t|
@@ -79,10 +73,8 @@ ActiveRecord::Schema.define(:version => 20120831220548) do
     t.string   "description"
     t.string   "category"
     t.string   "image"
-    t.integer  "pictureable_id"
-    t.string   "pictureable_type"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "sets", :force => true do |t|
@@ -107,10 +99,8 @@ ActiveRecord::Schema.define(:version => 20120831220548) do
 
   create_table "tags", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "tagable_id"
-    t.string   "tagable_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

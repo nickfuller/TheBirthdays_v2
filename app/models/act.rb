@@ -4,6 +4,6 @@ class Act < ActiveRecord::Base
 
 	has_many :sets
 	has_many :gigs, :through => :sets
-	has_many :contacts, :as => :contactable
+	has_many :contacts
 
 end
