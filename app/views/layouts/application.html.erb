@@ -13,15 +13,13 @@
       <td><%= link_to "Music", albums_url %>   |  </td>
       <td><%= link_to "Blog", blogs_url %>     |  </td>
       <td>Partners                             |  </td>
+      <td id="notice"><%= notice %></td>
+      <% if session[:user_id] %>
+      	<%= link_to 'Sign Out', session_url, :method => 'delete' %>
+      <% else %>
+      	<%= link_to 'Sign Up', new_user_url %> / <%= link_to 'Sign In', new_session_url %>
+      <% end %>
     </tr>
-
-    <p id="notice"><%= notice %></p>
-
-    <% if session[:user_id] %>
-    	<%= link_to 'Sign Out', session_url, :method => 'delete' %>
-    <% else %>
-    	<%= link_to 'Sign Up', new_user_url %> or <%= link_to 'Sign In', new_session_url %>
-    <% end %>
 
     <%= yield %>
 
