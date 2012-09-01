@@ -1,5 +1,7 @@
 TheBirthdaysV2::Application.routes.draw do
 
+	resource :session, :only => [:new, :create, :destroy]
+
   root :to => 'Home#index', :as => "home"
 
 # USERS ROUTES

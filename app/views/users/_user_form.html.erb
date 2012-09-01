@@ -2,18 +2,17 @@
   <thead>
     <tr>
       <th scope="col">Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Password</th>
       <th scope="col">Category</th>
+      <th scope="col">Email</th>
     </tr>
   </thead>
   <tbody>
     <% users.each do |user| %>
     <tr>
-      <td><%= link_to "#{user.name}", user_url(user.id) %></td>
-      <td><%= user.email %></td>
-      <td><%= user.password %></td>
+      <td><%= user.name %></td>
       <td><%= user.category %></td>
+      <td><%= user.email %></td>
+      <td><%= link_to "Show", user_url(user.id) %></td>
       <td><%= link_to "Edit", edit_user_url(user.id) %></td>
       <td><%= link_to "Delete", destroy_user_url(user.id), :method => :delete %></td>
     </tr>

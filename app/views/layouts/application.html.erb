@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>the birthdays</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>the birthdays</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<tr>
-  <td><%= link_to "Gigs", gigs_url %>      |  </td>
-  <td><%= link_to "Music", albums_url %>   |  </td>
-  <td><%= link_to "Blog", blogs_url %>     |  </td>
-  <td>Partners                             |  </td>
-</tr>
+    <tr>
+      <td><%= link_to "Gigs", gigs_url %>      |  </td>
+      <td><%= link_to "Music", albums_url %>   |  </td>
+      <td><%= link_to "Blog", blogs_url %>     |  </td>
+      <td>Partners                             |  </td>
+    </tr>
 
-<%= yield %>
+    <p id="notice"><%= notice %></p>
 
-</body>
+    <% if session[:user_id] %>
+    	<%= link_to 'Sign Out', session_url, :method => 'delete' %>
+    <% else %>
+    	<%= link_to 'Sign Up', new_user_url %> or <%= link_to 'Sign In', new_session_url %>
+    <% end %>
+
+    <%= yield %>
+
+  </body>
 </html>
