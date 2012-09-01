@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  attr_accessible :name, :category, :email, :password, :password_confirmation
+  attr_accessible :name, :category, :email, :password, :password_confirmation, :password_digest
 
 	has_secure_password
 

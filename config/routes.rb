@@ -1,10 +1,8 @@
 TheBirthdaysV2::Application.routes.draw do
 
-	resource :session, :only => [:new, :create, :destroy]
-
   root :to => 'Home#index', :as => "home"
 
-# USERS ROUTES
+# USERS ROUTES-----------------------------------------------------------
   
   get "users" => "Users#index", :as => "users"
   
@@ -17,8 +15,12 @@ TheBirthdaysV2::Application.routes.draw do
   put "users/:id" => "Users#update", :as => "update_user"
   
   delete "users/:id" => "Users#destroy", :as => "destroy_user"
+
+# SESSIONS / LOGIN ROUTES-----------------------------------------------------------
+
+	resource :session, :only => [:new, :create, :destroy] # WHY CAN I EDIT/UPDATE????
   
-# GIG ROUTES
+# GIG ROUTES-----------------------------------------------------------
 
   get "gigs" => "Gigs#index", :as => "gigs"
 
@@ -32,7 +34,7 @@ TheBirthdaysV2::Application.routes.draw do
 
   delete "gigs/:id" => "Gigs#destroy", :as => "destroy_gig" 
 
-# VENUE ROUTES
+# VENUE ROUTES-----------------------------------------------------------
 
   get "venues" => "venues#index", :as => "venues"
 
@@ -46,7 +48,7 @@ TheBirthdaysV2::Application.routes.draw do
 
   delete "venues/:id" => "venues#destroy", :as => "destroy_venue"
 
-# ACT ROUTES
+# ACT ROUTES-----------------------------------------------------------
 
   get "acts" => "acts#index", :as => "acts"
 
@@ -61,7 +63,7 @@ TheBirthdaysV2::Application.routes.draw do
   delete "acts/:id" => "acts#destroy", :as => "destroy_act" 
 
   
-# ALBUM ROUTES
+# ALBUM ROUTES-----------------------------------------------------------
   
   get "albums" => "Albums#index", :as => "albums"
   
@@ -75,7 +77,7 @@ TheBirthdaysV2::Application.routes.draw do
   
   delete "albums/:id" => "Albums#destroy", :as => "destroy_album"
   
-# SONG ROUTES
+# SONG ROUTES-----------------------------------------------------------
   
   get "songs" => "Songs#index", :as => "songs"
   
@@ -89,7 +91,7 @@ TheBirthdaysV2::Application.routes.draw do
   
   delete "songs/:id" => "Songs#destroy", :as => "destroy_song"
   
-# BLOG ROUTES
+# BLOG ROUTES-----------------------------------------------------------
   
   get "blogs" => "Blogs#index", :as => "blogs"
   
@@ -103,7 +105,7 @@ TheBirthdaysV2::Application.routes.draw do
   
   delete "blogs/:id" => "Blogs#destroy", :as => "destroy_blog"
 
-# CONTACT ROUTES
+# CONTACT ROUTES-----------------------------------------------------------
 
   get "contacts" => "Contacts#index", :as => "contacts"
 
@@ -117,7 +119,7 @@ TheBirthdaysV2::Application.routes.draw do
 
   delete "contacts/:id" => "Contacts#destroy", :as => "destroy_contact"
 
-# TAG ROUTES
+# TAG ROUTES-----------------------------------------------------------
 
   get "tags" => "Tags#index", :as => "tags"
 
@@ -130,6 +132,5 @@ TheBirthdaysV2::Application.routes.draw do
   put "tags/:id" => "Tags#update", :as => "update_tag"
 
   delete "tags/:id" => "Tags#destroy", :as => "destroy_tag"
-
 
 end

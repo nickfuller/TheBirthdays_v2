@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.order("category asc")
+    @users = User.all
     respond_to do |format|
       format.html
       format.json { render :json => @users }
@@ -13,21 +13,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(params[:user])
-    if user.save
-      flash[:user_created] = "#{user.name} is now a registered user!"
-      redirect_to user_url(user.id)
-    else
-      flash[:user_not_created] = "Please fill in all fields before submitting."
-      render 'new'  # Q: Could I say render new_user_url instead?
-    end
+    @user = User.new(params[:user])
+
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to @user, notice: 'Account successfully created.' }
+        format.html { redirect_to @user, notice: "Thanks for being a fan!" }
         format.json { render json: @user, status: :created, location: @user }
       else
-				format.html { render action: 'new' }
+				format.html { render action: "new" }
 				format.json { render json: @user.errors, status: :unprocessable_entity }
 			end
 		end
@@ -55,7 +49,7 @@ class UsersController < ApplicationController
       render 'edit' 
     end
   end
-
+	
   def destroy
     User.find_by_id(params[:id]).destroy
     flash[:user_destroyed] = "A user's profile has been deleted."

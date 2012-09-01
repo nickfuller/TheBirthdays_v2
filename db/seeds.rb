@@ -65,29 +65,38 @@ end
 # TAG---------------------------------------------------------------------------
 
 # USER---------------------------------------------------------------------------
-# fans = ["Celine Ui", "Lindsay Wahlborg", "Amanda Chase", "Kevin McCabe", "Courtland Premo", "Sean Cameron", "Sean Kelly", "David Rogge", "Deanna Fuller", "Greg Fuller", "Ada Mark"]
-# fans.each do |fan|
-# 	User.create(name: fan, 
-# 		email: fan.first.downcase + "_" + fan.split(" ").last.downcase + "@gmail.com",
-# 		password: fan.split(" ").last.upcase + fan.split(" ").first.downcase,
-# 		category: "Fan")
-# end
-# 
-# bandmembers = ["Nick Fuller", "Nolan Ericson", "Michael Nunan", "Aaron Wahlborg"]
-# bandmembers.each do |bandmember|
-# 	User.create(name: bandmember, 
-# 		email: bandmember.first.downcase + "_" + bandmember.split(" ").last.downcase+"@gmail.com",
-# 		password: bandmember.split(" ").last.upcase + bandmember.split(" ").first.downcase,
-# 		category: "Bandmember")
-# end
-# 
-# partners = ["David Geffen", "Ridley Scott", "Steven Spielberg", "Kara Diaguardi"]
-# partners.each do |partner|
-# 	User.create(name: partner, 
-# 		email: partner.first.downcase + "_" + partner.split(" ").last.downcase+"@gmail.com",
-# 		password: partner.split(" ").last.upcase + partner.split(" ").first.downcase,
-# 		category: "Partner")
-# end
+User.create(name: "Nick", 
+	email: "vandebar@gmail.com",
+	password: "password",
+	password_confirmation: "password",
+	category: "Bandmember")
+
+fans = ["Celine Ui", "Lindsay Wahlborg", "Amanda Chase", "Kevin McCabe", "Courtland Premo", "Sean Cameron", "Sean Kelly", "David Rogge", "Deanna Fuller", "Greg Fuller", "Ada Mark"]
+fans.each do |fan|
+	User.create(name: fan, 
+		email: fan.first.downcase + "_" + fan.split(" ").last.downcase + "@gmail.com",
+		password: fan.split(" ").last.upcase + fan.split(" ").first.downcase,
+		password_confirmation: fan.split(" ").last.upcase + fan.split(" ").first.downcase,
+		category: "Fan")
+end
+
+bandmembers = ["Nolan Ericson", "Michael Nunan", "Aaron Wahlborg"]
+bandmembers.each do |bandmember|
+	User.create(name: bandmember, 
+		email: bandmember.first.downcase + "_" + bandmember.split(" ").last.downcase+"@gmail.com",
+		password: bandmember.split(" ").last.upcase + bandmember.split(" ").first.downcase,
+		password_confirmation: bandmember.split(" ").last.upcase + bandmember.split(" ").first.downcase,
+		category: "Bandmember")
+end
+
+partners = ["David Geffen", "Ridley Scott", "Steven Spielberg", "Kara Diaguardi"]
+partners.each do |partner|
+	User.create(name: partner, 
+		email: partner.first.downcase + "_" + partner.split(" ").last.downcase+"@gmail.com",
+		password: partner.split(" ").last.upcase + partner.split(" ").first.downcase,
+		password_confirmation: partner.split(" ").last.upcase + partner.split(" ").first.downcase,
+		category: "Partner")
+end
 
 # VENUE---------------------------------------------------------------------------
 Venue.create(name: "The Empty Bottle", street: "1035 North Western Avenue", city: "Chicago", state: "IL", zip: "60622", url: "http://www.emptybottle.com/")
