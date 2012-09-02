@@ -1,10 +1,15 @@
 <%= form_for @song do |f| %>
-  <tr>
-    <td><%= f.text_field :title %></td>
-    <td><%= f.file_field :recording %></td>
-    <td><%= f.text_field :lyric %></td>
-    <td><%= f.text_field :chart %></td>
-    <td><%= f.text_field :tablature %></td>
-    <td><%= f.submit "Submit" %></td>
-  </tr>
+
+    <tr><td><%= f.label "Title" %></td></tr>
+    <tr><td><%= f.text_field :title %></td></tr>
+    <tr><td><%= f.label "Audio" %></td></tr>
+    <tr><td><%= f.file_field :recording %></td></tr>
+    <tr><td><%= f.label "Lyric" %></td></tr>
+    <tr><td><%= f.text_area :lyric %></td>
+    <tr><td><%= f.label "Chart" %></td></tr>
+    <tr><td><%= f.text_area :chart %></td>
+    <tr><td><%= f.label "Tabs" %></td></tr>
+    <tr><td><%= f.text_area :tablature %></td>
+    <tr><td><%= f.submit "Submit" %></td></tr>
+
 <% end %>

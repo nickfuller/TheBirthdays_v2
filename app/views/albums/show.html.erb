@@ -1,11 +1,16 @@
-<h1><%= @album.title %> Details</h1>
-
 <%= flash[:album_created] %>
 <%= flash[:album_updated] %>
 
 <%= render "album_form", :albums => [@album] %>
 
-<%= render "songs/song_form", :songs => @album.songs %>
+<table>
+  <tbody>
+
+    <%= render "songs/song_form", :songs => @album.songs %>
+
+  </tbody>
+</table>
+
 
 <ul>
   <li><%= link_to "New Album", new_album_url %></li>

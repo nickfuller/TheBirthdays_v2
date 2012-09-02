@@ -3,17 +3,8 @@
 <%= flash[:blog_not_updated] %>
 
 <table>
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Body</th>
-      <th scope="col">Category</th>
-    </tr>
-  </thead>
   <tbody>
-    
     <%= render "form" %>
-    
     <tr>
       <td><%= link_to "Delete", destroy_blog_url(@blog.id), :method => :delete %></td>
     </tr>

@@ -1,25 +1,29 @@
 <!-- NOTE: Using this in Albums#show and Songs#index -->
 
-<table>
-  <tbody>
-    <% songs.each do |song| %>
-    <tr>
-      <td><a href="<%= song_url(song.id) %>" title="GOODIE"><%= song.title %></a></td>
-      <td>
-        <audio controls preload="none">
-          <source src="<%= song.recording.to_s %>" type="audio/mpeg">
-          <object type="application/x-shockwave-flash" data="player.swf?audio=<%= song.recording.to_s %>">
-          <p>This browser does not support the song format. Please <a href="<%= song.recording.to_s %>" title="<%= song.title %>">download</a>it.</p>
-          </object>
-        </audio>
-      </td>
-      <td><%= song.lyric %></td>
-      <td><%= song.chart %></td>
-      <td><%= song.tablature %></td>
-      <td><%= link_to "Edit", edit_song_url(song.id) %> </td>
-      <td><%= link_to "Delete", destroy_song_url(song.id), :method => :delete %></td>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<% songs.each do |song| %>
+
+<tr>
+  <td><a href="<%= song_url(song.id) %>"><%= song.title %></a></td>
+  <td>
+    <audio controls preload="none">
+      <source src="<%= song.recording.to_s %>" 
+          type="audio/mpeg"
+          >
+        <object type="application/x-shockwave-flash" 
+          data="player.swf?audio=<%= song.recording.to_s %>"
+          >
+          <p>This browser does not support the song format. Please 
+            <a href="<%= song.recording.to_s %>" title="<%= song.title %>">download</a>it.
+          </p>
+      </object>
+    </audio>
+  </td>
+  <td><%= song.lyric %></td>
+  <td><%= song.chart %></td>
+  <td><%= song.tablature %></td>
+  <td><%= link_to "Edit", edit_song_url(song.id) %> </td>
+  <td><%= link_to "Delete", destroy_song_url(song.id), :method => :delete %></td>
+</tr>
+
+<% end %>
+

@@ -1,8 +1,10 @@
-<%= form_for @album do |f| %>
+<%= form_for @album, :html => {:multipart => true} do |f| %>
   <tr>
     <td><%= f.text_field :title %></td>
     <td><%= f.text_field :date %></td>
-    <td><%= f.text_field :cover_art %></td>
+    <td><%= f.file_field :cover_art %></td>
+    <td><%= f.label :remote_cover_art_url, "or URL" %></td>
+    <td><%= f.text_field :remote_cover_art_url %></td> 
     <td><%= f.submit "Submit" %></td>
   </tr>
 <% end %>

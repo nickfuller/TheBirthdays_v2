@@ -1,17 +1,10 @@
 <table>
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Release Date</th>
-      <th scope="col">Cover Art</th>
-    </tr>
-  </thead>
   <tbody>
     <% albums.each do |album| %>
     <tr>
-      <td><%= link_to album.title, album_url(album.id) %></td>
-      <td><%= album.date.strftime("%Y (%B %e)")  %></td>
-      <td><%= album.cover_art %></td>
+      <td><div class="album_title"><%= link_to album.title, album_url(album.id) %></div></td>
+      <td><%= album.date.strftime("%Y")  %></td>
+      <td><%= image_tag album.cover_art_url.to_s %></td>
       <td><%= link_to "Edit", edit_album_url(album.id) %></td>
       <td><%= link_to "Delete", destroy_album_url(album.id), :method => :delete %></td>
     </tr>

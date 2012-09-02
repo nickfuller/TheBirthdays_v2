@@ -1,26 +1,13 @@
 <%= form_for @blog do |f| %>
-  <tr>
-  
-  <% if params[:blog].present? %>
-    <td><%= f.text_field :title, params[:blog][:title] %></td>
-  <% else %>
-    <td><%= f.text_field :title %></td>
-  <% end %>
- 
-  <% if params[:blog].present? %>
-    <td><%= f.text_field :body, params[:blog][:body] %></td>
-  <% else %>
-    <td><%= f.text_field :body %></td>
-  <% end %>
-
-  <% if params[:blog].present? %>
-    <td><%= f.text_field :category, params[:blog][:category] %></td>
-  <% else %>
-    <td><%= f.text_field :category %></td>
-  <% end %>
-  
-    <td><%= f.submit "Submit" %></td>
-  </tr>
+<table>
+  <tbody>
+    <tr><td><%= f.label "Title" %></td></tr>
+    <tr><td><%= f.text_field :title %></td></tr>
+    <tr><td><%= f.label "Category" %></td></tr>
+    <tr><td><%= f.text_field :category %></td>
+    <tr><td><%= f.label "Body" %></td></tr>
+    <tr><td><%= f.text_area :body %></td>
+    <tr><td><%= f.submit "Submit" %></td></tr>
+  </tbody>
+</table>
 <% end %>
-
-<!-- All the logic components are irrelevant here. See other _form.html.erb files. Still, good to know about this logic, plus, as Emily points out, it might make sense somewhere to have certain fields show up in the "sign up" but not "update"... -->
