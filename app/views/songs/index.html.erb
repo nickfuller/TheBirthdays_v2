@@ -3,7 +3,17 @@
 <%= flash[:song_created] %>
 <%= flash[:song_destroyed] %>
 
-<%= render "song_form", :songs => @songs %>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Recording</th>
+      <th scope="col">Lyric</th>
+      <th scope="col">Chart</th>
+      <th scope="col">Tablature</th>
+    </tr>
+  </thead>
+  <%= render "song_form", :songs => @songs %>
 
 <p><font color=red, size=4px>BUTTON: DELETE ALL SONGS</font></p> <!-- this shows in green? -->
 
