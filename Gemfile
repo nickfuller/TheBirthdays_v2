@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 
 # gem 'rmagick'
+gem 'aws-s3', :require => 'aws/s3'
 gem 'carrierwave'
 gem 'fog'
 

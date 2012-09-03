@@ -1,43 +1,24 @@
-<h1>Upcoming Gigs</h1>
+<h1>Concerts</h1>
 
 <%= flash[:gig_destroyed] %>
 
-<table>
-  <thead>
-    <tr>
-     <th scope="col">Date</th>
-     <th scope="col">Venue</th>
-     <th scope="col">Cover</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @upcoming_gigs.each do |gig| %>
-    <tr>
-      <td><%= link_to gig.date.strftime("%B %e, %Y (%A, %l:%M%P)"), gig_url(gig.id) %></td> 
-      <!-- January 21, 2012 (Monday) -->
-      <td>VENUE PLACEHOLDER</td>
-      <td>$<%= gig.cover %></td> 
-      <td><%= link_to "Edit", edit_gig_url(gig.id) %> </td>
-      <td><%= link_to "Delete", destroy_gig_url(gig.id), :method => :delete %></td>
-      </td>
-    </tr>
-    <% end %>
+<h2>Upcoming</h2>
 
 <table>
   <tbody>
-    <tr>
-      <td>PAST GIGS</td>
-    </tr>
-    <% @past_gigs.each do |gig| %>
-    <tr>
-      <td><%= link_to gig.date.strftime("%B %e, %Y"), gig_url(gig.id) %></td> 
-      <td>VENUE PLACEHOLDER</td>
-      <td>$<%= gig.cover %></td> 
-      <td><%= link_to "Edit", edit_gig_url(gig.id) %> </td>
-      <td><%= link_to "Delete", destroy_gig_url(gig.id), :method => :delete %></td>
-      </td>
-    </tr>
-    <% end %>
+    
+    <%= render "gig_form", :gigs => @upcoming_gigs %>
+  
+  </tbody>
+</table>
+
+<h3>Past</h3>
+
+<table>
+  <tbody>
+  
+    <%= render "gig_form", :gigs => @past_gigs %>
+  
   </tbody>
 </table>
 

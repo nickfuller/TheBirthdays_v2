@@ -2,7 +2,12 @@
 
 <%= flash[:album_destroyed] %>
 
-<%= render "album_form", :albums => @albums %>
+<table>
+  <tbody>
+    <%= render "album_form", :albums => @albums %>
+  </tbody>
+</table>
+
 
 <p><font color=red, size=4px>BUTTON: DELETE ALL ALBUMS</font></p> <!-- this shows in green? -->
 

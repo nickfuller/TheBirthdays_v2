@@ -1,13 +1,19 @@
-<h1>Edit <%= @song.title %></h1>
+<h1>Edit...</h1>
+<h2><%= @song.title %></h2>
 
 <%= flash[:song_not_updated] %>
 
+<p>Please fill in the following fields, and then submit:</p>
+
 <table>
   <tbody>
+    
     <%= render "form" %>
+    
     <tr>
       <td><%= link_to "Delete", destroy_song_url(@song.id), :method => :delete %></td>
     </tr>
+    
   </tbody>
 </table>
     

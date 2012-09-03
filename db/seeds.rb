@@ -77,31 +77,31 @@ puts "Creating Songs..."
 
 Song.create(title: "Bliss in a Basket", 
 						album_id: Album.find_by_title("A Spirited Rendition").id,
-						recording: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/1%20Bliss%20in%20a%20Basket/01%20Bliss%20in%20a%20Basket.mp3"
+						remote_recording_url: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/1%20Bliss%20in%20a%20Basket/01%20Bliss%20in%20a%20Basket.mp3"
 					 )
 Song.create(title: "Don't Hate Me",
 						album_id: Album.find_by_title("A Spirited Rendition").id,
-						recording: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/2%20Don't%20Hate%20Me/02%20Don't%20Hate%20Me.mp3"
+						remote_recording_url: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/2%20Don't%20Hate%20Me/02%20Don't%20Hate%20Me.mp3"
 					)
 Song.create(title: "Nix Nix",
 						album_id: Album.find_by_title("A Spirited Rendition").id,
-						recording: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/3%20Nix%20Nix/03%20Nix%20Nix.mp3"
+						remote_recording_url: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/3%20Nix%20Nix/03%20Nix%20Nix.mp3"
 					)
 Song.create(title: "Here I Go Again",
 						album_id: Album.find_by_title("A Spirited Rendition").id,
-						recording: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/4%20Here%20I%20Go%20Again/04%20Here%20I%20Go%20Again.mp3"
+						remote_recording_url: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/4%20Here%20I%20Go%20Again/04%20Here%20I%20Go%20Again.mp3"
 					)
 Song.create(title: "Real Bungee",
 						album_id: Album.find_by_title("A Spirited Rendition").id,
-						recording: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/5%20Real%20Bungee/05%20Real%20Bungee.mp3"
+						remote_recording_url: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/5%20Real%20Bungee/05%20Real%20Bungee.mp3"
 					)
 Song.create(title: "The Sayso",
 						album_id: Album.find_by_title("A Spirited Rendition").id,
-						recording: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/6%20The%20Sayso/06%20The%20Sayso.mp3"
+						remote_recording_url: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/6%20The%20Sayso/06%20The%20Sayso.mp3"
 					)
 Song.create(title: "Far Behind",
 						album_id: Album.find_by_title("A Spirited Rendition").id,
-						recording: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/7%20Far%20Behind/07%20Far%20Behind.mp3"
+						remote_recording_url: "http://dl.dropbox.com/u/14393898/S3%20Directory/Albums/A%20Spirited%20Rendition/Songs/7%20Far%20Behind/07%20Far%20Behind.mp3"
 					)
 
 puts "Songs created."

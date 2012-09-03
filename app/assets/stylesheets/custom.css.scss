@@ -23,6 +23,23 @@ h1 {
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
+h2 {
+	color: teal;
+	font-family: arial;
+	font-style: oblique;
+	font-size: 20px;
+	padding: 9px;
+}
+
+h3 {
+	color: teal;
+	font-family: arial;
+	font-style: oblique;
+	font-size: 20px;
+	padding: 9px;
+}
+
 /*
 
 thead {
@@ -35,7 +52,7 @@ thead {
 th {
 	color: red;
 	font-family: arial;
-	font-size: 20px;
+	font-size: 18px;
 	padding-top: 5px;	
 	padding-bottom: 5px;
 	padding-left: 10px;
@@ -54,11 +71,11 @@ td {
 }
 
 p {
-	color: gray;
+	color: black;
 	font-family: courier;
 	font-size: 10px;
-	padding-top: 5px;	
-	padding-bottom: 5px;
+	padding-top: 7px;	
+	padding-bottom: 7px;
 	padding-left: 10px;
 	padding-right: 10px;
 }

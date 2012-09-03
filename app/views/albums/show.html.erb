@@ -1,15 +1,19 @@
 <%= flash[:album_created] %>
 <%= flash[:album_updated] %>
 
-<%= render "album_form", :albums => [@album] %>
+<table>
+  <tbody>
+    <%= render "album_form", :albums => [@album] %>
+    <%= render "songs/song_form", :songs => @album.songs %> 
+  </tbody>
+</table>
 
+<!-- Why can't I put this in the table above (it messes it up) -->
 <table>
   <tbody>
 
-    <%= render "songs/song_form", :songs => @album.songs %>
-
   </tbody>
-</table>
+</tabel>
 
 
 <ul>

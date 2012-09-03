@@ -2,12 +2,16 @@
   <tbody>
     <% albums.each do |album| %>
     <tr>
-      <td><div class="album_title"><%= link_to album.title, album_url(album.id) %></div></td>
+      <th><%= link_to album.title, album_url(album.id) %></th>
       <td><%= album.date.strftime("%Y")  %></td>
-      <td><%= image_tag album.cover_art_url.to_s %></td>
       <td><%= link_to "Edit", edit_album_url(album.id) %></td>
       <td><%= link_to "Delete", destroy_album_url(album.id), :method => :delete %></td>
+    </tr>
+    
+    <tr>
+      <td><%= image_tag album.cover_art_url.to_s %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+

@@ -6,5 +6,5 @@ CarrierWave.configure do |config|
     :region                 => 'us-east-1'  
 # This is important. If you follow the railscast guy, he'll put 'eu-east-1' - DON'T DO THAT IF YOU'RE IN THE U.S.!!!
   }
-  config.fog_directory  = 'BandWebsite'                     # required
+  config.fog_directory  = 'thebirthdays'                     # required
 end

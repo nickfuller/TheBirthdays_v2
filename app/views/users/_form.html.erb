@@ -1,36 +1,25 @@
 <%= form_for @user do |f| %>
-  <div class="field">
     <tr>
-      <td><%= f.label "Name" %></td>
+      <td><%= f.label :name %></td>
       <td><%= f.text_field :name %></td>
     </tr>
     <tr>
-      <td><%= f.label "Category" %></td>
-      <td> <!-- Should be collection_select (I think) but I don't understand how to implement it. -->
-        <select>
-          <option value="fan">Fan</option>
-          <option value="partner">Partner</option>
-          <option value="bandmember">Bandmember</option>
-        </select>        
-
-      </td>
+      <td><%= f.label :category %></td>
+      <td><%= f.select :category, ["Fan", "Partner", "Bandmember"] %></td>
     </tr>
     <tr>    
-      <td><%= f.label "Email" %></td>
+      <td><%= f.label :email %></td>
       <td><%= f.text_field :email %></td>
     </tr>
     <tr>   
-      <td><%= f.label "Password" %></td>
+      <td><%= f.label :password %></td>
       <td><%= f.password_field :password %></td>
     </tr>
     <tr>   
-      <td><%= f.label "Confirm" %></td>
+      <td><%= f.label :password_confirmation, "Confirm" %></td>
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
-  </div>
-  <div class="actions">
     <tr>
       <td><%= f.submit "Submit" %></td>
     </tr>
-  </div>
 <% end %>

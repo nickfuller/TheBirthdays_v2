@@ -8,20 +8,43 @@
   </head>
   <body>
 
-    <tr>
-      <td><%= link_to "Gigs", gigs_url %>      |  </td>
-      <td><%= link_to "Music", albums_url %>   |  </td>
-      <td><%= link_to "Blog", blogs_url %>     |  </td>
-      <td>Partner Up!                          |  </td>
-      <td id="notice"><%= notice %></td>
-      <% if session[:user_id] %>
-      	<%= link_to 'Sign Out', session_url, :method => 'delete' %>
-      <% else %>
-      	<%= link_to 'Sign Up', new_user_url %> / <%= link_to 'Sign In', new_session_url %>
-      <% end %>
-    </tr>
-
-    <%= yield %>
-
+<!-- div -->
+  <div class="header_links">
+    <table>
+      <thead>
+        <tr>
+          <td><%= link_to "Concerts", gigs_url %>     </td>
+          <td><%= link_to "Music", albums_url %>      </td>
+          <td>History                                 </td>
+          <td><%= link_to "Blog", blogs_url %>        </td>
+          <td id="notice">
+            <%= notice %>
+            <% if session[:user_id] %>
+            	<%= link_to 'Sign Out', session_url, :method => 'delete' %>
+            <% else %>
+            	<%= link_to 'Sign Up', new_user_url %> or <%= link_to 'Sign In', new_session_url %>
+            <% end %>
+          </td>
+          <td>Partner Up!                            </td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+<!-- /div -->
+    
+  <%= yield %>
+    
+<!-- div --> 
+  <div class="gutter_links">
+    <table>
+      <thead>
+        <tr>
+          <td>Contact</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+<!-- /div -->
+   
   </body>
 </html>

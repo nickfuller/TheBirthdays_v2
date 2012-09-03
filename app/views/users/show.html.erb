@@ -1,10 +1,22 @@
-<h1><%= @user.name %>'s Profile</h1>
+<h1>Profile</h1>
 
 <%= flash[:user_created] %>
 <%= flash[:user_updated] %>
 
-<%= render "user_form", :users => [@user] %>
+<h2><%= @user.name %></h2>
 
-<p><%= link_to "New User", new_user_url %></p>
-<p><%= link_to "Users", users_url %></p>
-<p><%= link_to "Home", home_url %></p>
+<ul>
+  <li><%= @user.email %></li>
+  <li><%= @user.category %> since <%= @user.created_at.strftime("%l:%M%P, %A %B %d, %Y") %></li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td><%= link_to "Edit", edit_user_url(@user.id) %></td>
+      <td><%= link_to "Delete", destroy_user_url(@user.id), :method => :delete %></td>      
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to "The Birthdays Home", home_url %></p>

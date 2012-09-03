@@ -3,13 +3,6 @@
 <%= flash[:album_not_updated] %>
 
 <table>
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Release Date</th>
-      <th scope="col">Cover Art</th>
-    </tr>
-  </thead>
   <tbody>
     
     <%= render "form" %>
@@ -17,6 +10,7 @@
     <tr>
       <td><%= link_to "Delete", destroy_album_url(@album.id), :method => :delete %></td>
     </tr>
+
   </tbody>
 </table>
 
