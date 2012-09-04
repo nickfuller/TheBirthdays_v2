@@ -11,4 +11,5 @@ class Gig < ActiveRecord::Base
 	has_many :pictures
 
 	mount_uploader :poster, PictureUploader
+	
 end

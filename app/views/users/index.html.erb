@@ -11,15 +11,17 @@
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
     <tr>
-      <td><%= link_to "#{user.name}", user_url(user.id) %></td>
-      <td><%= user.email %></td>
-      <td><%= user.category %> since <%= user.created_at.strftime("%Y") %></td>
-      <td><%= link_to "Edit", edit_user_url(user.id) %></td>
-      <td><%= link_to "Delete", destroy_user_url(user.id), :method => :delete %></td>
+      <%= @users.each do |user| %>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.category %></td>
+        <% if user.category == "Bandmember" %>
+          <td><%= link_to "Edit", edit_user_url(user.id) %></td>
+          <td><%= link_to "Delete", destroy_user_url(user.id), :method => :delete %></td>
+        <% end %>
+      <% end %>
     </tr>
-    <% end %>
   </tbody>
 </table> 
 

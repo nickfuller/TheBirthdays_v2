@@ -1,0 +1,11 @@
+<% @upcoming_gigs.each do |gig| %>
+<tr>
+    <td><%= link_to gig.date.strftime("%B %e, %Y (%A, %l:%M%P)"), gig_url(gig.id) %></td> 
+    <td>VENUE PLACEHOLDER</td>
+    <td>$<%= gig.cover %></td> 
+  <% if @bandmember %>
+    <td><%= link_to "Edit", edit_gig_url(gig.id) %> </td>
+    <td><%= link_to "Delete", destroy_gig_url(gig.id), :method => :delete %></td>
+  <% end %>
+</tr>
+<% end %>

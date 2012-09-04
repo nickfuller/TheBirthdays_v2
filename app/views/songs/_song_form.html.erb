@@ -1,8 +1,5 @@
 <!-- NOTE: Using this in Albums#show and Songs#index -->
 
-<table>
-  <tbody>
-
     <% songs.each do |song| %>
     <tr>
       <th><a href="<%= song_url(song.id) %>"><%= song.title %></a></th>
@@ -21,13 +18,10 @@
       <td><%= song.lyric %></td>
       <td><%= song.chart %></td>
       <td><%= song.tablature %></td>
+      <% if @bandmember %>
       <td><%= link_to "Edit", edit_song_url(song.id) %> </td>
       <td><%= link_to "Delete", destroy_song_url(song.id), :method => :delete %></td>
+      <% end %>
     </tr> 
     <% end %>   
-
-  </tbody>
-</table>
-
-
 

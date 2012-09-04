@@ -16,6 +16,7 @@
           <td><%= link_to "History", history_url %>       </td>    
           <td><%= link_to "Blog", blogs_url %>            </td>         
           <td><%= link_to "Contact", contact_us_url %>    </td> 
+          <td><%= link_to "Store", store_url %>           </td>
           <td>  <% if session[:user_id] %>
             <%= link_to 'Sign Out', session_url, :method => 'delete' %>
             <% else %>

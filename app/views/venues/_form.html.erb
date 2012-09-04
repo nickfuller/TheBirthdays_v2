@@ -1,11 +1,25 @@
-<%= form_for @venue do |f| %>
-  <tr>
-    <td><%= f.text_field :name %></td>
-    <td><%= f.text_field :street %></td>
-    <td><%= f.text_field :city %></td>
-    <td><%= f.text_field :state %></td>
-    <td><%= f.text_field :zip %></td>
-    <td><%= f.text_field :url %></td>
-    <td><%= f.submit "Submit" %></td>
-  </tr>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Street</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">ZIP</th>
+      <th scope="col">Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= form_for @venue do |f| %>
+    <tr>
+      <td><%= f.text_field :name %></td>
+      <td><%= f.text_field :street %></td>
+      <td><%= f.text_field :city %></td>
+      <td><%= f.text_field :state %></td>
+      <td><%= f.text_field :zip %></td>
+      <td><%= f.text_field :url %></td>
+      <td><%= f.submit "Submit" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,26 +1,27 @@
-<%= form_for @gig do |f| %>
-<table>
-  <thead>
+<%= form_for @gig, :html => { :multipart => true } do |f| %>
+
     <tr>
-      <th>Date</th>
+      <th><%= f.label :date %></th>
       <td><%= f.text_field :date %></td>
     </tr>
+
     <tr>
-      <th>Venue</th>
+      <th><%= f.label :venue %></th>
       <td><%= f.text_field :venue %></td>
     </tr>
+
     <tr>
-      <th>Cover</th>
+      <th>$<%= f.label :cover %></th>
       <td><%= f.text_field :cover %></td>
     </tr>
+
     <tr>
-      <th>Poster</th>
-      <td><%= f.file_field :poster %></td>
-      <td><%= f.text_field :remote_poster_url %></td>
+      <th><%= f.label :poster %></th>
+      <td><%= f.file_field :poster %> or URL: <%= f.text_field :remote_poster_url %></td>
     </tr>
+
     <tr>
       <td><%= f.submit "Submit" %></td>  
     </tr>
-  </thead>
-</table>
+  
 <% end %>

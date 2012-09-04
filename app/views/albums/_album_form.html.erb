@@ -1,15 +1,20 @@
 <div class="form">
   <% albums.each do |album| %>
   
-  <div class="element_greater">
+  <div class="element">
     <%= link_to album.title, album_url(album.id) %>
-    <%= album.date.strftime("%Y")  %>
+    (<%= album.date.strftime("%Y")  %>)
+  <div>
+
+  <% if @band_member %>
+  <div>
     <%= link_to "Edit", edit_album_url(album.id) %>
     <%= link_to "Delete", destroy_album_url(album.id), :method => :delete %>
   </div>
+  <% end  %>
 
   <div class="element">
-    <%= image_tag album.cover_art_url.to_s, :height => 200 %></td>
+    <%= image_tag album.cover_art_url.to_s, :height => 160 %></td>
       <!-- the :height command scales the image down -->
   </div>
 

@@ -1,13 +1,13 @@
-<h1>Concerts</h1>
-
 <%= flash[:gig_destroyed] %>
+
+<h1>Concerts</h1>
 
 <h2>Upcoming</h2>
 
 <table>
   <tbody>
     
-    <%= render "gig_form", :gigs => @upcoming_gigs %>
+    <%= render "futuregigs_form" %>
   
   </tbody>
 </table>
@@ -17,11 +17,13 @@
 <table>
   <tbody>
   
-    <%= render "gig_form", :gigs => @past_gigs %>
+    <%= render "pastgigs_form" %>
   
   </tbody>
 </table>
 
-<p><font color=red, size=4px>BUTTON: DELETE ALL GIGS</font></p> <!-- this shows in green? -->
+<% if @bandmember %>
+  <p><font color=red, size=4px>BUTTON: DELETE ALL GIGS</font></p> <!-- this shows in green? -->
+<% end %>
 
 <p><%= link_to "Add a Gig", new_gig_url %></p>
