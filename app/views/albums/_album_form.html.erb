@@ -1,17 +1,17 @@
-<table>
-  <tbody>
-    <% albums.each do |album| %>
-    <tr>
-      <th><%= link_to album.title, album_url(album.id) %></th>
-      <td><%= album.date.strftime("%Y")  %></td>
-      <td><%= link_to "Edit", edit_album_url(album.id) %></td>
-      <td><%= link_to "Delete", destroy_album_url(album.id), :method => :delete %></td>
-    </tr>
-    
-    <tr>
-      <td><%= image_tag album.cover_art_url.to_s %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="form">
+  <% albums.each do |album| %>
+  
+  <div class="element_greater">
+    <%= link_to album.title, album_url(album.id) %>
+    <%= album.date.strftime("%Y")  %>
+    <%= link_to "Edit", edit_album_url(album.id) %>
+    <%= link_to "Delete", destroy_album_url(album.id), :method => :delete %>
+  </div>
 
+  <div class="element">
+    <%= image_tag album.cover_art_url.to_s, :height => 200 %></td>
+      <!-- the :height command scales the image down -->
+  </div>
+
+  <% end %>
+</div>

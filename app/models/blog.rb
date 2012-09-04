@@ -7,5 +7,13 @@ class Blog < ActiveRecord::Base
 	has_many :users, :through => :comments # commenting fans
 	
 	belongs_to :user # posting bandmember
+	
+	def self.categories
+		categories = []
+		all.each	do |blog|
+			categories << blog.category
+		end
+		return categories.uniq
+	end
 
 end

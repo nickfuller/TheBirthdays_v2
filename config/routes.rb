@@ -1,6 +1,16 @@
 TheBirthdaysV2::Application.routes.draw do
 
-  root :to => 'Home#index', :as => "home"
+# HOME ROUTES-----------------------------------------------------------
+
+  root :to => "Home#index", :as => "home"
+
+# CONTACT_US ROUTES-----------------------------------------------------------
+
+  get "contact" => "ContactUs#index", :as => "contact_us"
+
+# BAND_BIO ROUTES-----------------------------------------------------------
+
+  get "history" => "BandBio#index", :as => "history" 
 
 # USERS ROUTES-----------------------------------------------------------
   

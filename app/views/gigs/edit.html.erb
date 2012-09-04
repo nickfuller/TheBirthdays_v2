@@ -2,18 +2,10 @@
 
 <%= flash[:gig_not_updated] %>
 
+<%= render "form" %>
+
 <table>
-  <thead>
-    <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Venue</th>
-      <th scope="col">Cover</th>
-    </tr>
-  </thead>
-  <tbody>
-   
-    <%= render "form" %>
-   
+  <tbody> 
     <tr>
       <td><%= link_to "Delete", destroy_gig_url(@gig.id), :method => :delete %></td>
     </tr>

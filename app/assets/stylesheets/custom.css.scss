@@ -3,10 +3,7 @@
 	font-family: sans-serif;
 	font-style: italic;
 	color: blue;
-	padding-top: 30px;	
-	padding-bottom: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 30px 10px 10px 10px;	
 }
 
 a {
@@ -36,56 +33,36 @@ h3 {
 	color: teal;
 	font-family: arial;
 	font-style: oblique;
-	font-size: 20px;
+	font-size: 15px;
 	padding: 9px;
 }
 
-/*
-
-thead {
-	color: char;
-	font-family: arial;
-	font-size: 18px;
-	padding: 10px;	
-}
-*/
-th {
-	color: red;
-	font-family: arial;
-	font-size: 18px;
-	padding-top: 5px;	
-	padding-bottom: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	text-align: left;
-}
 
 td {
 	color: black;
 	font-family: arial;
 	font-size: 15px;
-	padding-top: 5px;	
-	padding-bottom: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 5px 10px 5px 10px;
 }
 
 p {
 	color: black;
 	font-family: courier;
 	font-size: 10px;
-	padding-top: 7px;	
-	padding-bottom: 7px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 7px 10px;
 }
 
 li {
 	color: black;
 	font-family: courier;
 	font-size: 12px;
-	padding-top: 5px;	
-	padding-bottom: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 5px 10px;	
 }
+
+.form {
+	color: black;
+	font-family: arial;
+	font-size: 15px;
+	padding-top: 5px 10px;
+}
+

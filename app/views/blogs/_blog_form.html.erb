@@ -1,14 +1,15 @@
 <% blogs.each do |blog| %>
-
 <table>
   <tbody>
     <tr>
       <th><%= link_to "#{blog.title}", blog_url(blog.id) %></th>
-      <td><%= link_to "Edit", edit_blog_url(blog.id) %></td>
-      <td><%= link_to "Delete", destroy_blog_url(blog.id), :method => :delete %></td>
+        <% if @band_member %>
+          <td><%= link_to "Edit", edit_blog_url(blog.id) %></td>
+          <td><%= link_to "Delete", destroy_blog_url(blog.id), :method => :delete %></td>
+        <% end  %>
     </tr>
     <tr>
-      <td><%= blog.category %></td>
+      <td><%= blog.category %> </td>
     </tr>
   </tbody>
 </table>

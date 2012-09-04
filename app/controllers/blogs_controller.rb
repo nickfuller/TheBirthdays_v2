@@ -34,6 +34,7 @@ class BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find_by_id(params[:id])
+		@categories = blog_categories()
   end
 
   def update
@@ -45,6 +46,7 @@ class BlogsController < ApplicationController
       flash[:blog_not_updated] = "Please fill in all fields before submitting."
       render 'edit'
     end
+		@categories = blog_categories()
   end
 
   def destroy

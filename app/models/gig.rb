@@ -1,6 +1,6 @@
 class Gig < ActiveRecord::Base
 
-  attr_accessible :date, :cover, :poster, :venue_id
+  attr_accessible :date, :cover, :poster, :venue_id, :remote_poster_url
 
 	belongs_to :venue
 	
@@ -10,4 +10,5 @@ class Gig < ActiveRecord::Base
 	has_many :films
 	has_many :pictures
 
+	mount_uploader :poster, PictureUploader
 end

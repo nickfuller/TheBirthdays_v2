@@ -1,8 +1,26 @@
 <%= form_for @gig do |f| %>
-  <tr>
-    <td><%= f.text_field :date %></td>
-    <td><%= f.text_field :venue %></td>
-    <td><%= f.text_field :cover %></td>
-    <td><%= f.submit "Submit" %></td>
-  </tr>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <td><%= f.text_field :date %></td>
+    </tr>
+    <tr>
+      <th>Venue</th>
+      <td><%= f.text_field :venue %></td>
+    </tr>
+    <tr>
+      <th>Cover</th>
+      <td><%= f.text_field :cover %></td>
+    </tr>
+    <tr>
+      <th>Poster</th>
+      <td><%= f.file_field :poster %></td>
+      <td><%= f.text_field :remote_poster_url %></td>
+    </tr>
+    <tr>
+      <td><%= f.submit "Submit" %></td>  
+    </tr>
+  </thead>
+</table>
 <% end %>
