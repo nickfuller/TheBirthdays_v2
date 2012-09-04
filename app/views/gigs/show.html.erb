@@ -1,35 +1,44 @@
-<%= flash[:gig_created] %>
-<%= flash[:gig_updated] %>
+<p><%= flash[:gig_created] %></p>
+<p><%= flash[:gig_updated] %></p>
 
-<% if @gig.date < DateTime.now %>
-  
-  <h1><%= @venue %> | <%= @gig.date.strftime("%B %e, %Y") %></h1>
-  <% if @bandmember %>
-    <% if @gig.cover %>
-      <h3>$<%= @gig.cover %></h3>
+<!-- PAST GIG -->
+  <% if @gig.date < DateTime.now %> 
+        <h1><%= @venue %> | <%= @gig.date.strftime("%B %e, %Y") %></h1>
+    
+    <% if @bandmember %>
+      <% if @gig.cover %>
+        <h1>$<%= @gig.cover %></h1>
+      <% end %>
     <% end %>
-  <% end %>
-  <br />
-  <%= image_tag @gig.poster_url.to_s, :height => 400 %>
+        <br />
+    <% if @gig.poster %>
+        <img><%= image_tag @gig.poster_url.to_s, :height => 400 %></img>
+    <% end %>
   
-<% else %>
+<!-- OR FUTURE GIG -->
+  <% else %> 
+        <h1><%= @venue %> | <%= @gig.date.strftime("%B %e, %Y (%A, %l:%M%P)") %></h1>
+        <h1>$<%= @gig.cover %></h1>
+        <br />
+    <% if @gig.poster %>
+        <img><%= @gig.poster %></img>
+    <% end %>
 
-  <h1><%= @venue %> | <%= @gig.date.strftime("%B %e, %Y (%A, %l:%M%P)") %></h1>
-  <h3>$<%= @gig.cover %></h3>
-  <br />
-  <img><%= @gig.poster %></img>
+  <% end %>  
 
-<% end %>  
 
-<table>
-  <tbody>
-    <tr>
-      <td><%= link_to "Edit", edit_gig_url(@gig.id) %></td>
-      <td><%= link_to "Delete", destroy_gig_url(@gig.id), :method => :delete %></td>      
-    </tr>
-  </tbody>
-</table>
+  <% if @bandmember %>
+    <table>
+      <tbody>
+        <tr>
+          <td><%= link_to "Edit", edit_gig_url(@gig.id) %></td>
+          <td><%= link_to "Delete", destroy_gig_url(@gig.id), :method => :delete %></td>      
+        </tr>
+      </tbody>
+    </table>
 
-<p><%= link_to "New Gig", new_gig_url %></p>
+    <p><%= link_to "New Gig", new_gig_url %></p>
+  <% end %>
+
 <p><%= link_to "All Gigs", gigs_url %></p>
 <p><%= link_to "Home", home_url %></p>

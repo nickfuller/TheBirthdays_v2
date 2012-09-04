@@ -6,7 +6,7 @@
     (<%= album.date.strftime("%Y")  %>)
   <div>
 
-  <% if @band_member %>
+  <% if @bandmember %>
   <div>
     <%= link_to "Edit", edit_album_url(album.id) %>
     <%= link_to "Delete", destroy_album_url(album.id), :method => :delete %>

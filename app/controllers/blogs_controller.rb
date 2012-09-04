@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.find_by_id(params[:id])
-		# comments = @blog.comment.all --> not ready for this yet
+		@comment = Comment.new(:blog => @blog)
     respond_to do |format|
       format.html
       format.json { render :json => @blog }

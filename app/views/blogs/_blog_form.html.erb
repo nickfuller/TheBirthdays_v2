@@ -6,7 +6,7 @@
     <%= link_to "#{blog.title}", blog_url(blog.id) %>
   </div>
 
-  <% if @band_member %>
+  <% if @bandmember %>
   <div class="element">
       <%= link_to "Edit", edit_blog_url(blog.id) %>
       <%= link_to "Delete", destroy_blog_url(blog.id), :method => :delete %>
@@ -14,5 +14,9 @@
   <% end  %>
 
   <p><%= blog.body %></p>
+  
+  <div class="element">
+      <%= link_to "Comment", edit_blog_url(blog.id) %>
+  </div>
 
 <% end %>

@@ -6,6 +6,23 @@
 	padding: 30px 10px 10px 10px;	
 }
 
+.form {
+	color: black;
+	font-family: arial;
+	font-size: 15px;
+	padding: 5px 10px;
+}
+
+.element {
+	padding: 5px 10px;
+}
+
+.element_title {
+	color: #008E9A;
+	font-family: arial;
+	font-size: 20px;
+}
+
 a {
 	color:black;
 	text-decoration: none;
@@ -37,27 +54,8 @@ h3 {
 	padding: 9px;
 }
 
-th {
-	margin: 10px;
+img {
 	padding: 10px;
-	color:#008E9A;
-	font-family: arial;
-	font-size: 20px;
-	text-align: left;
-}
-
-td {
-	color: black;
-	font-family: arial;
-	font-size: 15px;
-	padding: 5px 10px 5px 10px;
-}
-
-p {
-	color: black;
-	font-family: courier;
-	font-size: 10px;
-	padding: 7px 10px;
 }
 
 li {
@@ -67,19 +65,25 @@ li {
 	padding: 5px 10px;	
 }
 
-.form {
+p {
+	color: black;
+	font-family: courier;
+	font-size: 10px;
+	padding: 7px 10px;
+}
+
+td {
 	color: black;
 	font-family: arial;
 	font-size: 15px;
-	padding: 5px 10px;
+	padding: 5px 10px 5px 10px;
 }
 
-.element {
-	padding: 5px 10px;
-}
-
-.element_title {
-	color: #008E9A;
+th {
+	margin: 10px;
+	padding: 10px;
+	color:#008E9A;
 	font-family: arial;
 	font-size: 20px;
+	text-align: left;
 }

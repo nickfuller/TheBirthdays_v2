@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  
+	helper :all # include all helpers, all the time <= picked this up from RailsCast #139
+	
+	protect_from_forgery
 	
 	before_filter :current_user, :bandmember, :partner, :fan
 	
