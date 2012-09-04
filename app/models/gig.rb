@@ -1,6 +1,6 @@
 class Gig < ActiveRecord::Base
 
-  attr_accessible :date, :cover, :poster, :venue_id, :remote_poster_url
+  attr_accessible :date, :cover, :poster, :venue_id, :remote_poster_url, :venue
 
 	belongs_to :venue
 	

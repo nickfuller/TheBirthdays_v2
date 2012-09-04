@@ -1,13 +1,32 @@
-<h1><%= @gig.venue %> | <%= @gig.date.strftime("%B %e, %Y") %></h1>
-
 <%= flash[:gig_created] %>
 <%= flash[:gig_updated] %>
 
+<% if @gig.date < DateTime.now %>
+  
+  <h1><%= @venue %> | <%= @gig.date.strftime("%B %e, %Y") %></h1>
+  <% if @bandmember %>
+    <% if @gig.cover %>
+      <h3>$<%= @gig.cover %></h3>
+    <% end %>
+  <% end %>
+  <br />
+  <%= image_tag @gig.poster_url.to_s, :height => 400 %>
+  
+<% else %>
+
+  <h1><%= @venue %> | <%= @gig.date.strftime("%B %e, %Y (%A, %l:%M%P)") %></h1>
+  <h3>$<%= @gig.cover %></h3>
+  <br />
+  <img><%= @gig.poster %></img>
+
+<% end %>  
+
 <table>
   <tbody>
-    
-    <%= render "gig_form", :gigs => [@gig] %>
-    
+    <tr>
+      <td><%= link_to "Edit", edit_gig_url(@gig.id) %></td>
+      <td><%= link_to "Delete", destroy_gig_url(@gig.id), :method => :delete %></td>      
+    </tr>
   </tbody>
 </table>
 

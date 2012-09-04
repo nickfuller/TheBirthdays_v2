@@ -118,7 +118,7 @@ User.create(name: "Nick",
 	email: "vandebar@gmail.com",
 	password: "password",
 	password_confirmation: "password",
-	category: "Bandmember")
+	role: "Bandmember")
 
 puts ".........created"
 
@@ -130,7 +130,7 @@ fans.each do |fan|
 		email: fan.first.downcase + "_" + fan.split(" ").last.downcase + "@gmail.com",
 		password: fan.split(" ").last.upcase + fan.split(" ").first.downcase,
 		password_confirmation: fan.split(" ").last.upcase + fan.split(" ").first.downcase,
-		category: "Fan")
+		role: "Fan")
 end
 
 puts ".........created"
@@ -143,7 +143,7 @@ bandmembers.each do |bandmember|
 		email: bandmember.first.downcase + "_" + bandmember.split(" ").last.downcase+"@gmail.com",
 		password: bandmember.split(" ").last.upcase + bandmember.split(" ").first.downcase,
 		password_confirmation: bandmember.split(" ").last.upcase + bandmember.split(" ").first.downcase,
-		category: "Bandmember")
+		role: "Bandmember")
 end
 
 puts ".........created"
@@ -156,7 +156,7 @@ partners.each do |partner|
 		email: partner.first.downcase + "_" + partner.split(" ").last.downcase+"@gmail.com",
 		password: partner.split(" ").last.upcase + partner.split(" ").first.downcase,
 		password_confirmation: partner.split(" ").last.upcase + partner.split(" ").first.downcase,
-		category: "Partner")
+		role: "Partner")
 end
 
 puts ".........created"

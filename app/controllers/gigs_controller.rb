@@ -2,7 +2,7 @@ class GigsController < ApplicationController
 
   def index
     @gigs = Gig.all
-    @upcoming_gigs = Gig.where("date > ?", DateTime.now).order("date asc")
+    @future_gigs = Gig.where("date > ?", DateTime.now).order("date asc")
     @past_gigs = Gig.where("date < ?", DateTime.now).order("date desc")
     respond_to do |format|
       format.html
@@ -17,7 +17,7 @@ class GigsController < ApplicationController
   def create
     gig = Gig.new(params[:gig])
     if gig.save
-      flash[:gig_created] = "A gig on #{gig.date} at #{gig.venue} has been added to the site!"
+      flash[:gig_created] = "A gig on #{gig.date.strftime("%b %d, %Y")} at #{gig.venue.name} has been added!"
       redirect_to gig_url(gig.id)
     else
       flash[:gig_not_created] = "Please fill in all required fields before submitting."
@@ -27,6 +27,7 @@ class GigsController < ApplicationController
 
   def show
     @gig = Gig.find_by_id(params[:id])
+		@venue = @gig.venue.name # Venue.find_by_id(params[:venue_id]).name
     respond_to do |format|
       format.html
       format.json { render :json => @gig }
@@ -40,7 +41,7 @@ class GigsController < ApplicationController
   def update
     @gig = Gig.find_by_id(params[:id])
     if @gig.update_attributes(params[:gig])
-      flash[:gig_updated] = "The gig on #{@gig.date} at #{@gig.venue} has been updated."
+      flash[:gig_updated] = "The gig on #{@gig.date.strftime("%b %d, %Y")} at #{@gig.venue.name} has been updated."
       redirect_to gig_url(@gig.id)
     else
       flash[:gig_not_updated] = "Please fill in all required fields before submitting."

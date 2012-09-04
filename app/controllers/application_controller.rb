@@ -4,24 +4,24 @@ class ApplicationController < ActionController::Base
 	before_filter :current_user, :bandmember, :partner, :fan
 	
 	def current_user
-		@current_user = User.find_by_id(session[:user_id])
+		@current_user ||= User.find_by_id(session[:user_id]) # What is the purpose of the ||?
 	end
 	
 	def bandmember
 		if @current_user
-			@bandmember = @current_user.category == "Bandmember"
+			@bandmember = @current_user.role == "Bandmember"
 		end
 	end
 	
 	def partner
 		if @current_user
-			@partner = @current_user.category == "Partner"
+			@partner = @current_user.role == "Partner"
 		end
 	end
 
 	def fan
 		if @current_user
-			@fan = @current_user.category == "Fan"
+			@fan = @current_user.role == "Fan"
 		end
 	end
 	

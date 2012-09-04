@@ -6,21 +6,21 @@
       <th scope="col">City</th>
       <th scope="col">State</th>
       <th scope="col">ZIP</th>
-      <th scope="col">Website</th>
     </tr>
   </thead>
   <tbody>
     <% venues.each do |venue| %>
     <tr>
-      <td><%= venue.name %></td>
+      <td><%= link_to venue.name, venue.url %></td> <!-- Make this a tab_to instead of link_to? -->
       <td><%= venue.street %></td>
       <td><%= venue.city %></td>
       <td><%= venue.state %></td>
       <td><%= venue.zip %></td>
-      <td><%= link_to "website", venue.url %></td>
       <td><%= link_to "Edit", edit_venue_url(venue.id) %></td>
       <td><%= link_to "Delete", destroy_venue_url(venue.id), :method => :delete %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+
+<!-- It'd be nice to have a drop down form for each venue, to see the gigs played at each. -->

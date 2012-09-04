@@ -2,16 +2,16 @@
 
     <tr>
       <th><%= f.label :date %></th>
-      <td><%= f.text_field :date %></td>
+      <td><%= f.datetime_select :date %></td>
     </tr>
 
     <tr>
       <th><%= f.label :venue %></th>
-      <td><%= f.text_field :venue %></td>
+      <td><%= f.collection_select :venue_id, Venue.all, :id, :name %></td>
     </tr>
 
     <tr>
-      <th>$<%= f.label :cover %></th>
+      <th><%= f.label :cover %></th>
       <td><%= f.text_field :cover %></td>
     </tr>
 

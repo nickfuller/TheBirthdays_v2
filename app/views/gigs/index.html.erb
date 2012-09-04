@@ -7,7 +7,7 @@
 <table>
   <tbody>
     
-    <%= render "futuregigs_form" %>
+    <%= render "futuregig_form" %>
   
   </tbody>
 </table>
@@ -17,13 +17,13 @@
 <table>
   <tbody>
   
-    <%= render "pastgigs_form" %>
+    <%= render "pastgig_form" %>
   
   </tbody>
 </table>
 
 <% if @bandmember %>
   <p><font color=red, size=4px>BUTTON: DELETE ALL GIGS</font></p> <!-- this shows in green? -->
+  <p><%= link_to "Add a Gig", new_gig_url %></p>
 <% end %>
 
-<p><%= link_to "Add a Gig", new_gig_url %></p>
