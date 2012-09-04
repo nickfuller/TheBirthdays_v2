@@ -1,3 +1,26 @@
+body {
+	background: image-url("wallpaper.jpg") 0 0 repeat;
+}
+.container {
+	background: #fff;
+	margin: 0 auto;
+	padding: 10px;
+	width: 700px;
+	border: solid #00495A 5px;
+}
+.logo {
+	text-align: center;
+}
+.nav {
+	height: 30px;
+}
+.nav li {
+	float: left;
+}
+.footer {
+	margin: 20px 0;
+	text-align: center;
+}
 .album_title {
 	font-size: 15px;
 	font-family: sans-serif;
@@ -5,29 +28,24 @@
 	color: blue;
 	padding: 30px 10px 10px 10px;	
 }
-
 .form {
 	color: black;
 	font-family: arial;
 	font-size: 15px;
 	padding: 5px 10px;
 }
-
 .element {
 	padding: 5px 10px;
 }
-
 .element_title {
 	color: #008E9A;
 	font-family: arial;
 	font-size: 20px;
 }
-
 a {
 	color:black;
 	text-decoration: none;
 }
-
 h1 {
 	color: teal;
 	font-family: arial;
@@ -37,7 +55,6 @@ h1 {
 	padding-left: 10px;
 	padding-right: 10px;
 }
-
 h2 {
 	color: teal;
 	font-family: arial;
@@ -45,7 +62,6 @@ h2 {
 	font-size: 20px;
 	padding: 9px;
 }
-
 h3 {
 	color: teal;
 	font-family: arial;
@@ -53,36 +69,28 @@ h3 {
 	font-size: 15px;
 	padding: 9px;
 }
-
-img {
-	padding: 10px;
-}
-
 li {
 	color: black;
 	font-family: courier;
 	font-size: 12px;
 	padding: 5px 10px;	
 }
-
 p {
 	color: black;
 	font-family: courier;
 	font-size: 10px;
 	padding: 7px 10px;
 }
-
 td {
 	color: black;
 	font-family: arial;
 	font-size: 15px;
 	padding: 5px 10px 5px 10px;
 }
-
 th {
 	margin: 10px;
 	padding: 10px;
-	color:#008E9A;
+	color: #008E9A;
 	font-family: arial;
 	font-size: 20px;
 	text-align: left;

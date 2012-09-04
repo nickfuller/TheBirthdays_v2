@@ -1,9 +1,15 @@
-<h1>Blog</h1>
+<% title "Blog" %> <!-- Suggested by RailsCast 139, what does this line do? -->
 
-<%= flash[:blog_destroyed] %>
+<div id="blog">
+  
+  <h1>Blog</h1>
+  <p><%= flash[:blog_destroyed] %></p>
+  
+  <%= render "blog_form", :blogs => @blogs %>  
 
-<%= render "blog_form", :blogs => @blogs %>
+  <% if @bandmember %>
+    <p><%= link_to "New Blog Post", new_blog_url %></p>
+  <% end %>
+  
+</div>
 
-<p><font color=red, size=4px>BUTTON: DELETE BLOG</font></p> <!-- this shows in green? -->
-
-<p><%= link_to "Post New Blog Entry", new_blog_url %></p>
