@@ -1,20 +1,27 @@
 <div class="form">
+  
   <%= form_for @blog do |f| %>
+  
     <div class="element">
       <%= f.label :title, "Title" %><br />
       <%= f.text_field :title %><br />
     </div>
+  
     <div class="element">
       <%= f.label :category, "Category" %><br />
       <%= f.select :category, Blog.categories, include_blank: true %> or enter a new category 
       <%= f.text_field :category %><br />
       </div>
+  
     <div class="element">
       <%= f.label :body, "Body" %><br />
       <%= f.text_area :body %><br />
     </div>
+  
     <div class="element">
       <%= f.submit "Submit" %>
     </div>
+  
   <% end %>
+
 </div>

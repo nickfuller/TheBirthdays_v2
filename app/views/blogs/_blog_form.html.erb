@@ -1,17 +1,18 @@
 <% blogs.each do |blog| %>
-<table>
-  <tbody>
-    <tr>
-      <th><%= link_to "#{blog.title}", blog_url(blog.id) %></th>
-        <% if @band_member %>
-          <td><%= link_to "Edit", edit_blog_url(blog.id) %></td>
-          <td><%= link_to "Delete", destroy_blog_url(blog.id), :method => :delete %></td>
-        <% end  %>
-    </tr>
-    <tr>
-      <td><%= blog.category %> </td>
-    </tr>
-  </tbody>
-</table>
-<p><%= blog.body %></p>
+
+<div class="form">
+
+  <div class="element">
+    <%= link_to "#{blog.title}", blog_url(blog.id) %>
+  </div>
+
+  <% if @band_member %>
+  <div class="element">
+      <%= link_to "Edit", edit_blog_url(blog.id) %>
+      <%= link_to "Delete", destroy_blog_url(blog.id), :method => :delete %>
+  </div>
+  <% end  %>
+
+  <p><%= blog.body %></p>
+
 <% end %>

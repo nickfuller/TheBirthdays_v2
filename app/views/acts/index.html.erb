@@ -1,26 +1,18 @@
-<h1>The Birthdays Have Played With...</h1>
+<% if @band_member %>
+  
+  <%= flash[:act_destroyed] %>
 
-<%= flash[:act_destroyed] %>
+  <h1>We've played with...</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Website</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @acts.each do |act| %>
-    <tr>
-      <td><%= link_to "#{act.name}", act_url(act.id) %></td>
-      <td><%= act.url %></td>
-      <td><%= link_to "Edit", edit_act_url(act.id) %></td>
-      <td><%= link_to "Delete", destroy_act_url(act.id), :method => :delete %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%= render "act_form", :acts => @acts %>
 
-<p><font color=red, size=4px>BUTTON: DELETE ALL ACTS</font></p> <!-- this shows in green? -->
+  <p><font color=red, size=4px>BUTTON: DELETE ALL ACTS</font></p> 
+  <!-- ^ this shows in green? -->
 
-<p><%= link_to "Add Act", new_act_url %></p>
+  <p><%= link_to "Add Act", new_act_url %></p>
+
+  <% else %>
+
+  <% redirect_to :back %>
+
+<% end %>
