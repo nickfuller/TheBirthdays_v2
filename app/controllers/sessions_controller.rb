@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 	
 	def destroy
 		reset_session
-		redirect_to home_url
+		redirect_to home_url, :notice => "You successfully signed out."
 	end
 
 end
