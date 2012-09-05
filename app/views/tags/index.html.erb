@@ -2,24 +2,7 @@
 
 <%= flash[:tag_destroyed] %>
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Website</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tags.each do |tag| %>
-    <tr>
-      <td><%= link_to "#{tag.name}", tag_url(tag.id) %></td>
-      <td><%= tag.url %></td>
-      <td><%= link_to "Edit", edit_tag_url(tag.id) %></td>
-      <td><%= link_to "Delete", destroy_tag_url(tag.id), :method => :delete %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render "tags", :tags => @tags %>
 
 <p><font color=red, size=4px>BUTTON: DELETE ALL ACTS</font></p> <!-- this shows in green? -->
 

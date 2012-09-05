@@ -3,22 +3,7 @@
 <%= flash[:tag_created] %>
 <%= flash[:tag_updated] %>
 
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Website</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @tag.name %></td>
-      <td><%= @tag.url %></td>
-      <td><%= link_to "Edit", edit_tag_url(@tag.id) %></td>
-      <td><%= link_to "Delete", destroy_tag_url(@tag.id), :method => :delete %></td>
-    </tr>
-  </tbody>
-</table>
+<%= render "tags", :tags => [@tag] %>
 
 <p><%= link_to "New Tag", new_tag_url %></p>
 <p><%= link_to "Tags", tags_url %></p>

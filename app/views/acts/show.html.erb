@@ -5,7 +5,7 @@
 
   <h1><%= @act.name %></h1>
 
-  <%= render "act_form", :acts => [@act] %>
+  <%= render "acts", :acts => [@act] %>
 
   <p><%= link_to "New Act", new_act_url %></p>
   <p><%= link_to "Acts", acts_url %></p>

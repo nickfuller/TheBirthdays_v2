@@ -3,7 +3,7 @@
 <%= flash[:contact_created] %>
 <%= flash[:contact_updated] %>
 
-<%= render "contact_form", :contacts => [@contact] %>
+<%= render "contacts", :contacts => [@contact] %>
 
 <p><%= link_to "New Contact", new_contact_url %></p>
 <p><%= link_to "Contacts", contacts_url %></p>

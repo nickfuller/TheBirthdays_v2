@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
 	before_filter :current_user, :bandmember, :partner, :fan
 	
 	def current_user
-		@current_user ||= User.find_by_id(session[:user_id]) # What is the purpose of the ||?
+		@current_user ||= User.find_by_id(session[:user_id]) 
 	end
+			# When will @current_user ever exist prior to having to 
+			# find it thruogh the session? Whats the purpose of the ||?
 	
 	def bandmember
 		if @current_user && @current_user.role == "Bandmember" 
@@ -17,14 +19,14 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def partner
-		if @current_user
-			@partner = @current_user.role == "Partner"
+		if @current_user && @current_user.role == "Partner"
+			@partner = @current_user
 		end
 	end
 
 	def fan
-		if @current_user
-			@fan = @current_user.role == "Fan"
+		if @current_user && @current_user.role == "Fan"
+			@fan = @current_user
 		end
 	end
 	

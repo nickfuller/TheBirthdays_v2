@@ -3,7 +3,7 @@
 <%= flash[:venue_created] %>
 <%= flash[:venue_updated] %>
 
-<%= render "venue_form", :venues => [@venue] %>
+<%= render "venues", :venues => [@venue] %>
 
 <p><%= link_to "New Venue", new_venue_url %></p>
 <p><%= link_to "Venues", venues_url %></p>

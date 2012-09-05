@@ -5,9 +5,11 @@
 <table>
   <tbody>
     <%= render "form" %>
+    <% if @bandmember %>
     <tr>
       <td><%= link_to "Delete", destroy_blog_url(@blog.id), :method => :delete %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 

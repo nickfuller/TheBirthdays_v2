@@ -5,7 +5,7 @@
   <h1>Blog</h1>
   <p><%= flash[:blog_destroyed] %></p>
   
-  <%= render "blog_form", :blogs => @blogs %>  
+  <%= render "blog", :blogs => @blogs %>  
 
   <% if @bandmember %>
     <p><%= link_to "New Blog Post", new_blog_url %></p>
