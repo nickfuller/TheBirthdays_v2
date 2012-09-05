@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def bandmember
-		if @current_user
-			@bandmember = @current_user.role == "Bandmember"
+		if @current_user && @current_user.role == "Bandmember" 
+			@bandmember = @current_user 
 		end
 	end
 	

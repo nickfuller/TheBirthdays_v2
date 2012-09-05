@@ -1,5 +1,5 @@
 <!-- NOTE: Using this in Albums#show and Songs#index -->
-
+  <div id="album_songs"> <!-- for JQuery id-ing -->
     <% songs.each do |song| %>
     <tr>
       <th><a href="<%= song_url(song.id) %>"><%= song.title %></a></th>
@@ -24,4 +24,5 @@
       <% end %>
     </tr> 
     <% end %>   
+  </div>
 
