@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>the birthdays</title>
+    <title>The Birthdays</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="container">
+    <div id="container">
       
-      <p class="logo"><%= image_tag "logo.bmp", :height => "185", :width =>"374" %></p>
+      <div id="header">
+        <p><%= image_tag "logo.bmp", :height => "185", :width =>"374" %></p>
+        <div id="centeredmenu">
+          <ul>
+            <li><%= link_to "Concerts", gigs_url %></li>      
+            <li><%= link_to "Music", albums_url %></li>       
+            <li><%= link_to "History", history_url %></li>    
+            <li><%= link_to "Blog", blogs_url %></li>         
+            <li><%= link_to "Contact", contact_us_url %></li> 
+            <li><%= link_to "Store", store_url %></li>
+            <% if session[:user_id] %>
+            <li><%= link_to 'Fan Out', session_url, :method => 'delete' %></li>
+            <% else %>
+            <li><%= link_to 'Fan In', new_session_url %></li>
+            <li><%= link_to 'Fan Up', new_user_url %></li>
+            <li><%= link_to 'Partner', home_url %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
       
-      <ul class="nav">
-        <li><%= link_to "Concerts", gigs_url %></li>      
-        <li><%= link_to "Music", albums_url %></li>       
-        <li><%= link_to "History", history_url %></li>    
-        <li><%= link_to "Blog", blogs_url %></li>         
-        <li><%= link_to "Contact", contact_us_url %></li> 
-        <li><%= link_to "Store", store_url %></li>
-        <li>
-          <% if session[:user_id] %>
-          <%= link_to 'Sign Out', session_url, :method => 'delete' %>
-          <% else %>
-          <%= link_to 'Sign Up', new_user_url %> or <%= link_to 'Sign In', new_session_url %>
-          <% end %>
-        </li>                                                       
-        <li>Partner Up!</li>
-      </ul>
+      <div id="body">
+        <%= notice %>
+        <%= yield %>
+      </div>
       
-      <%= notice %>
-      <%= yield %>
+      <div id="footer">
+        &copy; Copyright 2012
+      </div>
       
-      <p class="footer">&copy; Copyright 2012</p> 
-  
     </div>
   </body>
 </html>

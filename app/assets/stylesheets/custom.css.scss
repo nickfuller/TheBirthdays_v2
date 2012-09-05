@@ -1,26 +1,82 @@
+html,
 body {
-	background: image-url("wallpaper.jpg") 0 0 repeat;
+	background: url("wallpaper.jpg") center repeat;  /* to tile from top-left, replace center w/ 0 0 */
+	margin: 0;
+	padding: 0;
+	height: 100%;
 }
-.container {
+#container {
 	background: #fff;
 	margin: 0 auto;
-	padding: 10px;
+	min-height: 100%;
 	width: 700px;
+	position: relative;
 	border: solid #00495A 5px;
 }
-.logo {
-	text-align: center;
+
+/*-: HEADER STUFF :-.......................................................*/
+#header {
+	padding: 0px;
 }
-.nav {
-	height: 30px;
+#header p {
+	text-align: center; /*this centers the logo in the header, is there a better way?*/
 }
-.nav li {
-	float: left;
+#centeredmenu {   /* <== This is the stuff that centers the navs*/
+  float:left;
+  width:100%;
+  background:#fff;
+  border-bottom:4px solid #00495A;
+  overflow:hidden;
+  position:relative;
 }
-.footer {
-	margin: 20px 0;
-	text-align: center;
+#centeredmenu ul {
+  clear:left;
+  float:left;
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:relative;
+  left:50%;
+  text-align:center;
 }
+#centeredmenu ul li {
+  display:block;
+  float:left;
+  list-style:none;
+  margin:0;
+  padding:0;
+  position:relative;
+  right:50%;
+}
+#centeredmenu ul li a {
+  display:block;
+  margin:0 0 0 1px;
+  padding:3px 10px;
+  background:#ddd;
+	border-top: 1px solid #00495A;
+	border-right: 1px solid #00495A;
+	border-left: 1px solid #00495A;
+  color:#000;
+  text-decoration:none;
+  line-height:1.3em;
+}
+#centeredmenu ul li a:hover {
+  background:#369;
+  color:#fff;
+}
+#centeredmenu ul li a.active,
+#centeredmenu ul li a.active:hover {
+  color:#fff;
+  background:#000;
+  font-weight:bold;
+}
+
+/*-: BODY STUFF :-..................................................................*/
+#body	{
+	padding: 20px 20px 20px 20px;
+	padding-bottom: 30px; /*height of the footer*/
+}
+
 .album_title {
 	font-size: 15px;
 	font-family: sans-serif;
@@ -38,7 +94,7 @@ body {
 	padding: 5px 10px;
 }
 .element_title {
-	color: #008E9A;
+	color: #3D7570;
 	font-family: arial;
 	font-size: 20px;
 }
@@ -47,7 +103,7 @@ a {
 	text-decoration: none;
 }
 h1 {
-	color: teal;
+	color: #3D7570;
 	font-family: arial;
 	font-size: 30px;
 	padding-top: 30px;	
@@ -56,14 +112,14 @@ h1 {
 	padding-right: 10px;
 }
 h2 {
-	color: teal;
+	color: #3D7570;
 	font-family: arial;
 	font-style: oblique;
 	font-size: 20px;
 	padding: 9px;
 }
 h3 {
-	color: teal;
+	color: #3D7570;
 	font-family: arial;
 	font-style: oblique;
 	font-size: 15px;
@@ -95,3 +151,16 @@ th {
 	font-size: 20px;
 	text-align: left;
 }
+
+/*-: FOOTER STUFF :-..........................................................*/
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 30px; /*height of the footer*/
+	margin: 20px 0;
+	text-align: center;
+	font-family: arial;
+	color: #3D7570;
+}
+
