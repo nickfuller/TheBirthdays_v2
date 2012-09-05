@@ -108,19 +108,19 @@ TheBirthdaysV2::Application.routes.draw do
   
   delete "songs/:id" => "Songs#destroy", :as => "destroy_song"
   
-# BLOG ROUTES-----------------------------------------------------------
+# ARTICLE ROUTES-----------------------------------------------------------
   
-  get "blogs" => "Blogs#index", :as => "blogs"
+  get "articles" => "Articles#index", :as => "articles"
   
-  get "blogs/new" => "Blogs#new", :as => "new_blog"
-  post "blogs" => "Blogs#create", :as => "create_blog"
+  get "articles/new" => "Articles#new", :as => "new_article"
+  post "articles" => "Articles#create", :as => "create_article"
   
-  get "blogs/:id" => "Blogs#show", :as => "blog"
+  get "articles/:id" => "Articles#show", :as => "article"
   
-  get "blogs/:id/edit" => "Blogs#edit", :as => "edit_blog"
-  put "blogs/:id" => "Blogs#update", :as => "update_blog"
+  get "articles/:id/edit" => "Articles#edit", :as => "edit_article"
+  put "articles/:id" => "Articles#update", :as => "update_article"
   
-  delete "blogs/:id" => "Blogs#destroy", :as => "destroy_blog"
+  delete "articles/:id" => "Articles#destroy", :as => "destroy_article"
 
 # CONTACT ROUTES-----------------------------------------------------------
 

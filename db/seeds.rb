@@ -40,15 +40,15 @@ Album.create(title: "In Need of Drums", date: "2001-11-16", cover_art: "In_Need_
 
 puts "Albums created."
 
-# BLOG---------------------------------------------------------------------------
+# ARTICLE---------------------------------------------------------------------------
 
-puts "Creating Blogs..."
+puts "Creating Articles..."
 
-Blog.create(title: "Site in a Conception Stage", body: "We are super excited to be launching our website 15 years late in 10 years. Please be patient as we work through our issues!", category: "by Nick")
-Blog.create(title: "Seed Files", body: "This text is being generated from the band to the world, because of a little thing in Rails called the seeds file in the db directory. Free tips from your favorite band!", category: "by Nick")
-Blog.create(title: "Derp Sperk", body: "I erb a terp of sperk curled derp sperk. Urt gurts lurk therz. And urt sounds lurk therz.", category: "by Nolan")
+Article.create(title: "Site in a Conception Stage", body: "We are super excited to be launching our website 15 years late in 10 years. Please be patient as we work through our issues!", category: "by Nick")
+Article.create(title: "Seed Files", body: "This text is being generated from the band to the world, because of a little thing in Rails called the seeds file in the db directory. Free tips from your favorite band!", category: "by Nick")
+Article.create(title: "Derp Sperk", body: "I erb a terp of sperk curled derp sperk. Urt gurts lurk therz. And urt sounds lurk therz.", category: "by Nolan")
 
-puts "Blogs created."
+puts "Articles created."
 
 # COMMENT---------------------------------------------------------------------------
 

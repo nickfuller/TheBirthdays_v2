@@ -1,18 +1,18 @@
 class CommentsController < ApplicationController
 
 	def index
-		@blog = Blog.find(params[:blog_id])
-		@comments = @blog.comments
+		@article = Article.find(params[:article_id])
+		@comments = @article.comments
 	end
 	
 	def new
-		@blog = Blog.find(params[:blog_id])
-		@comment = @blog.comments.build
+		@article = Article.find(params[:article_id])
+		@comment = @article.comments.build
 	end
 	
 	def create
-		@blog = Blog.find(params[:blog_id])
-		@comment = @blog.comments.build(params[:comment])
+		@article = Article.find(params[:article_id])
+		@comment = @article.comments.build(params[:comment])
 		if @comment.save
 			flash[:notice] = "Successfully commented."
 			redirect_to blog_url(@comment.article_id)
@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:id])
 		@comment.destroy
 		flash[:notice] = "Successfully destroyed comment."
-		redirect_to blog_url(@comment.blog_id)
+		redirect_to article_url(@comment.article_id)
 	end
 
 end
