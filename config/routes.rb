@@ -110,15 +110,15 @@ TheBirthdaysV2::Application.routes.draw do
   
 # ARTICLE ROUTES-----------------------------------------------------------
   
-  get "articles" => "Articles#index", :as => "articles"
+  get "blog" => "Articles#index", :as => "articles"
   
-  get "articles/new" => "Articles#new", :as => "new_article"
-  post "articles" => "Articles#create", :as => "create_article"
+  get "blog/new" => "Articles#new", :as => "new_article"
+  post "blog" => "Articles#create", :as => "create_article"
   
-  get "articles/:id" => "Articles#show", :as => "article"
+  get "blog/:id" => "Articles#show", :as => "article"
   
-  get "articles/:id/edit" => "Articles#edit", :as => "edit_article"
-  put "articles/:id" => "Articles#update", :as => "update_article"
+  get "blog/:id/edit" => "Articles#edit", :as => "edit_article"
+  put "blog/:id" => "Articles#update", :as => "update_article"
   
   delete "articles/:id" => "Articles#destroy", :as => "destroy_article"
 
