@@ -1,0 +1,21 @@
+<h1>Edit <%= @article.title %></h1>
+
+<%= flash[:article_not_updated] %>
+
+<table>
+  <tbody>
+    <%= render "form" %>
+    <% if @bandmember %>
+    <tr>
+      <td><%= link_to "Delete", destroy_article_url(@article.id), :method => :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @bandmember %>
+  <p><%= link_to "New Blog Post", new_article_url %></p>
+<% end %>
+
+<p><%= link_to "Blog", articles_url %></p>
+<p><%= link_to "Home", home_url %></p>

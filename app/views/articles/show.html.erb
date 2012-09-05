@@ -1,0 +1,10 @@
+<p><%= flash[:blog_created] %></p>
+<p><%= flash[:blog_updated] %></p>
+
+<%= render "articles", :articles => [@article] %>
+
+<p>COMMENTS</p>
+
+<p><%= link_to "New Blog Post", new_article_url %></p>
+<p><%= link_to "Blog", articles_url %></p>
+<p><%= link_to "Home", home_url %></p>

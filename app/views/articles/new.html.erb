@@ -1,0 +1,14 @@
+<h1>New Article</h1>
+
+<%= flash[:article_not_created] %>
+
+<p>Fill in the following fields, and then submit:</p>
+
+<table>
+  <tbody>
+    <%= render "form" %>
+  </tbody>
+</table>
+
+<p><%= link_to "Blog", articles_url %></p>
+<p><%= link_to "Home", home_url %></p>

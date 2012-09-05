@@ -1,0 +1,25 @@
+<div class="form">
+<%= form_for @article do |f| %>
+
+  <div class="element">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div><br />
+
+  <div class="element">
+    <%= f.label :category %><br />
+    <%= f.select :category, Article.categories, include_blank: true %> or enter a new category 
+    <%= f.text_field :category %>
+  </div><br />
+
+  <div class="element">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div><br />
+
+  <div class="element">
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>
+</div>

@@ -1,0 +1,13 @@
+<div id="blog">
+  
+  <h1>Blog</h1>
+  <p><%= flash[:article_destroyed] %></p>
+  
+  <%= render "articles", :articles => @articles %>  
+
+  <% if @bandmember %>
+    <p><%= link_to "New Blog Post", new_article_url %></p>
+  <% end %>
+  
+</div>
+
