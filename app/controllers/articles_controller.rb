@@ -23,7 +23,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by_id(params[:id])
-		# @comment = Comment.new...
+		@comment = Comment.new
+    @comment.article_id = @article.id
+    @comment.user_id = session[:user_id]
     respond_to do |format|
       format.html
       format.json { render :json => @article }
