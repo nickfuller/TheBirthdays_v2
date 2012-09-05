@@ -22,37 +22,37 @@ body {
 	text-align: center; /*this centers the logo in the header, is there a better way?*/
 }
 #centeredmenu {   /* <== This is the stuff that centers the navs*/
-  float:left;
-  width:100%;
-  background:#fff;
-  border-bottom:4px solid #00495A;
-  overflow:hidden;
-  position:relative;
+  float: left;
+  width: 100%;
+  background: #fff;
+  border-bottom: 4px solid #00495A;
+  overflow: hidden;
+  position: relative;
 }
 #centeredmenu ul {
-  clear:left;
-  float:left;
-  list-style:none;
-  margin:0;
-  padding:0;
-  position:relative;
-  left:50%;
-  text-align:center;
+  clear: left;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  text-align: center;
 }
 #centeredmenu ul li {
-  display:block;
-  float:left;
-  list-style:none;
-  margin:0;
-  padding:0;
-  position:relative;
-  right:50%;
+  display: block;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  right: 50%;
 }
 #centeredmenu ul li a {
   display:block;
-  margin:0 0 0 1px;
-  padding:3px 10px;
-  background:#ddd;
+  margin: 0 0 0 1px;
+  padding: 3px 10px;
+  background: #ddd;
 	border-top: 1px solid #00495A;
 	border-right: 1px solid #00495A;
 	border-left: 1px solid #00495A;
@@ -76,11 +76,19 @@ body {
 	padding: 20px 20px 20px 20px;
 	padding-bottom: 30px; /*height of the footer*/
 }
-
+#loginalert {
+	padding: 5px;
+	text-align: center;
+	font-family: arial;
+	color: #C12F3C;
+/*	background: #ddd;
+	border-bottom: 1px solid #00495A;
+	border-left: 1px solid #00495A;
+	border-right: 1px solid #00495A;   for some reason this stuff adds a long grey box even w/o notice */
+}
 .album_title {
 	font-size: 15px;
-	font-family: sans-serif;
-	font-style: italic;
+	font-family: arial;
 	color: blue;
 	padding: 30px 10px 10px 10px;	
 }
