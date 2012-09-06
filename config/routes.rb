@@ -120,7 +120,7 @@ TheBirthdaysV2::Application.routes.draw do
   get "blog/:id/edit" => "Articles#edit", :as => "edit_article"
   put "blog/:id" => "Articles#update", :as => "update_article"
   
-  delete "articles/:id" => "Articles#destroy", :as => "destroy_article"
+  delete "blog/:id" => "Articles#destroy", :as => "destroy_article"
 
 # CONTACT ROUTES-----------------------------------------------------------
 
@@ -149,5 +149,16 @@ TheBirthdaysV2::Application.routes.draw do
   put "tags/:id" => "Tags#update", :as => "update_tag"
 
   delete "tags/:id" => "Tags#destroy", :as => "destroy_tag"
+# COMMENT ROUTES-----------------------------------------------------------
+
+  get "comments" => "Comments#index", :as => "comments"
+
+  get "comments/new" => "Comments#new", :as => "new_comment"
+  post "comments" => "Comments#create", :as => "create_comment"
+
+  get "comments/:id/edit" => "Comments#edit", :as => "edit_comment"
+  put "comments/:id" => "Comments#update", :as => "update_comment"
+
+  delete "comments/:id" => "Comment#destroy", :as => "destroy_comment"
 
 end

@@ -15,7 +15,7 @@
       <td>Placeholder for Gigs Played w/ Birthdays</td>
       <td>Placeholder for Contacts</td>
       <td><%= link_to "Edit", edit_act_url(act.id) %></td>
-      <td><%= link_to "Delete", destroy_act_url(act.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_act_url(act.id), confirm: "You sure 'bout that?", :method => :delete %></td>
     </tr>
     <% end %>
   </tbody>

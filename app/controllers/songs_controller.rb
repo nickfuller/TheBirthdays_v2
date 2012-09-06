@@ -11,10 +11,12 @@ class SongsController < ApplicationController
 
   def new
 		@song = Song.new
+		albums = Album.all
   end
 
   def create
-    song = Song.new(params[:song])
+    albums = Album.all
+		song = Song.new(params[:song])
     if song.save
       flash[:song_created] = "Song, #{song.title}, just uploaded!"
       redirect_to songs_url
@@ -34,10 +36,12 @@ class SongsController < ApplicationController
 
   def edit
     @song = Song.find_by_id(params[:id])
+		albums = Album.all
   end
 
   def update
-    @song = Song.find_by_id(params[:id])
+		albums = Album.all    
+		@song = Song.find_by_id(params[:id])
     if @song.update_attributes(params[:song])
       flash[:song_updated] = "Song, #{@song.title}, just updated."
       redirect_to song_url(@song.id)

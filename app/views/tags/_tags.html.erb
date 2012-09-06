@@ -11,7 +11,7 @@
       <td><%= link_to "#{tag.name}", tag_url(tag.id) %></td>
       <td>Placeholder for Associated Content</td>
       <td><%= link_to "Edit", edit_tag_url(tag.id) %></td>
-      <td><%= link_to "Delete", destroy_tag_url(tag.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_tag_url(tag.id), confirm: "You sure 'bout that?", :method => :delete %></td>
     </tr>
     <% end %>
   </tbody>

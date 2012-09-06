@@ -1,28 +1,20 @@
 class CommentsController < ApplicationController
+	
+	before_filter :redirect_if_not_signed_in
+	before_filter :only => [ :update, :destroy ] do |action|
+		redirect_if_not_authorized(Comment.find(params[:id]).user_id)
+	end
 
-	def index
-		@article = Article.find(params[:article_id])
-		@comments = @article.comments
-	end
-	
-	def new
-		@article = Article.find(params[:article_id])
-		@comment = @article.comments.build
-	end
-	
 	def create
-		@article = Article.find(params[:article_id])
-		@comment = @article.comments.build(params[:comment])
+		@article = Article.find_by_id(params[:comment][:article_id])
+		@user = User.find_by_id(params[:comment][:user_id])
+		@comment = Comment.new
 		if @comment.save
 			flash[:notice] = "Successfully commented."
-			redirect_to blog_url(@comment.article_id)
+			redirect_to articles_url
 		else
 			render :action => "new"
 		end
-	end
-	
-	def edit
-		@comment = Comment.find(params[:id])
 	end
 	
 	def update

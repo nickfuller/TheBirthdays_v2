@@ -16,7 +16,7 @@
     <%= render "form" %>
     
     <tr>
-      <td><%= link_to "Delete", destroy_contact_url(@contact.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_contact_url(@contact.id), confirm: "You sure 'bout that?", :method => :delete %></td>
     </tr>
   </tbody>
 </table>

@@ -11,7 +11,7 @@
     <%= render "form" %>
     
     <tr>
-      <td><%= link_to "Delete", destroy_song_url(@song.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_song_url(@song.id), confirm: "You sure 'bout that?", :method => :delete %></td>
     </tr>
     
   </tbody>

@@ -20,7 +20,7 @@
       <td><%= song.tablature %></td>
       <% if @bandmember %>
       <td><%= link_to "Edit", edit_song_url(song.id) %> </td>
-      <td><%= link_to "Delete", destroy_song_url(song.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_song_url(song.id), confirm: "You sure 'bout that?", :method => :delete %></td>
       <% end %>
     </tr> 
     <% end %>   

@@ -1,12 +1,26 @@
+<!-- Used in edit and new -->
+
 <%= form_for @song do |f| %>
 
     <tr>
       <td><%= f.label :title %></td>
-      <td><%= f.label :recording, "Audio" %></td>
     </tr>
     <tr>
       <td><%= f.text_field :title %></td>      
+    </tr>
+
+    <tr>
+      <td><%= f.label :recording, "Audio" %></td>
+    </tr>
+    <tr>
       <td><%= f.file_field :recording %> or url <%= f.text_field :remote_recording_url %></td>
+    </tr>
+      
+    <tr>
+      <td><%= f.label :album_id %></td>
+    </tr>    
+    <tr>
+      <td><%= f.select :album_id, albums.each do Album.all, include_blank: true %></td>
     </tr>
 
     <tr>

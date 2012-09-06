@@ -9,13 +9,14 @@
   <% if @bandmember %>
   <div>
     <%= link_to "Edit", edit_album_url(album.id) %>
-    <%= link_to "Delete", destroy_album_url(album.id), :method => :delete %>
+    <%= link_to "Delete", destroy_album_url(album.id),, confirm: "You sure 'bout that?" :method => :delete %>
   </div>
   <% end  %>
 
   <div class="element">
-    <%= image_tag album.cover_art_url.to_s, :height => 160, id:"cover_art" %> <!-- for JQuery object id-ing -->
-      <!-- the :height command scales the image down -->
+    <%= image_tag album.cover_art_url.to_s, :height => 160, id:"cover_art" %> 
+    <!-- the :height command scales the image down ^      for ^ JQuery object id-ing -->
+      
   </div>
 
   <% end %>

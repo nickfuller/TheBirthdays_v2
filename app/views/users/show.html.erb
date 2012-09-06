@@ -21,7 +21,7 @@
 
 <div class="datachange">
   <%= link_to "Edit", edit_user_url(@user.id) %>
-  <%= link_to "Delete", destroy_user_url(@user.id), :method => :delete %>
+  <%= link_to "Delete", destroy_user_url(@user.id), confirm: "You sure 'bout that?", :method => :delete %>
 </div>
 
 <p><%= link_to "The Birthdays Home", home_url %></p>

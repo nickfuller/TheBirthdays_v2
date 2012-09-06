@@ -1,24 +1,62 @@
-<% articles.each do |article| %>
+<div id="blogcontainer">
 
-  <div class="form">
+  <% articles.each do |article| %>
 
-    <div class="element">
-      <%= link_to "#{article.title}", article_url(article.id) %>
-    </div>
+      <div class="headline">
 
-    <% if @bandmember %>
-    <div class="element">
-        <%= link_to "Edit", edit_article_url(article.id) %>
-        <%= link_to "Delete", destroy_article_url(article.id), :method => :delete %>
-    </div>
-    <% end  %>
+        <div class="title">
+          <%= link_to "#{article.title}", article_url(article.id) %>
+        </div>
 
-    <p><%= article.body %></p>
-  
-    <div class="element">
-        <%= link_to "Comment", edit_article_url(article.id) %>
-    </div>
+        <% if @bandmember %>
+        <div class="datado">
+          <%= link_to "Edit", edit_article_url(article.id) %>
+          <%= link_to "Delete", destroy_article_url(article.id), :method => :delete %>
+        </div>
+        <% end %>
 
-  </div>
+      </div>
 
-<% end %>
+    <!--    BELOW: This is the body of each blog article. -->
+      <div class="body">
+        <p><%= article.body %></p>
+      </div>
+    
+    <!--   BELOW: RE: dom_id, see 2 comments down  -->
+      <div class="datado">
+        <%= link_to "Comment", '#', id: "new_comment_for_#{dom_id article}_link" %> <!-- ln 39 -->
+        <%= render "comments/form", comment: Comment.new, :article => article %>
+      </div>
+      
+    <!--  BELOW: This is a conditional statement; if an article has been commented on, 
+          then comments are shown below a "Comments" header.  -->
+    <% if article.comments.present? %>
+      <div class="datasee">
+        <div class="clickable">Comments</div>
+        <%= render "comments/comments", :comments => article.comments %>
+      </div>
+    <% end %>
+
+    <!--  BELOW: The dom_id allows unique ids to be created in every pass of the loop. 
+          Without the dom_id, the javascript would only work for the first instance, 
+          because a page cannot have multiple instances of identical html ids. -->
+    <script>
+      $("#fancy_<%= dom_id article %>_comment").hide(); // ref "comments/form"
+      $("#new_comment_for_<%= dom_id article %>_link").click(function() { // ln 21
+    		$("#fancy_<%= dom_id article %>_comment").slideToggle();  // ref "comments/form"
+    	});  
+    </script>
+
+  <% end %>
+
+</div>
+
+
+<!--        CSS                 -->
+<!-- -------------------------- -->
+<!--        #blogcontainer      -->
+<!--          .headline         -->
+<!--            .title          -->
+<!--            .datado         -->
+<!--          .datasee          -->
+<!--            .clickable      -->

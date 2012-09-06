@@ -1,0 +1,8 @@
+<!-- Using this in "articles/articles" partial -->
+
+<%= form_for comment, html: { id: "fancy_#{ dom_id article }_comment" } do |f| %>
+  <%= f.hidden_field :article_id %>
+  <%= f.hidden_field :user_id %>
+  <%= f.text_field :body %>
+  <%= f.submit "Submit" %>
+<% end %>

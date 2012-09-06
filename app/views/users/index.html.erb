@@ -18,7 +18,7 @@
       <td><%= user.role %></td>
       <td><%= link_to "Show", user_url(user.id) %></td>
       <td><%= link_to "Edit", edit_user_url(user.id) %></td>
-      <td><%= link_to "Delete", destroy_user_url(user.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_user_url(user.id), confirm: "You sure 'bout that?", :method => :delete %></td>
     </tr>
     <% end %>
   </tbody>

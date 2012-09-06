@@ -17,7 +17,7 @@
       <td><%= venue.state %></td>
       <td><%= venue.zip %></td>
       <td><%= link_to "Edit", edit_venue_url(venue.id) %></td>
-      <td><%= link_to "Delete", destroy_venue_url(venue.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_venue_url(venue.id), confirm: "You sure 'bout that?", :method => :delete %></td>
     </tr>
     <% end %>
   </tbody>

@@ -7,7 +7,7 @@
     <%= render "form" %>
     <% if @bandmember %>
     <tr>
-      <td><%= link_to "Delete", destroy_article_url(@article.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_article_url(@article.id), confirm: "You sure 'bout that?", :method => :delete %></td>
     </tr>
     <% end %>
   </tbody>

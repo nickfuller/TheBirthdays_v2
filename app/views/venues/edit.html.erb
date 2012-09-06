@@ -7,7 +7,7 @@
 <table>
   <tbody>
     <tr>
-      <td><%= link_to "Delete", destroy_venue_url(@venue.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_venue_url(@venue.id), confirm: "You sure 'bout that?", :method => :delete %></td>
     </tr>
   </tbody>
 </table>

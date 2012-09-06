@@ -1,0 +1,8 @@
+<!-- Invoked in "articles/articles" :: Articles#index -->
+
+<% comments.each do |comment| %>
+  <%#= comment.user.name + "said..." %><br />
+  <p><%= comment.body %></p>
+<% end %>
+
+<!-- LOOK AT: http://www.roberthuberdeau.com/articles/4-How-to-create-a-blog-in-Ruby-on-Rails-3 -->

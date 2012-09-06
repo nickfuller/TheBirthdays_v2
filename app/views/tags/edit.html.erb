@@ -14,7 +14,7 @@
     <%= render "form" %>
     
     <tr>
-      <td><%= link_to "Delete", destroy_tag_url(@tag.id), :method => :delete %></td>
+      <td><%= link_to "Delete", destroy_tag_url(@tag.id), confirm: "You sure 'bout that?", :method => :delete %></td>
     </tr>
   </tbody>
 </table>

@@ -3,14 +3,6 @@
 
 <%= render "articles", :articles => [@article] %>
 
-<p>COMMENTS</p>
-
-<%= form_for @comment do |f| %>
-  <%= f.hidden_field :article_id %>
-  <%= f.hidden_field :user_id %>
-  <%= f.text_field :body %>
-<% end %>
-
 <p><%= link_to "New Blog Post", new_article_url %></p>
 <p><%= link_to "Blog", articles_url %></p>
 <p><%= link_to "Home", home_url %></p>

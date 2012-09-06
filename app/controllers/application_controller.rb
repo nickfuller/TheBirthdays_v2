@@ -30,4 +30,22 @@ class ApplicationController < ActionController::Base
 		end
 	end
 	
+	def redirect_if_not_signed_in
+		if @current_user.nil?
+			flash[:error] = "You must be signed in to do that."
+			redirect_to :back
+		end
+	end
+	
+	def authorized_to_change(user_id)
+		@current_user && @current_user.id == user_id
+	end
+	
+	def redirect_if_not_authorized(user_id)
+		if !(authorized_to_change(user_id))
+			flash[:error] = "You were not authorized to perform that action."
+			redirect_to :back
+		end
+	end
+		
 end
