@@ -5,7 +5,7 @@
     <% if @bandmember %><%= link_to "New Blog Post", new_article_url %><% end %>
   </div>
   
-  <p><%= flash[:article_destroyed] %></p>
+  <%= flash[:article_destroyed] %>
   
   <%= render "articles", :articles => @articles %>  
   

@@ -1,11 +1,12 @@
-<h1>Albums</h1>
+<div id="music">
+  
+  <div class="heading">
+    <h1>ALBUMS</h1>
+    <% if @bandmember %><%= link_to "New Album", new_article_url %><% end %>
+  </div>
 
-<%= flash[:album_destroyed] %>
+  <%= flash[:album_destroyed] %>
 
-<table>
-  <tbody>
-    <%= render "albums", :albums => @albums %>
-  </tbody>
-</table>
-
-<p><%= link_to "New Album", new_album_url %></p>
+  <%= render "albums", :albums => @albums %>
+  
+</div>

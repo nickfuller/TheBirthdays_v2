@@ -20,8 +20,10 @@
         <!--   BELOW: RE: dom_id, see 2 comments down  -->
           <div class="datado">
             <%= link_to "Comment", '#', id: "new_comment_for_#{dom_id article}_link" %> 
-                                            <!-- ^ ln 39 -->
-            <%= render "comments/form", comment: Comment.new, :article => article %>
+            <%= render "comments/form", :comment => Comment.new, :article_id => article %>
+                                        <!-- :article_id => article.id %> -->
+                                        <!-- what is this ^ doing? -->
+                                        <!-- do I need a :user_id? -->
           </div>
       </div>
     
@@ -44,6 +46,13 @@
       $("#new_comment_for_<%= dom_id article %>_link").click(function() { // ln 21
     		$("#fancy_<%= dom_id article %>_comment").slideToggle();  // ref "comments/form"
     	});  
+    </script>
+    
+    <script>  // why doesn't this work?
+      $(".comment").hide();
+      $(".clickable").click(function()) {
+        $(".comment").slideToggle();
+      });
     </script>
     
 <% end %>

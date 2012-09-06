@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.order("created_at desc")
+	#	@comments = Comment.find_by_article_id(params[:article][:id])  <= but i must define comments
     respond_to do |format|
       format.html
       format.json { render :json => @articles }
