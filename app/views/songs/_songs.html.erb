@@ -6,13 +6,14 @@
       <td>
         <audio controls preload="none">
           <source src="<%= song.recording.to_s %>" type="audio/mpeg">
+          <source src="<%= song.recording.to_s %>" type="audio/ogg"> <!-- just added this -->
           <object type="application/x-shockwave-flash" 
           data="player.swf?audio=<%= song.recording.to_s %>">
               <p>This browser does not support the song format. Please 
                 <a href="<%= song.recording.to_s %>" title="<%= song.title %>">download</a>it.
               </p>
           </object>
-          </source> <!-- Is this necessary -->
+<!-- It is mysteriously not necessary to close source-->
         </audio>
       </td>
       <td><%= song.lyric %></td>

@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 	
 	before_filter :redirect_if_not_signed_in
 	before_filter :only => [ :update, :destroy ] do |action|
-		redirect_if_not_authorized(Comment.find(params[:id]).user_id)
+		redirect_if_not_authorized(current_user.id) # Comment.find(params[:id]).user_id
 	end
 
 	def create

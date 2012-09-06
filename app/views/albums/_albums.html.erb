@@ -9,7 +9,7 @@
   <% if @bandmember %>
   <div>
     <%= link_to "Edit", edit_album_url(album.id) %>
-    <%= link_to "Delete", destroy_album_url(album.id),, confirm: "You sure 'bout that?" :method => :delete %>
+    <%= link_to "Delete", destroy_album_url(album.id), confirm: "You sure 'bout that?", :method => :delete %>
   </div>
   <% end  %>
 
