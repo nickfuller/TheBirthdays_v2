@@ -71,9 +71,9 @@ body {
   font-weight:bold;
 }
 
-/*_________________________________________________________________________________
+/*---------------------------------------------------------------------------------
 																BODY STUFF
-___________________________________________________________________________________*/
+  ---------------------------------------------------------------------------------*/
 
 #body	{
 	padding: 20px 20px 20px 20px;
@@ -110,192 +110,165 @@ ________________________________________________________________________________
 	font-size: 20px;
 }
 
-/*--------------------------------------------------------
+/*----------------------
    FOR BLOG INDEX                 
   ----------------------
-      #blog    
-        .head         
-            h1          
-            .datado
-     						a
-        .body         
-            p
-            a
-        .foot
-            .clickable
-            .comment      */
-#blog {
+   #blog
+ 			.heading
+				h1
+				a
+       .head
+           table
+               tr
+                   th
+                       a
+                   td
+                       a
+       .body         
+           p
+           .datado
+               .comment
+                   #new_comment_for_DOM_ID ARTICLE_link
+               form
+                   text-field
+       .foot
+           .clickable
+           .comment
+               #ARTICLE.ID_comment
+                   form
+                                                 */
+	#blog {
 	}
-		#blog .heading {
-			text-align: center;				
+		#blog .heading {  
+			text-align: center;
+			border-bottom: 3px solid #00495A;	
+			width: 180px;	
+			margin: auto;		/* gets the heading to center with a limited border width */
 		}
-				#blog .heading h1 {
+				#blog .heading h1 {  /* The big "BLOG" title at the top  */
 					color: #00495A;
 					font-family: times;
-					font-size: 75px;
-					padding: 2px 10px 0px 10px;
-					border-bottom: 3px solid #00495A;
+					font-size: 45px;
+					
 				}
-						#blog .heading a {
-							text-decoration: none;
-							text-align: right;
-							padding: 3px 10px;
-							font-family: courier;
-							font-size: 12px;
-							color: #00495A;
-							background: #ddd;
-							border: 1px solid #00495A
-						}
-						#blog .heading a:hover {
-						  background:#992018;
-						  color:#fff;
-						}
+				#blog .heading a {  /* IF bandmember, this is the add new article button */
+					text-decoration: none;
+					text-align: right;
+					padding: 3px 10px;
+					font-family: courier;
+					font-size: 12px;
+					color: #00495A;
+					background: #ddd;
+					border: 1px solid #00495A
+				}
+				#blog .heading a:hover {
+				  background:#992018;
+				  color:#fff;
+				}
 		
-		#blog .head {  /* layout of article title(h1[a]) & edit+delete(.datado)*/
+		#blog .head {  /*layout of article title(h1[a]) & edit+delete(.datado)*/
 			background: #FFF;
-			padding: 5px 0px 5px 0px;
-			margin: 50px 0px 10px 0px;
-		}
+			margin: 30px 0px 3px 0px;
+		}			
+				#blog .head table {
+					width: 100%;
+				}	
+						#blog .head table tr {
+						}
+								#blog .head table tr th {
+									text-align: left;
+								}
+										#blog .head table tr th a { /*what the article title looks like*/
+											text-decoration: none;
+											color: #184E99;
+											font-family: verdana;
+											font-size: 20px;
+										}				
+								#blog .head table tr td	{
+									text-align: right;
+								}
+										#blog .head table tr td	a {  /*edit+delete button formatting*/
+											text-decoration: none;
+											padding: 3px 10px;
+											font-family: courier;
+											font-size: 12px;
+											color: #00495A;
+											background: #ddd;
+											border: 1px solid #969696;
+										}
+										#blog .head table tr td	a:hover {
+										  background:#992018;
+										  color:#fff;
+										}		
+				
 				#blog .head h1 { /*where the article title is positioned*/
-					float: left; /* <= this puts edit & delete next to the blog title */
 					padding-right: 150px;
 				}
-						#blog .head h1 a { /*what the article title looks like*/
-							text-decoration: none;
-							color: #184E99;
-							font-family: verdana;
-							font-size: 50px;
-						}
-				#blog .head .datado {  /*  layout of the edit+delete buttons  */
-				}
-						#blog .head .datado a {  /*formatting of the individual edit or delete buttons*/
-							text-decoration: none;
-							padding: 3px 10px;
-							font-family: courier;
-							color: #00495A;
-							background: #ddd;
-							border: 1px solid #00495A
-						}
-								#blog .head .datado a:hover {
-								  background:#992018;
-								  color:#fff;
-								}						
+					
 		#blog .body {
-			padding-top: 10px;
 		}
-				#blog .body p { 	/* formatting of the actual content of articles */
+				#blog .body p { 	/*formatting content (:body) of articles*/
 					background: #D0FFE7; /*baby blue*/
 					color: black;
 					font-family: courier;
 					font-size: 12px;
 					line-height: 20px;
-					padding: 7px 10px;
+					padding: 7px 10px 7px 10px;
 					border: 1px solid #969696;
-					margin-top: 10px;
 				}
 				#blog .body .datado {
-					margin: 10px 0px 10px 0px;
+					/*margin: 0px 0px 10px 0px;*/
 				}
-						#blog .body .datado .comment {  /* formatting of the "Comment" button */
-							margin: 0px 0px 0px 0px;
-							width: 72px;
+						#blog .body .datado .comment {  /*formatting of the "Comment" button*/
+							width: 51px;
 							text-decoration: none;
 							padding: 3px 10px;
 							font-family: courier;
+							font-size: 12px;
 							color: #00495A;
 							background: #ddd;
-							border: 1px solid #00495A;						
+							border-right: 1px solid #969696;	/*no border-top to blend with .body p*/		
+							border-bottom: 1px solid #969696;					
+							border-left: 1px solid #969696;					
 						}
 								#blog .body .datado .comment:hover {
 									background:#369;
 								  color:#fff;
 								}
 						#blog .body .datado form {
+							width: 100%;
 						}	
 								#blog .body .datado form textarea { /* pop-down comment area */
 									background: #fff;
-									border: 1px solid #00495A;
-									width: 100%;
+									border: 1px solid #969696;
+									width: 99%;
 									height: 100px;
 								}
 		#blog .foot {
-			margin: 20px 0px 10px 10px;
+			margin: 10px 0px 0px 10px;
 		}
 				#blog .foot .clickable {  /* the "Comments" heading for past comments */
 					text-decoration: none;
 					font-family: verdana;
-					font-size: larger; /* (x-,xx-)small(er), medium, (x-,xx-)large(r), length */ 
-					font-weight: 900; /* this sets boldness (values by hundred b/t 100-900) */
+					font-size: 12px; /* (x-,xx-)small(er), medium, (x-,xx-)large(r), length */ 
+					font-weight: 700; /* this sets boldness (values by hundred b/t 100-900) */
 				}
 				#blog .foot .comment{
 					text-decoration: none;
 					font-family: courier;
-					font-size: medium;
-					margin: 0px 0px 0px 10px;
+					font-size: 12px;
+					margin: 10px 0px 0px 10px;
 				}
-/*_____________________________________________________*/
 
-/*a {
-	color:black;
-	text-decoration: none;
-}*/
-/*h1 {
-	color: #3D7570;
-	font-family: arial;
-	font-size: 30px;
-	padding-top: 30px;	
-	padding-bottom: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-}*/
-h2 {
-	color: #3D7570;
-	font-family: arial;
-	font-style: oblique;
-	font-size: 20px;
-	padding: 9px;
-}
-h3 {
-	color: #3D7570;
-	font-family: arial;
-	font-style: oblique;
-	font-size: 15px;
-	padding: 9px;
-}
-li {
-	color: black;
-	font-family: courier;
-	font-size: 12px;
-	padding: 5px 10px;	
-}
-/*p {
-	color: black;
-	font-family: courier;
-	font-size: 10px;
-	padding: 7px 10px;
-}*/
-td {
-	color: black;
-	font-family: arial;
-	font-size: 15px;
-	padding: 5px 10px 5px 10px;
-}
-th {
-	margin: 10px;
-	padding: 10px;
-	color: #008E9A;
-	font-family: arial;
-	font-size: 20px;
-	text-align: left;
-}
-
-/*-: FOOTER STUFF :-..........................................................*/
+/*-----------------------------------------------------------------------------
+	FOOTER STUFF
+	-----------------------------------------------------------------------------*/
 #footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 30px; /*height of the footer*/
-	margin: 20px 0;
+	padding: 0px 0px 0px 0px;
 	text-align: center;
 	font-family: arial;
 	color: #3D7570;

@@ -1,8 +1,8 @@
 <div id="blog">
   
   <div class="heading">
-    <h1>BLOG</h1>
     <% if @bandmember %><%= link_to "New Blog Post", new_article_url %><% end %>
+    <h1>BLOG</h1>
   </div>
   
   <%= flash[:article_destroyed] %>

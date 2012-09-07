@@ -1,76 +1,62 @@
 <% articles.each do |article| %>
 
-      <div class="head">
-        <h1>
-          <%= link_to "#{article.title}", article_url(article.id) %>
-        </h1>
+  <!-- HEAD of each article. -->
+  <div class="head">
+    <table>
+      <tr>
+          <th><%= link_to "#{article.title}", article_url(article.id) %></th>
         <% if @bandmember %>
-        <div class="datado">
-          <a>
+          <td>
             <%= link_to "Edit", edit_article_url(article.id) %>
             <%= link_to "Delete", destroy_article_url(article.id), :method => :delete %>
-          </a>      
-        </div>  
+          </td>
         <% end %>
+      </tr>
+    </table>
+  </div>
+          
+  <!-- BODY of each article. -->
+  <div class="body">
+    <p><%= article.body %></p>
+    <!--   BELOW: RE: dom_id, see 2 comments down  -->
+      <div class="datado">
+        <div class="comment" id="new_comment_for_<%= dom_id article %>_link">Comment</div> 
+        <%= render "comments/form", article: article %>
       </div>
+  </div>
+    
+  <!-- FOOT of each blog article; if an article has been commented on, 
+       then comments are shown below a "Comments" header. -->
+  <% if article.comments.present? %>
+    <div class="foot">
+      <div class="clickable">Comments</div>
+      <div class="comment" id="<%= article.id %>_comment"><!--<=js puts comment in right spot.-->
+        <%= render "comments/comments", :comments => article.comments %>
+      </div>      
+    </div>
+  <% end %>
 
-    <!--    BELOW: This is the body of each blog article. -->
-      <div class="body">
-        <p><%= article.body %></p>
-        <!--   BELOW: RE: dom_id, see 2 comments down  -->
-          <div class="datado">
-            <div class="comment" id="new_comment_for_<%= dom_id article %>_link">Comment</div> 
-            <%= render "comments/form", article: article %>
-                                        <!-- :article_id => article.id %> -->
-                                        <!-- what is this ^ doing? -->
-                                        <!-- do I need a :user_id? -->
-          </div>
-      </div>
-    
-    <!--  BELOW: This is a conditional statement; if an article has been commented on, 
-          then comments are shown below a "Comments" header.  -->
-    <% if article.comments.present? %>
-      <div class="foot">
-        <div class="clickable">Comments</div>
-        <div class="comment" id="<%= article.id %>_comment">  
-              <!-- ABOVE: This tells js to put the comment in the right spot. -->
-          <%= render "comments/comments", :comments => article.comments %>
-        </div>      
-      </div>
-    <% end %>
+  <!-- BELOW: The dom_id allows unique ids to be created in every pass of the loop. 
+       Without the dom_id, the javascript would only work for the first instance, 
+       because a page cannot have multiple instances of identical html ids. -->
+  <!--  -->
+  <script>
+    $("#fancy_<%= article.id %>_comment").hide(); // ref "comments/form"
+    $("#new_comment_for_<%= dom_id article %>_link").click(function() { // ln 21
+  		$("#fancy_<%= article.id %>_comment").slideToggle();  // ref "comments/form"
+  	});  // "article.id" used to be:  "dom_id article"
+  </script>
 
-    <!--  BELOW: The dom_id allows unique ids to be created in every pass of the loop. 
-          Without the dom_id, the javascript would only work for the first instance, 
-          because a page cannot have multiple instances of identical html ids. -->
-    <script>
-      $("#fancy_<%= article.id %>_comment").hide(); // ref "comments/form"
-      $("#new_comment_for_<%= dom_id article %>_link").click(function() { // ln 21
-    		$("#fancy_<%= article.id %>_comment").slideToggle();  // ref "comments/form"
-    	});  
-    </script>
-    
-    <!-- used to be:  dom_id article -->
-    
-    <script>  // why doesn't this work?
-      $(".comment").hide();
-      $(".clickable").click(function()) {
-        $(".comment").slideToggle();
-      });
-    </script>
+  <!-- BELOW: This is for hiding, then showing, comments that already exist. 
+       Why doesn't it work? -->
+  <script>
+    $(".comment").hide();
+    $(".clickable").click(function()) {
+      $(".comment").slideToggle();
+    });
+  </script>
     
 <% end %>
 
 
-<!--/*        CSS                 
-    --------------------------
-      #blogcontainer    
-        .head         
-            h1          
-            .datado     
-        .body         
-            p
-            .datado
-        .foot
-            .clickable
-            .comment      */
--->
+<!---->
