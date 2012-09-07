@@ -38,14 +38,11 @@
     
   <!-- FOOT of each blog article; if an article has been commented on, 
        then comments are shown below a "Comments" header. -->
-  <% if article.comments.present? %>
     <div class="foot">
-      <div class="clickable">Comments</div>
       <div class="comment" id="<%= article.id %>_comment"><!--<=js puts comment in right spot.-->
         <%= render "comments/comments", :comments => article.comments.order("created_at desc") %>
       </div>      
     </div>
-  <% end %>
 
   <!-- BELOW: The dom_id allows unique ids to be created in every pass of the loop. 
        Without the dom_id, the javascript would only work for the first instance, 
