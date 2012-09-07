@@ -24,9 +24,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by_id(params[:id])
-		@comments = @article.comments.order("created_at desc")
-    # @comment.article_id = @article.id
-    # @comment.user_id = session[:user_id]    <= I only need the article and its comments
+		@comments = @article.comments.order("created_at asc")
     respond_to do |format|
       format.html
       format.json { render :json => @article }

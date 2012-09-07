@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
 
 	def create
 		
-		@comment = Comment.create(
+		@comment = Comment.create(  
+		# ABOVE: @comments is defined, because we are using it in a view (the create.js.erb view)
 				body: params[:comment][:body], 
 				article_id: params[:comment][:article_id], 
 				user_id: params[:comment][:user_id])

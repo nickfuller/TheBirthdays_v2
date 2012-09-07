@@ -5,3 +5,5 @@
   <p><%= comment.body %></p>
   <br /><br />
 <% end %>
+
+<!-- Understand WHY we don't need '@' before comment here, but notice we DO need the '@' for the create.js.erb file; that's because for the create.js.erb file we're interacting directly with the create action in the comments_controller, under which @comments is defined. -->
