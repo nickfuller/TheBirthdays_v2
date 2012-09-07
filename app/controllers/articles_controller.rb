@@ -14,9 +14,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = Article.new(params[:article])
-    if article.save
-      redirect_to article_url(article.id), notice:"#{article.title} posted!"
+    @article = Article.new(params[:article])
+    if @article.save
+      redirect_to @article, notice: "#{@article.title} posted!"
     else
 			render 'new'
     end
@@ -24,9 +24,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by_id(params[:id])
-		@comment = Comment.new
-    @comment.article_id = @article.id
-    @comment.user_id = session[:user_id]
+		@comments = @article.comments.order("created_at desc")
+    # @comment.article_id = @article.id
+    # @comment.user_id = session[:user_id]    <= I only need the article and its comments
     respond_to do |format|
       format.html
       format.json { render :json => @article }

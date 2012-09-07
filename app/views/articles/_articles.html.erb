@@ -19,8 +19,8 @@
         <p><%= article.body %></p>
         <!--   BELOW: RE: dom_id, see 2 comments down  -->
           <div class="datado">
-            <%= link_to "Comment", '#', id: "new_comment_for_#{dom_id article}_link" %> 
-            <%= render "comments/form", :comment => Comment.new, :article_id => article %>
+            <div class="comment" id="new_comment_for_<%= dom_id article %>_link">Comment</div> 
+            <%= render "comments/form", article: article %>
                                         <!-- :article_id => article.id %> -->
                                         <!-- what is this ^ doing? -->
                                         <!-- do I need a :user_id? -->
@@ -32,7 +32,8 @@
     <% if article.comments.present? %>
       <div class="foot">
         <div class="clickable">Comments</div>
-        <div class="comment">
+        <div class="comment" id="<%= article.id %>_comment">  
+              <!-- ABOVE: This tells js to put the comment in the right spot. -->
           <%= render "comments/comments", :comments => article.comments %>
         </div>      
       </div>
@@ -42,11 +43,13 @@
           Without the dom_id, the javascript would only work for the first instance, 
           because a page cannot have multiple instances of identical html ids. -->
     <script>
-      $("#fancy_<%= dom_id article %>_comment").hide(); // ref "comments/form"
+      $("#fancy_<%= article.id %>_comment").hide(); // ref "comments/form"
       $("#new_comment_for_<%= dom_id article %>_link").click(function() { // ln 21
-    		$("#fancy_<%= dom_id article %>_comment").slideToggle();  // ref "comments/form"
+    		$("#fancy_<%= article.id %>_comment").slideToggle();  // ref "comments/form"
     	});  
     </script>
+    
+    <!-- used to be:  dom_id article -->
     
     <script>  // why doesn't this work?
       $(".comment").hide();

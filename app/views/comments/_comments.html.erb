@@ -1,6 +1,7 @@
 <!-- Invoked in "articles/articles" :: Articles#index -->
 
 <% comments.each do |comment| %>
-  <%#= comment.user.name + "said..." %><br /> <!-- how to get this working?... -->
+  <%= comment.user.name + " said..." %><br />
   <p><%= comment.body %></p>
+  <br /><br />
 <% end %>

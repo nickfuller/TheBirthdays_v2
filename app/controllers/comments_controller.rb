@@ -6,12 +6,18 @@ class CommentsController < ApplicationController
 	end
 
 	def create
+		
+		@comment = Comment.create(
+				body: params[:comment][:body], 
+				article_id: params[:comment][:article_id], 
+				user_id: params[:comment][:user_id])
 		@article = Article.find_by_id(params[:comment][:article_id])
-		@user = User.find_by_id(params[:comment][:user_id])
-		@comment = Comment.new
-		if @comment.save
+		if @comment
 			flash[:notice] = "Successfully commented."
-			redirect_to articles_url
+			respond_to do |format|
+				format.html { redirect_to articles_url }
+				format.js
+			end
 		else
 			render :action => "new"
 		end

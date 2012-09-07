@@ -1,6 +1,13 @@
 <div class="form">
+  <ul>
+  <% @article.errors.messages.each do |field, problem| %>
+    <li><%= field %> <%= problem %></li>
+  <% end %>
+  </ul>
 <%= form_for @article do |f| %>
 
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+  
   <div class="element">
     <%= f.label :title %><br />
     <%= f.text_field :title %>

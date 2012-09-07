@@ -20,7 +20,8 @@
       <td><%= f.label :album_id %></td>
     </tr>    
     <tr>
-      <td><%= f.select :album_id, albums.each do Album.all, include_blank: true %></td>
+      <td><%= f.collection_select :album_id, Album.all, :id, :title, include_blank: true %></td>
+      <!-- <%#= f.collection_select :venue_id, Venue.all, :id, :name %> -->
     </tr>
 
     <tr>

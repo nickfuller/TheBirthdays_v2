@@ -196,8 +196,9 @@ ________________________________________________________________________________
 				#blog .body .datado {
 					margin: 10px 0px 10px 0px;
 				}
-						#blog .body .datado a {  /* formatting of the "Comment" button */
+						#blog .body .datado .comment {  /* formatting of the "Comment" button */
 							margin: 0px 0px 0px 0px;
+							width: 72px;
 							text-decoration: none;
 							padding: 3px 10px;
 							font-family: courier;
@@ -205,7 +206,7 @@ ________________________________________________________________________________
 							background: #ddd;
 							border: 1px solid #00495A;						
 						}
-								#blog .body .datado a:hover {
+								#blog .body .datado .comment:hover {
 									background:#369;
 								  color:#fff;
 								}

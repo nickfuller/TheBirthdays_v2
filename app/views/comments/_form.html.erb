@@ -1,10 +1,10 @@
 <!-- Using this in "articles/articles" partial -->
 
-<%= form_for @comment do |f| %>
-  <%= f.hidden_field :article_id %>
-  <%= f.hidden_field :user_id %>
+<%= form_for Comment.new, html: { id: "fancy_#{ article.id }_comment" }, remote: true do |f| %>
+  <%= f.hidden_field :article_id, value:article.id %>
+  <%= f.hidden_field :user_id, value:article.user_id %>
   <%= f.text_area :body %>
   <%= f.submit "Submit" %>
 <% end %>
 
-<!-- , html: { id: "fancy_#{ dom_id article }_comment" } -->
+<!--  first field in f.... line is the KEY name you're assigning in the params hash; the second field in the f.... is the VALUE you're giving to that key. This goes for any variable in a form. In this example, "article" (in lines 3-5) is the only key whose value is defined in the articles/articles partial.  -->

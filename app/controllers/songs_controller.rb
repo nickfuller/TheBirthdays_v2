@@ -12,10 +12,14 @@ class SongsController < ApplicationController
   def new
 		@song = Song.new
 		albums = Album.all
+		# @titles = []
+		# Album.all.each do |album|
+		# 	@titles << album.title 
+		# end   
   end
 
   def create
-    albums = Album.all
+		albums = Album.all
 		song = Song.new(params[:song])
     if song.save
       flash[:song_created] = "Song, #{song.title}, just uploaded!"
@@ -54,7 +58,7 @@ class SongsController < ApplicationController
   def destroy
     Song.find_by_id(params[:id]).destroy
     flash[:song_destroyed] = "A song has been deleted."
-		redirect_to :back # <= This ":back" means "the last url you were on"
+		redirect_to albums_url
 		# 
 	end
 		#     if song_url
