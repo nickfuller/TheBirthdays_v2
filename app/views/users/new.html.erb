@@ -4,13 +4,7 @@
 
 <p>Please fill in the following fields, and then submit:</p>
 
-<table>
-  <tbody>
-    
-    <%= render "form" %>
-  
-  </tbody>
-</table>
+<%= render "form", user:@user %>
 
 <p><%= link_to "Users", users_url %></p>
 <p><%= link_to "Home", home_url %></p>

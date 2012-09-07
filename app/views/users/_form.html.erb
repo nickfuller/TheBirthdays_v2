@@ -1,5 +1,6 @@
-<%= form_for @user do |f| %>
+<%= form_for user do |f| %>
 
+  <table>
     <tr>
       <td><%= f.label :name %></td>
       <td><%= f.text_field :name %></td>
@@ -28,5 +29,6 @@
     <tr>
       <td><%= f.submit "Submit" %></td>
     </tr>
+  </table>
 
 <% end %>

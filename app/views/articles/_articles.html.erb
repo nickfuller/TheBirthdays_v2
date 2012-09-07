@@ -19,10 +19,21 @@
   <div class="body">
     <p><%= article.body %></p>
     <!--   BELOW: RE: dom_id, see 2 comments down  -->
+    <% if @current_user %>
       <div class="datado">
         <div class="comment" id="new_comment_for_<%= dom_id article %>_link">Comment</div> 
         <%= render "comments/form", article: article %>
       </div>
+    <% else %>
+      <div class="datadoreqs">
+        <div class="signin_to_comment" id="signin_to_comment_on_<%= dom_id article %>">
+          Sign in to comment.
+        </div> 
+        <table>
+          <%= render "users/signinorup" %>
+        </table>
+      </div>
+    <% end %>
   </div>
     
   <!-- FOOT of each blog article; if an article has been commented on, 
@@ -31,7 +42,7 @@
     <div class="foot">
       <div class="clickable">Comments</div>
       <div class="comment" id="<%= article.id %>_comment"><!--<=js puts comment in right spot.-->
-        <%= render "comments/comments", :comments => article.comments %>
+        <%= render "comments/comments", :comments => article.comments.order("created_at desc") %>
       </div>      
     </div>
   <% end %>
@@ -46,6 +57,8 @@
   		$("#fancy_<%= article.id %>_comment").slideToggle();  // ref "comments/form"
   	});  // "article.id" used to be:  "dom_id article"
   </script>
+  
+  
 
   <!-- BELOW: This is for hiding, then showing, comments that already exist. 
        Why doesn't it work? -->

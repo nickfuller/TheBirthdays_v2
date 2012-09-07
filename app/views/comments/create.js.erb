@@ -1,3 +1,3 @@
 $("#fancy_<%= @article.id %>_comment").replaceWith("<%= j(render 'form', article: @article) %>");
 $("#fancy_<%= @article.id %>_comment").slideUp();
-$("#<%= @article.id %>_comment").append("<%= j(@comment.user.name + " said...") %><br /><p><%= @comment.body %></p><br />");
+$("#<%= @article.id %>_comment").prepend("<%= j(@comment.user.name + " said...") %><br /><p><%= @comment.body %></p><br />"); // ".prepend" puts at top of list, ".append" at bottom.

@@ -2,16 +2,16 @@
 
 <%= flash[:user_not_updated] %>
 
+<%= render "form", user:@user %>
+
 <table>
-  <tbody>
-    
-    <%= render "form" %>
-    
-    <tr>
-      <td><%= link_to "Delete", destroy_user_url(@user.id), confirm: "You sure 'bout that?", :method => :delete %></td>
-    </tr>
-    
-  </tbody>
+  <tr>
+    <td>
+      <%= link_to "Delete", destroy_user_url(@user.id), 
+            :confirm => "You sure 'bout that?",
+            :method => :delete %>
+    </td>
+  </tr>
 </table>
 
 <p><%= link_to "Create Profile", new_user_url %></p>

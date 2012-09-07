@@ -1,9 +1,17 @@
 <!-- Invoked in "articles/articles" :: Articles#index -->
 
 <% comments.each do |comment| %>
-  <%= comment.user.name + " said..." %><br />
-  <p><%= comment.body %></p>
-  <br />
+  <% if comment.user.name.present? %>
+    <%= comment.user.name + " said..." %><br />
+  <% else %>
+    <%= "An anonymous fan said..." %><br />
+  <% end %>
+  <%= comment.body %>
+  <!-- <#% if comment.user == @current_user %>
+    <%#= link_to "Edit", update_comment_url(comment.id) %>
+    <%#= link_to "Delete", destroy_comment_url(comment.id), :method => :delete %> 
+    ABOVE: how to get this to work? -->
+  <br /><br />
 <% end %>
 
 <!-- Understand WHY we don't need '@' before comment here, but notice we DO need the '@' for the create.js.erb file; that's because for the create.js.erb file we're interacting directly with the create action in the comments_controller, under which @comments is defined. -->

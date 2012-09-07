@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
     user = User.find_by_email(@email)
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_url(user), :notice => "Signed in as #{@email}."
+      redirect_to home_url, :notice => "Signed in as #{@email}." 
+			# ^ Don't redirect :back, b/c no route will match /session.
     else
       flash[:notice] = 'Sign-in unsuccessful.'
       render 'new'
