@@ -248,13 +248,13 @@ body {
 		#blog .foot {
 			margin: 10px 0px 0px 10px;
 		}
-				#blog .foot .clickable {  /* the "Comments" heading for past comments */
+				#blog .foot .comment {  /* the "Comments" heading for past comments */
 					text-decoration: none;
 					font-family: verdana;
 					font-size: 12px; /* (x-,xx-)small(er), medium, (x-,xx-)large(r), length */ 
 					font-weight: 700; /* this sets boldness (values by hundred b/t 100-900) */
 				}
-				#blog .foot .comment{
+				#blog .foot .commentlist {
 					text-decoration: none;
 					font-family: courier;
 					font-size: 12px;

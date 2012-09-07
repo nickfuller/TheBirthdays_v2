@@ -40,7 +40,12 @@
        then comments are shown below a "Comments" header. -->
     <div class="foot">
       <div class="comment" id="<%= article.id %>_comment"><!--<=js puts comment in right spot.-->
-        <%= render "comments/comments", :comments => article.comments.order("created_at desc") %>
+        <% if article.comments.present? %>
+          Comments
+        <% end %>
+      </div>
+      <div class="commentlist" id="<%= article.id %>_comments">
+        <%=render "comments/comments", :comments => article.comments.order("created_at desc")%>
       </div>      
     </div>
 
